@@ -1,0 +1,18 @@
+{
+  "name": "ideal-octo-guacamole",
+  "version": "1.0.0",
+  "description": "My Blog Dev Version\r https://sujithq.github.io/ideal-octo-guacamole/",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4"
+  },
+  "dependencies": {
+    "glob": "^11.0.1",
+    "gray-matter": "^4.0.3"
+  }
+}
