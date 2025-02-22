@@ -1,0 +1,32 @@
+// Import Bootstrap Core
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Custom Variables (override Bootstrap defaults)
+$primary: #007bff;
+$secondary: #6c757d;
+$font-family-base: "Arial, sans-serif";
+
+// Import Bootstrap Components
+@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap/scss/bootstrap-reboot";
+@import "node_modules/bootstrap/scss/bootstrap-utilities";
+
+// Custom Styles
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: $primary;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.custom-card {
+    border: 2px solid $primary;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
