@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "My Blog Dev Version\r https://sujithq.github.io/ideal-octo-guacamole/",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "copy:scripts": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts.ps1",
+    "postinstall": "npm run copy:scripts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
