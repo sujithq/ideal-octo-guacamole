@@ -1,32 +1,30 @@
-// Import Bootstrap Core
+// 1️⃣ Import Bootstrap Core Functions & Mixins First
+// @import "node_modules/bootstrap/scss/functions";
+// @import "node_modules/bootstrap/scss/variables";
+// @import "node_modules/bootstrap/scss/mixins";
+
+// 2️⃣ Import Custom Palettes & Mixins
+// @import "palettes";
+// @import "mixins"; // Import mixins
+
+// 3️⃣ Define Custom Theme Variables (Optional - If you want to override Bootstrap defaults)
+// Override Bootstrap defaults (BEFORE importing Bootstrap itself)
+// $primary: #007bff;
+// $secondary: #6c757d;
+// $font-family-base: "Arial, sans-serif";
+
+// 4️⃣ Import Bootstrap After Overriding Variables
 @import "node_modules/bootstrap/scss/bootstrap";
 
-// Custom Variables (override Bootstrap defaults)
-$primary: #007bff;
-$secondary: #6c757d;
-$font-family-base: "Arial, sans-serif";
+//create a variable for the themes
+// $themes: (
+//     "watercolor": $theme-watercolor
+// );
 
-// Import Bootstrap Components
-@import "node_modules/bootstrap/scss/bootstrap-grid";
-@import "node_modules/bootstrap/scss/bootstrap-reboot";
-@import "node_modules/bootstrap/scss/bootstrap-utilities";
-
-// Custom Styles
-body {
-    background-color: #f8f9fa;
-}
-
-h1 {
-    color: $primary;
-}
-
-.navbar-brand {
-    font-weight: bold;
-}
-
-.custom-card {
-    border: 2px solid $primary;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-}
+// 5️⃣ Apply Custom Themes
+// Apply themes dynamically
+// @each $theme-name, $theme-map in $themes {
+//     [data-bs-theme=#{$theme-name}] {
+//         @include apply-theme($theme-map);
+//     }
+// }
