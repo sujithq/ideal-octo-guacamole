@@ -1,55 +1,60 @@
 {{ define "main" }}
+<div
+  class="container aos-init aos-animate"
+  data-aos="fade-up"
+  data-aos-delay="100"
+>
+  <div class="row">
+    <div class="col-lg-8">
+      {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date"
+      "desc") }} {{ $latest := index . 0 }} {{ partial "blog-detail.html" (dict
+      "page" $latest "useContent" true "useLink" true) }} {{ end }}
+      <div class="card border-primary col-sm-12">
+        <div class="card-body">
+          <h2 class="card-title">Other Posts</h2>
+          <div class="row">
+            {{ $remainingPosts := after 1 (sort (where site.RegularPages
+            "Section" "posts") "Date" "desc") }} {{ range $remainingPosts }} {{
+            $cover := "" }} {{ if .Params.cover }} {{ $cover = printf
+            "%s/cover.jpg" .RelPermalink }} {{ else }} {{ $cover =
+            "img/default-cover.jpg" }} {{ end }}
+            <div class="card border-primary col-lg-6 p-0">
+              <div class="">
+                <a href="{{ .RelPermalink }}"
+                  ><img src="{{ $cover }}" alt="" class="img-fluid"
+                /></a>
+              </div>
+              <div class="card-body">
+                <span class="">
+                  {{ with index .Params.tags 0 }} {{ . }} {{ end }}
+                </span>
+                <span class="mx-1">•</span>
+                <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
+                <h6 class="card-title">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h6>
+              </div>
+            </div>
 
-    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
-        <div class="col-md-9">
-          <article class="card md-4">
-            <h1>Article 1</h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia maxime, illo eveniet asperiores perspiciatis voluptate exercitationem, recusandae tempora ullam optio ab quibusdam autem. Necessitatibus obcaecati rerum quo beatae, fuga modi.
-          </article>
-          <article class="card md-4">
-            <h1>Article 2</h1>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque expedita error, sit maiores necessitatibus commodi possimus temporibus assumenda omnis eaque officia inventore eos adipisci, velit porro est eligendi ex sed.
-          </article>
-          <article class="card md-4">
-            <h1>Article 3</h1>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae atque, quia enim quo delectus minima fugit possimus voluptates nam dignissimos reprehenderit accusantium porro magni voluptatum pariatur aliquid eos ipsum nisi!
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-          <article class="card md-4">
-            <h1>Article 4</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta rerum commodi iste. Quo perferendis, aspernatur suscipit quam pariatur veritatis quisquam autem voluptas, repellat culpa quae! Minima repellendus impedit consequuntur deleniti.
-          </article>
-        </div>
-        <div class="col-md-3">
-          <aside class="card">
-            <h2>Sidebar 1</h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos a ducimus iure minus nobis cum iusto repudiandae nisi assumenda voluptate autem aliquam, sed enim dolorem tempore dolorum cumque veritatis recusandae.
-          </aside>
-          <aside class="card">
-            <h2>Sidebar 2</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ullam vitae eum atque beatae! Minima, dolorem excepturi voluptate eveniet, doloremque quia cumque error consequuntur, fugit sed unde aliquam! Aut, totam.
-          </aside>
+            <!-- <div class="col-lg-6">
+                  <a href="{{ .RelPermalink }}"><img src="{{ $cover }}" alt="" class="img-fluid"></a>
+                  <div class="post-meta">
+                    <span class="date">
+                      {{ with index .Params.tags 0 }}
+                        {{ . }}
+                      {{ end }}
+                    </span>
+                    <span class="mx-1">•</span>
+                    <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
+                  </div>
+                  <h6><a href="{{ .RelPermalink }}">{{ .Title }}</a></h6>
+                </div> -->
+            {{ end}}
+          </div>
         </div>
       </div>
     </div>
-{{ end }}
+    <div class="col-lg-4 sidebar">{{ partial "sidebar.html" . }}</div>
+  </div>
+  {{ end }}
+</div>

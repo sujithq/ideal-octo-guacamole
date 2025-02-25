@@ -4,8 +4,9 @@
   "description": "My Blog Dev Version\r https://sujithq.github.io/ideal-octo-guacamole/",
   "main": "index.js",
   "scripts": {
-    "copy:scripts": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts.ps1",
-    "postinstall": "npm run copy:scripts"
+    "copy:scripts-js": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts-js.ps1",
+    "copy:scripts-fonts": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts-fonts.ps1",
+    "postinstall": "npm run copy:scripts-js && npm run copy:scripts-fonts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "glob": "^11.0.1",
     "gray-matter": "^4.0.3"
   }

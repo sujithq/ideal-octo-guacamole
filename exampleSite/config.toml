@@ -28,6 +28,7 @@ resourceDir = "../resources"
 [params]
   theme = "forest"
   themes = ["dark", "light", "neon", "forest"]
+  dateFormat = "Jan 2, 2006"
 
 [markup]
   [markup.goldmark]
