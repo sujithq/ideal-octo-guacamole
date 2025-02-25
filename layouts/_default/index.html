@@ -1,8 +1,5 @@
 {{ define "main" }}
 
-
-
-
 <div
   class="container aos-init aos-animate"
   data-aos="fade-up"
@@ -40,25 +37,15 @@
               </div>
             </div>
 
-            <!-- <div class="col-lg-6">
-                  <a href="{{ .RelPermalink }}"><img src="{{ $cover }}" alt="" class="img-fluid"></a>
-                  <div class="post-meta">
-                    <span class="date">
-                      {{ with index .Params.tags 0 }}
-                        {{ . }}
-                      {{ end }}
-                    </span>
-                    <span class="mx-1">•</span>
-                    <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                  </div>
-                  <h6><a href="{{ .RelPermalink }}">{{ .Title }}</a></h6>
-                </div> -->
             {{ end}}
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 sidebar">{{ partial "sidebar.html" (dict "page" . "showRecentPosts" false "showSearch" false) }}</div>
+    <div class="col-lg-4 sidebar">
+      {{ partial "sidebar.html" (dict "page" . "showRecentPosts" false
+      "showSearch" false) }}
+    </div>
   </div>
 </div>
 {{ end }}

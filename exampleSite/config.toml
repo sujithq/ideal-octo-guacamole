@@ -5,26 +5,60 @@ theme = ["github.com/sujithq/ideal-octo-guacamole"]
 resourceDir = "../resources"
 
 [menu]
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/"
+    weight = 1
+
   [[menu.main]]
     identifier = "docs"
     name = "Documentation"
-    url = "/docs/"
-    weight = 1
+#     url = "/docs/"
+    weight = 2
 
   [[menu.main]]
     identifier = "alerts"
     name = "Alerts"
     url = "/doc/alerts"
-    weight = 2
+    weight = 1
     parent = "docs"
 
   [[menu.main]]
     identifier = "badges"
     name = "Badges"
     url = "/doc/badges"
-    weight = 3
+    weight = 2
     parent = "docs"
 
+  [[menu.main]]
+    identifier = "taxonomy"
+    name = "Taxonomy"
+#     url = "/docs/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 1
+    parent = "taxonomy"
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories"
+    weight = 2
+    parent = "taxonomy"  
+
+  [[menu.main]]
+    identifier = "series"
+    name = "Series"
+    url = "/series"
+    weight = 3
+    parent = "taxonomy"  
+    
 [params]
   theme = "forest"
   themes = ["dark", "light", "neon", "forest"]
@@ -34,3 +68,8 @@ resourceDir = "../resources"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[taxonomies]
+  categories = 'categories'
+  tags = 'tags'
+  series = 'series'

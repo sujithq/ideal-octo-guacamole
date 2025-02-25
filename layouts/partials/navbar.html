@@ -6,15 +6,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
-                </li>
-                {{ range site.Menus.main }}
+                </li> -->
+                {{ range sort site.Menus.main "Weight"}}
                     {{ if .HasChildren }}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ .URL }}" data-bs-toggle="dropdown">{{ .Name }}</a>
                         <ul class="dropdown-menu">
-                        {{ range .Children }}
+                        {{ range sort .Children "Weight"}}
                             <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
                         {{ end }}
                         </ul>
