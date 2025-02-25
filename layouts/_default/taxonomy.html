@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div
+  class="container aos-init aos-animate"
+  data-aos="fade-up"
+  data-aos-delay="100"
+>
+  <div class="row">
+    <div class="col-lg">
+      <div class="card border-primary mb-3">
+        <div class="card-body">
+          <h2 class="card-title"><i class="bi bi-{{if eq .Type "tags" }}tags{{else if eq .Type "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ .Title }}</h2>
+          {{ range .Pages }}
+          <a href="{{ .RelPermalink }}">
+            <div class="card mb-3 border-0">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  {{ $cover := "" }} 
+                  {{ if .Params.cover }} 
+                    {{ $cover = printf "%s/cover.jpg" .RelPermalink }}
+                  {{ else }} 
+                    {{ $cover = "img/default-cover.jpg" }} 
+                  {{ end }}
+                  <img src="{{ $cover }}" class="img-fluid rounded-start h-100 " alt="{{ .Title }}">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ .Title }}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
