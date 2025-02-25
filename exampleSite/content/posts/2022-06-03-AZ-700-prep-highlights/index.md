@@ -104,6 +104,8 @@ Public IPs enable external communication for Azure resources. They can be **stat
 
 Azure provides both **public and private DNS services** to resolve domain names.  
 
+{{< image src="img/hybrid-dns-infra.png" caption="DNS" alt="DNS" >}}
+
 ### **Public DNS**  
 Azure DNS manages **internet-facing** domain names and supports:  
 🔹 **A / AAAA** records for IPv4/IPv6  
@@ -138,11 +140,15 @@ Azure **VNet Peering** allows seamless communication between VNets without a VPN
 ✅ Works across **subscriptions and tenants**  
 
 
+{{< image src="img/peering.jpg" caption="Peering" alt="Peering" >}}
+
 ## **7. Gateway Transit for Shared VPN Access**  
 
 **Gateway Transit** allows one VNet to use another VNet’s **VPN gateway** for cross-premises connectivity.  
 
 💡 **Use case**: A hub-and-spoke topology where a single gateway in the hub VNet provides VPN access to multiple spokes.  
+
+{{< image src="img/gatewaytransit.png" alt="Gateway Transit" caption="Gateway Transit" >}} 
 
 ## **8. Azure Traffic Routing**  
 

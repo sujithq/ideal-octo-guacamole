@@ -2,3 +2,8 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 LanguageDirection = 'ltr'
 title = 'Ideal Octo Guacamole'
+
+[params]
+  theme = "forest"
+  themes = ["dark", "light", "neon", "forest"]
+  dateFormat = "Jan 2, 2006"

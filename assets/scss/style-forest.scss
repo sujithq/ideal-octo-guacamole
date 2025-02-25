@@ -11,3 +11,10 @@ $dark: #081c15; // Midnight Forest
 // ✅ 2. Import Bootstrap AFTER setting SCSS colors
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+.center-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

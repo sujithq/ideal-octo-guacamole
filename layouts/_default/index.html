@@ -1,4 +1,8 @@
 {{ define "main" }}
+
+
+
+
 <div
   class="container aos-init aos-animate"
   data-aos="fade-up"
@@ -9,7 +13,7 @@
       {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date"
       "desc") }} {{ $latest := index . 0 }} {{ partial "blog-detail.html" (dict
       "page" $latest "useContent" true "useLink" true) }} {{ end }}
-      <div class="card border-primary col-sm-12">
+      <div class="card border-primary col-lg-12">
         <div class="card-body">
           <h2 class="card-title">Other Posts</h2>
           <div class="row">
@@ -54,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4 sidebar">{{ partial "sidebar.html" . }}</div>
+    <div class="col-lg-4 sidebar">{{ partial "sidebar.html" (dict "page" . "showRecentPosts" false "showSearch" false) }}</div>
   </div>
-  {{ end }}
 </div>
+{{ end }}

@@ -75,11 +75,15 @@ In **Azure**, there are multiple load-balancing options, each designed for diffe
 | **Azure Application Gateway** | Regional | HTTP(S) web traffic | Layer 7 |  
 | **Azure Front Door** | Global | Web applications, API acceleration | Layer 7 |  
 
+{{< image src="img/load-balancing-decision-tree.png" alt="Load Balancing Decision Tree" caption="Load Balancing Decision Tree" >}}
+
 Now, let’s explore each of these services in detail.  
 
 ---
 
 ## **🌍 Azure Load Balancer (ALB)**  
+
+{{< image src="img/azure-load-balancer.png" alt="Azure Load Balancer" caption="Azure Load Balancer" >}}
 
 **Azure Load Balancer** is a **Layer 4 (TCP/UDP)** load-balancing service designed for **high-performance and ultra-low-latency traffic**. It efficiently distributes inbound and outbound traffic while ensuring high availability across **Availability Zones**.  
 
@@ -90,6 +94,8 @@ Now, let’s explore each of these services in detail.
 | **Public Load Balancer** | Distributes **internet-facing** traffic across VMs in a VNet. |  
 | **Internal Load Balancer** | Distributes **private network traffic** within Azure. |  
 
+{{< image src="img/alb-public-internal.png" alt="ALB Public vs Internal" caption="ALB Public vs Internal" >}}
+
 ### **Availability Zone Configurations**  
 
 | **Mode** | **Behavior** |  
@@ -97,6 +103,7 @@ Now, let’s explore each of these services in detail.
 | **Zone Redundant** | Uses a single IP, surviving zone failures. |  
 | **Zonal** | Restricts traffic to a specific zone. |  
 
+{{< image src="img/alb-zone-redundant.png" alt="ALB Zone Redundant" caption="ALB Zone Redundant" >}}  
 
 ### **Standard vs. Basic Load Balancer**  
 
@@ -112,6 +119,9 @@ Now, let’s explore each of these services in detail.
 
 ## **🌐 Azure Traffic Manager (ATM)**  
 
+{{< image src="img/azure-traffic-manager.png" alt="Azure Traffic Manager" caption="Azure Traffic Manager" >}}  
+
+
 **Traffic Manager** is a **DNS-based global load balancer**, designed to distribute traffic across **multiple Azure regions**. It **does not directly route traffic**—instead, it resolves requests to the nearest **healthy backend**.  
 
 ### **How It Works**  
@@ -120,6 +130,9 @@ Now, let’s explore each of these services in detail.
 2️⃣ The DNS system redirects to `contoso.trafficmanager.net`.  
 3️⃣ Traffic Manager selects a backend using **health checks & routing rules**.  
 4️⃣ The client receives the IP of the closest, available backend and connects directly.  
+
+{{< image src="img/tm-setup.png" alt="Azure Traffic Manager Setup" caption="Azure Traffic Manager Setup" >}}  
+
 
 ### **Routing Methods**  
 
@@ -132,6 +145,8 @@ Now, let’s explore each of these services in detail.
 | **MultiValue** | Return multiple healthy endpoints. |  
 | **Subnet** | Route based on user IP ranges. |  
 
+{{< image src="img/tm-weighted.png" alt="Traffic Manager Routing" caption="Traffic Manager Routing" >}}  
+
 **Traffic Manager is ideal for:**  
 ✔️ **Failover between Azure regions**  
 ✔️ **Multi-region deployments**  
@@ -140,6 +155,8 @@ Now, let’s explore each of these services in detail.
 ---
 
 ## **🔹 Azure Application Gateway (APG)**  
+
+{{< image src="img/azure-application-gateway.png" alt="Azure Application Gateway" caption="Azure Application Gateway" >}}  
 
 
 **Application Gateway** is a **Layer 7 load balancer** designed specifically for **HTTP(S) traffic**. It provides advanced **web traffic routing**, **SSL offloading**, and **Web Application Firewall (WAF) integration**.  
@@ -151,6 +168,8 @@ Now, let’s explore each of these services in detail.
 ✅ **SSL Termination** → Offload SSL decryption to reduce backend CPU usage.  
 ✅ **Autoscaling** → Dynamically scale based on traffic load.  
 
+{{< image src="img/apg-general.png" alt="Application Gateway Flow" caption="Application Gateway Flow" >}}  
+
 **Best for:**  
 ✔️ **Web applications** that require advanced traffic routing.  
 ✔️ **Security-conscious deployments** using **WAF protection**.  
@@ -158,6 +177,8 @@ Now, let’s explore each of these services in detail.
 ---
 
 ## **🌎 Azure Front Door (AFD)**  
+
+{{< image src="img/azure-front-door.png" alt="Azure Front Door" caption="Azure Front Door" >}}  
 
 **Azure Front Door** is a **global Layer 7** service that combines **load balancing, caching, acceleration, and security** into one solution. It ensures **high availability and low-latency** for web applications.  
 

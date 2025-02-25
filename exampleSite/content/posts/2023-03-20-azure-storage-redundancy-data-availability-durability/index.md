@@ -52,6 +52,8 @@ LRS **synchronously** copies your data **three times** within a **single physica
 ✅ **Lowest-cost option**  
 ⚠️ Not recommended for applications requiring high availability  
 
+{{< image src="img/lrs.png" alt="LRS Replication" caption="Locally Redundant Storage (LRS)" >}}
+
 
 ### 🔵 **Zone-Redundant Storage (ZRS)**  
 
@@ -59,6 +61,8 @@ ZRS **synchronously** replicates data **across three availability zones** within
 
 ✅ Recommended for **high-availability** applications  
 ✅ Protects against **data center failures**  
+
+{{< image src="img/zrs.png" alt="ZRS Replication" caption="Zone Redundant Storage (ZRS)" >}}
 
 ---
 
@@ -84,6 +88,8 @@ GRS copies data:
 ✅ Protects against **regional outages**  
 ⚠️ Data in the secondary region is **not readable** unless failover occurs  
 
+{{< image src="img/ra-grs.png" alt="LRS Replication" caption="Geo-Redundant Storage (GRS)" >}}
+
 ### 🔴 **Geo-Zone-Redundant Storage (GZRS)**  
 
 GZRS combines the benefits of **ZRS + GRS**:  
@@ -92,6 +98,8 @@ GZRS combines the benefits of **ZRS + GRS**:
 
 ✅ Best for **mission-critical applications**  
 ✅ Protects against **both zonal & regional failures**  
+
+{{< image src="img/ra-gzrs.png" alt="LRS Replication" caption="Geo-Zone-Redundant Storage (GZRS)" >}}
 
 ---
 
@@ -110,6 +118,8 @@ However, if your application requires **read access** to the secondary region du
 > **Note:** In a disaster scenario, some data might be **lost** since replication to the secondary region is **asynchronous**.  
 
 ---
+
+{{< image src="img/cover.jpg" alt="LRS Replication" caption="Overview" >}}
 
 ---
 
