@@ -4,15 +4,32 @@ title = "ideal-octo-guacamole"
 theme = ["github.com/sujithq/ideal-octo-guacamole"]
 resourceDir = "../resources"
 
-[[menu.main]]
-  name = "About"
-  url = "/about/"
+[menu]
+  [[menu.main]]
+    identifier = "docs"
+    name = "Documentation"
+    url = "/docs/"
+    weight = 1
 
-[[menu.main]]
-    name = "Bootstrap Showcase"
-    url = "/bootstrap-showcase/"
+  [[menu.main]]
+    identifier = "alerts"
+    name = "Alerts"
+    url = "/doc/alerts"
     weight = 2
+    parent = "docs"
+
+  [[menu.main]]
+    identifier = "badges"
+    name = "Badges"
+    url = "/doc/badges"
+    weight = 3
+    parent = "docs"
 
 [params]
-  theme = "neon"
-  themes = ["dark", "light", "neon"]
+  theme = "forest"
+  themes = ["dark", "light", "neon", "forest"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
