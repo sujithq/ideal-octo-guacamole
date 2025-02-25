@@ -1,0 +1,12 @@
+// ✅ 1. Set a default primary color for SCSS compilation
+$primary: #2d6a4f; // Deep Forest Green
+$secondary: #74c69d; // Soft Fern Green
+$success: #52b788; // Bright Leaf Green
+$info: #b7e4c7; // Light Mint
+$warning: #e9c46a; // Autumn Gold
+$danger: #9b2226; // Dark Redwood
+$light: #d8f3dc; // Misty Green
+$dark: #081c15; // Midnight Forest
+
+// ✅ 2. Import Bootstrap AFTER setting SCSS colors
+@import "node_modules/bootstrap/scss/bootstrap";

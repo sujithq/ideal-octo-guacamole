@@ -1,0 +1,35 @@
+<!-- Store available themes in JavaScript -->
+<script>
+    var availableThemes = JSON.parse({{ .Site.Params.themes | jsonify }});
+</script>
+<!-- Bootstrap JS (Optional, for components like modals, tooltips, etc.) -->
+{{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" | minify | fingerprint }}
+<script src="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}" crossorigin="anonymous"></script>
+<script src="{{ "js/theme-switcher.js" | relURL }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- Initialize AOS after loading -->
+<script>
+  function aosInit() {
+    AOS.init({
+      duration: 600,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }
+  window.addEventListener('DOMContentLoaded', aosInit);
+</script>
+
+
+{{- with resources.Get "vendor/swiper/swiper-bundle.min.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}

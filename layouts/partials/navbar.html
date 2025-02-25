@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -9,12 +9,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
                 </li>
-                {{ range .Site.Menus.main }}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
-                </li>
+                {{ range site.Menus.main }}
+                    {{ if .HasChildren }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ .URL }}" data-bs-toggle="dropdown">{{ .Name }}</a>
+                        <ul class="dropdown-menu">
+                        {{ range .Children }}
+                            <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
+                    <li class="nav-item"><a class="nav-link" href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
                 {{ end }}
-                <button id="themeToggle" class="btn btn-outline-light">🌙 Toggle Theme</button>
+                <button id="themeToggle" class="btn btn-primary">🌙 Toggle Theme</button>
             </ul>
         </div>
     </div>

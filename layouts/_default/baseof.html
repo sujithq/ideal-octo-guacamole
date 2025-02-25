@@ -1,46 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="{{ .Site.Params.theme }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
-    {{ $theme := .Site.Params.theme }}
-    {{ $scssPath := printf "scss/style-%s.scss" $theme }}
-    <script>
-        if (!window.themeStyles) {
-            window.themeStyles = {};
-        }
-        {{ range $theme := .Site.Params.themes }}
-            {{ $scssPath := printf "scss/style-%s.scss" $theme }}
-            {{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
-                window.themeStyles["{{ $theme }}"] = {
-                link: "{{ $styles.RelPermalink }}",
-                integrity: "{{ $styles.Data.Integrity }}"
-            };
-                
-        {{ end }}
-    </script>
-    {{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ "/android-chrome-192x192.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ "/android-chrome-512x512.png" | relURL }}">
-    <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relURL }}">
-    <link rel="shortcut icon" href="{{ "/favicon.ico" | relURL }}">
-</head>
-<body >
-    {{ partial "navbar.html" . }}
-    {{ block "main" . }}{{ end }}
-
-    <!-- Store available themes in JavaScript -->
-    <script>
-        var availableThemes = JSON.parse({{ .Site.Params.themes | jsonify }});
-    </script>
-    <!-- Bootstrap JS (Optional, for components like modals, tooltips, etc.) -->
-    {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" | minify | fingerprint }}
-    <script src="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}" crossorigin="anonymous"></script>
-    <script src="{{ "js/theme-switcher.js" | relURL }}"></script>
-</body>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }} data-bs-theme={{ .Site.Params.theme }}">
+    <head>
+        {{ partial "head" . }}
+    </head>
+    <body >
+        <header class="header">
+            {{ partial "header" . }}
+        </header>
+        <main class="main">
+            {{ block "main" . }}{{ end }}
+        </main>
+        <footer class="footer">
+            {{ partial "footer" . }}
+        </footer>
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- Preloader -->
+        <div id="preloader"></div>
+        {{ partial "js" . }}
+    </body>
 </html>

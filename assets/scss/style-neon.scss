@@ -1,6 +1,12 @@
 // ✅ 1. Set a default primary color for SCSS compilation
-$primary: #eef618;   // Default Bootstrap Blue
-$secondary: #6c757d; // Default Bootstrap Gray
+$primary: #00e5ff; // Electric Cyan
+$secondary: #ff00ff; // Neon Magenta
+$success: #39ff14; // Bright Neon Green
+$info: #00ffff; // Neon Aqua
+$warning: #ffd700; // Bright Neon Yellow
+$danger: #ff073a; // Neon Red
+$light: #f5f5f5; // Soft White Glow
+$dark: #0d0221; // Deep Space Black
 
 // ✅ 2. Import Bootstrap AFTER setting SCSS colors
 @import "node_modules/bootstrap/scss/bootstrap";

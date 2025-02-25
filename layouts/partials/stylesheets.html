@@ -1,0 +1,19 @@
+<!-- Store available themes in JavaScript -->
+{{ $theme := .Site.Params.theme }}
+{{ $scssPath := printf "scss/style-%s.scss" $theme }}
+<script>
+    if (!window.themeStyles) {
+        window.themeStyles = {};
+    }
+    {{ range $theme := .Site.Params.themes }}
+        {{ $scssPath := printf "scss/style-%s.scss" $theme }}
+        {{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
+            window.themeStyles["{{ $theme }}"] = {
+            link: "{{ $styles.RelPermalink }}",
+            integrity: "{{ $styles.Data.Integrity }}"
+        };
+            
+    {{ end }}
+</script>
+{{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
