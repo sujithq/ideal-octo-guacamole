@@ -38,21 +38,21 @@ jobs:
               with:
                   node-version: '20'
 
-            # - name: Install PowerShell
-            #   run: |
-            #     sudo apt-get update
-            #     sudo apt-get install -y wget apt-transport-https software-properties-common
-            #     wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
-            #     sudo dpkg -i packages-microsoft-prod.deb
-            #     sudo apt-get update
-            #     sudo apt-get install -y powershell
-            #     $PSVersionTable
+            - name: Install PowerShell
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y wget apt-transport-https software-properties-common
+                wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+                sudo dpkg -i packages-microsoft-prod.deb
+                sudo apt-get update
+                sudo apt-get install -y powershell
+                $PSVersionTable
 
-            # - name: Install npm dependencies
-            #   run: |
-            #     $PSVersionTable
-            #     npm install
-            #   shell: pwsh
+            - name: Install npm dependencies
+              run: |
+                $PSVersionTable
+                npm install
+              shell: pwsh
 
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v3
