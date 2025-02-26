@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = '/ideal-octo-guacamole'
 languageCode = 'en-us'
 LanguageDirection = 'ltr'
 title = 'Ideal Octo Guacamole'
