@@ -135,7 +135,7 @@ I'm deeply passionate about **DevOps culture and automation**. With certificatio
 
 #### **🔧 My Certifications & Expertise**  
 
-I've spent years expanding my knowledge across **cloud, DevOps, and security**, earning multiple certifications, including:  
+I've spent years expanding my knowledge across **Azure, DevOps, Security and AI**, earning multiple certifications, including:  
 
 ##### **☁️ Cloud & Infrastructure**  
 ✅ **Azure Solutions Architect** – Cloud strategy & architecture  
@@ -145,15 +145,20 @@ I've spent years expanding my knowledge across **cloud, DevOps, and security**, 
 ✅ **Azure Cosmos DB Developer** – Scalable NoSQL solutions  
 
 ##### **🛠 DevOps & GitHub**  
-✅ **GitHub Actions** – CI/CD pipelines  
+✅ **Azure DevOps Engineer** – CI/CD, automation, and release management pipelines  
+✅ **GitHub Actions** – Automated workflows for CI/CD, testing, security scanning, and infrastructure deployment  
 ✅ **GitHub Advanced Security** – Secure software development  
 ✅ **GitHub Administration** – Enterprise GitHub management  
 ✅ **Terraform Associate (HashiCorp)** – Infrastructure as Code (IaC) automation  
 
-##### **🔐 Security & Identity**  
+##### **🧠 Security & Identity**  
 ✅ **Azure Security Engineer** – Threat protection & security controls  
 ✅ **Azure Identity & Access Administrator** – IAM & Azure AD management  
 ✅ **Cybersecurity Architect** – Enterprise-wide security strategy  
+
+##### **🔐 AI**  
+✅ **Azure AI Engineer** – Developing AI solutions with cognitive services and ML models  
+
 
 ##### **📢 Training & Mentorship**  
 As a **GitHub Accredited Trainer**, I deliver training on:  
