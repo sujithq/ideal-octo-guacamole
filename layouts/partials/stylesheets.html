@@ -17,5 +17,9 @@
 </script>
 {{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+{{ $aos := resources.Get "vendor/aos/css/aos.css" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $aos.RelPermalink }}" integrity="{{ $aos.Data.Integrity }}">
+
 {{ $swiper := resources.Get "vendor/swiper/css/swiper-bundle.min.css" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $swiper.RelPermalink }}" integrity="{{ $swiper.Data.Integrity }}">

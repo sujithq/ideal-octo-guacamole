@@ -1,10 +1,6 @@
 {{ define "main" }}
 
-<div
-  class="container aos-init aos-animate"
-  data-aos="fade-up"
-  data-aos-delay="100"
->
+<div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
   <div class="row">
     <div class="col-lg-8">
       {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date"
