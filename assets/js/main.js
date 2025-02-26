@@ -124,6 +124,8 @@
         // Get available themes from config
         let themes = window.availableThemes || ["dark", "light", "neon", "forest"];    
         let currentTheme = htmlElement.getAttribute("data-bs-theme");
+
+        // remove all themes from html element
     
         // Get stored theme or use default from config
         const storedTheme = localStorage.getItem("bs-theme");
@@ -131,11 +133,37 @@
             currentTheme = storedTheme;
             htmlElement.setAttribute("data-bs-theme", storedTheme);
         }
-    
-        function getOldThemeStylesheet() {
-            let currentTheme = htmlElement.getAttribute("data-bs-theme");
+
+        reset(currentTheme);
+
+        function reset(currentTheme) {
+
+          const stylesheets = Array.from(document.querySelectorAll("link[rel='stylesheet']"))
+        .filter(link => link.href.startsWith(window.location.origin + "/scss/style-")).forEach(link => {
+
+            if(link.getAttribute("data-theme") !== currentTheme) {
+              link.parentNode.removeChild(link);
+            }
+          });
+
+          if(!getOldThemeStylesheet(currentTheme)) {
             let themeData = window.themeStyles[currentTheme];
+            if (themeData) {
+                let newLink = document.createElement("link");
+                newLink.rel = "stylesheet";
+                newLink.href = themeData.link;
+                newLink.integrity = themeData.integrity;
+                newLink.crossOrigin = "anonymous";
+                newLink.setAttribute("data-theme", currentTheme);
         
+                document.head.appendChild(newLink);
+            }
+          }
+
+        };
+    
+        function getOldThemeStylesheet(currentTheme) {
+            let themeData = window.themeStyles[currentTheme];
             if (themeData) {
                 return Array.from(document.querySelectorAll("link[rel='stylesheet']")).find(
                     (link) => link.integrity === themeData.integrity
@@ -155,28 +183,9 @@
         
             console.log(`Switching theme from '${currentTheme}' to '${newTheme}'`);
         
-            let oldLink = getOldThemeStylesheet(); // Get the correct old stylesheet
-        
-            let themeData = window.themeStyles[newTheme];
-            if (themeData) {
-                let newLink = document.createElement("link");
-                newLink.rel = "stylesheet";
-                newLink.href = themeData.link;
-                newLink.integrity = themeData.integrity;
-                newLink.crossOrigin = "anonymous";
-                newLink.setAttribute("data-theme", newTheme);
-        
-                newLink.onload = function () {
-                    if (oldLink && oldLink.parentNode) {
-                        oldLink.parentNode.removeChild(oldLink); // Remove the old stylesheet safely
-                    }
-                };
-        
-                document.head.appendChild(newLink);
-                currentTheme = newTheme;
-            }
+            reset(newTheme);
+            currentTheme = newTheme;
         }
-        
     
         themeToggle.addEventListener("click", switchTheme);
     });

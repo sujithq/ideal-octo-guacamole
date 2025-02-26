@@ -12,7 +12,7 @@ $dark: #081c15; // Midnight Forest
 
 :root {
     --accent-color: #{$primary}; 
-    --contrast-color: #{$dark}; 
+    --contrast-color: #{$light}; 
 }
 
 // ✅ 2. Import Bootstrap AFTER setting SCSS colors
@@ -30,6 +30,8 @@ $dark: #081c15; // Midnight Forest
 @import "preloader";
 // @import "timeline";
 @import "resume.scss";
+@import "header.scss";
+@import "footer.scss";
 
 
 

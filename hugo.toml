@@ -4,6 +4,6 @@ LanguageDirection = 'ltr'
 title = 'Ideal Octo Guacamole'
 
 [params]
-  theme = "forest"
+  theme = "light"
   themes = ["dark", "light", "neon", "forest"]
   dateFormat = "Jan 2, 2006"
