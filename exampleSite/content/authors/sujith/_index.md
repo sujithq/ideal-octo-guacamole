@@ -151,12 +151,12 @@ I've spent years expanding my knowledge across **Azure, DevOps, Security and AI*
 ✅ **GitHub Administration** – Enterprise GitHub management  
 ✅ **Terraform Associate (HashiCorp)** – Infrastructure as Code (IaC) automation  
 
-##### **🧠 Security & Identity**  
+##### **🔐 Security & Identity**  
 ✅ **Azure Security Engineer** – Threat protection & security controls  
 ✅ **Azure Identity & Access Administrator** – IAM & Azure AD management  
 ✅ **Cybersecurity Architect** – Enterprise-wide security strategy  
 
-##### **🔐 AI**  
+##### **🧠 AI**  
 ✅ **Azure AI Engineer** – Developing AI solutions with cognitive services and ML models  
 
 
