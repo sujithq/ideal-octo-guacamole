@@ -13,10 +13,16 @@ resourceDir = "../resources"
     weight = 1
 
   [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume"
+    weight = 2
+
+  [[menu.main]]
     identifier = "docs"
     name = "Documentation"
 #     url = "/docs/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "alerts"
@@ -36,7 +42,7 @@ resourceDir = "../resources"
     identifier = "taxonomy"
     name = "Taxonomy"
 #     url = "/docs/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "tags"
@@ -73,3 +79,23 @@ resourceDir = "../resources"
   categories = 'categories'
   tags = 'tags'
   series = 'series'
+
+  [[params.socials]]
+    name = "twitter"
+    url = "https://x.com/SujithQ"
+    icon = "bi bi-twitter-x"
+
+  [[params.socials]]
+    name = "facebook"
+    url = "https://www.facebook.com/sujith.quintelier"
+    icon = "bi bi-facebook"
+
+  [[params.socials]]
+    name = "github"
+    url = "https://github.com/sujithq"
+    icon = "bi bi-github"
+
+  [[params.socials]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/sujithquintelier/"
+    icon = "bi bi-linkedin"

@@ -22,7 +22,16 @@ Helping clients with:
 * Assessments
 * CI/CD
 * IaC
-* Trainings
+* Trainer
+  * GitHub
+    * Foundations
+    * Actions
+    * Advanced Security
+    * Copilot
+  * Git
+  * Azure DevOps
+  * Azure
+
 """
 
 [[item]]
