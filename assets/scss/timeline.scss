@@ -1,0 +1,36 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    // max-width: 800px;
+    // margin: auto;
+    // padding: 20px;
+  }
+  
+  .timeline-item {
+    // background: #2b2e3b; /* Dark background */
+    border-radius: 10px;
+    padding: 20px;
+    //width: 90%;
+    margin-bottom: 20px;
+    position: relative;
+    // color: #var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .timeline-item::before {
+    // content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    background: var(--default-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .timeline-content {
+    text-align: left;
+  }

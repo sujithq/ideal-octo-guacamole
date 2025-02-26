@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/functions";
+
 // ✅ 1. Set a default primary color for SCSS compilation
 $primary: #2d6a4f; // Deep Forest Green
 $secondary: #74c69d; // Soft Fern Green
@@ -7,6 +9,11 @@ $warning: #e9c46a; // Autumn Gold
 $danger: #9b2226; // Dark Redwood
 $light: #d8f3dc; // Misty Green
 $dark: #081c15; // Midnight Forest
+
+:root {
+    --accent-color: #{$primary}; 
+    --contrast-color: #{$dark}; 
+}
 
 // ✅ 2. Import Bootstrap AFTER setting SCSS colors
 @import "node_modules/bootstrap/scss/bootstrap";
@@ -21,3 +28,12 @@ $dark: #081c15; // Midnight Forest
 
 @import "scrolltop";
 @import "preloader";
+// @import "timeline";
+@import "resume.scss";
+
+
+
+.swiper-slide-test{
+    padding-left: 20%;
+    padding-right: 20%;
+}
