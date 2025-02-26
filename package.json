@@ -1,12 +1,12 @@
 {
   "name": "ideal-octo-guacamole",
   "version": "1.0.0",
-  "description": "My Blog Dev Version\r https://sujithq.github.io/ideal-octo-guacamole/",
+  "description": "Ideal-Octo-Guacamole\r https://sujithq.github.io/ideal-octo-guacamole/",
   "main": "index.js",
   "scripts": {
-    "copy:scripts-js": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts-js.ps1",
-    "copy:scripts-fonts": "powershell -ExecutionPolicy Bypass -File scripts/copy-scripts-fonts.ps1",
-    "postinstall": "npm run copy:scripts-js && npm run copy:scripts-fonts"
+    "copy-files": "powershell -ExecutionPolicy Bypass -File scripts/copy-files.ps1",
+    "copy-vendor-files": "powershell -ExecutionPolicy Bypass -File scripts/copy-vendor-files.ps1",
+    "postinstall": "npm run copy-files"
   },
   "keywords": [],
   "author": "",

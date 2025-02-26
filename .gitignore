@@ -8,3 +8,9 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Hugo
+
+bootstrap.bundle.min.js
+bootstrap-icons.woff
+bootstrap-icons.woff2
