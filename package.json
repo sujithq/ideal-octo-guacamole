@@ -4,8 +4,8 @@
   "description": "Ideal-Octo-Guacamole\r https://sujithq.github.io/ideal-octo-guacamole/",
   "main": "index.js",
   "scripts": {
-    "copy-files": "powershell -ExecutionPolicy Bypass -File scripts/copy-files.ps1",
-    "copy-vendor-files": "powershell -ExecutionPolicy Bypass -File scripts/copy-vendor-files.ps1",
+    "copy-files": "pwsh -ExecutionPolicy Bypass -File scripts/copy-files.ps1",
+    "copy-vendor-files": "pwsh -ExecutionPolicy Bypass -File scripts/copy-vendor-files.ps1",
     "postinstall": "npm run copy-files"
   },
   "keywords": [],

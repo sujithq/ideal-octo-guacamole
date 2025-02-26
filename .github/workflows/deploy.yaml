@@ -49,7 +49,9 @@ jobs:
                 $PSVersionTable
 
             - name: Install npm dependencies
-              run: npm install
+              run: |
+                $PSVersionTable
+                npm install
               shell: pwsh
 
             - name: Setup Hugo
