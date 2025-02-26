@@ -14,3 +14,5 @@ node_modules/
 bootstrap.bundle.min.js
 bootstrap-icons.woff
 bootstrap-icons.woff2
+aos.js
+swiper-bundle.min.js
