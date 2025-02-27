@@ -122,7 +122,7 @@
         const htmlElement = document.documentElement;
     
         // Get available themes from config
-        let themes = window.availableThemes || ["dark", "light", "neon", "forest"];    
+        let themes = window.availableThemes || ["dark", "light", "neon", "forest", "xebia"];    
         let currentTheme = htmlElement.getAttribute("data-bs-theme");
 
         // remove all themes from html element

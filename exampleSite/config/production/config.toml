@@ -1,0 +1,15 @@
+baseURL = "/ideal-octo-guacamole"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume"
+    weight = 2

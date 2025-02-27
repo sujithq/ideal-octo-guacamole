@@ -1,8 +1,18 @@
-baseURL = "http://localhost:1313/"
 languageCode = "en-us"
 title = "ideal-octo-guacamole"
 theme = ["github.com/sujithq/ideal-octo-guacamole"]
 resourceDir = "../resources"
+baseURL = "http://localhost:1313/"
+ 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  categories = 'categories'
+  tags = 'tags'
+  series = 'series'
 
 [menu]
 
@@ -64,38 +74,3 @@ resourceDir = "../resources"
     url = "/series"
     weight = 3
     parent = "taxonomy"  
-    
-[params]
-  theme = "forest"
-  themes = ["dark", "light", "neon", "forest"]
-  dateFormat = "Jan 2, 2006"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-[taxonomies]
-  categories = 'categories'
-  tags = 'tags'
-  series = 'series'
-
-  [[params.socials]]
-    name = "twitter"
-    url = "https://x.com/SujithQ"
-    icon = "bi bi-twitter-x"
-
-  [[params.socials]]
-    name = "facebook"
-    url = "https://www.facebook.com/sujith.quintelier"
-    icon = "bi bi-facebook"
-
-  [[params.socials]]
-    name = "github"
-    url = "https://github.com/sujithq"
-    icon = "bi bi-github"
-
-  [[params.socials]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/sujithquintelier/"
-    icon = "bi bi-linkedin"

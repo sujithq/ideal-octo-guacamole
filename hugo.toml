@@ -1,9 +1,16 @@
-baseURL = '/ideal-octo-guacamole'
+[development]
+  baseURL = "http://localhost:1313/"
+  disableRobotsTXT = true
+
+[production]
+  baseURL = "/ideal-octo-guacamole"
+  disableRobotsTXT = false
+  
 languageCode = 'en-us'
 LanguageDirection = 'ltr'
 title = 'Ideal Octo Guacamole'
 
 [params]
-  theme = "forest"
-  themes = ["dark", "light", "neon", "forest"]
+  theme = "xebia"
+  themes = ["dark", "light", "neon", "forest", "xebia"]
   dateFormat = "Jan 2, 2006"

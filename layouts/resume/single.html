@@ -87,7 +87,7 @@
                 {{ range .Pages }}
                   {{ if eq .Title "Experiences" }}
                     {{ range sort .Params.item "date_start" "desc"}}
-                      <div class="swiper-slide swiper-slide-test">
+                      <div class="swiper-slide swiper-slide-10">
                         <h3>{{ .title }}</h3>
                         <h4 class="organization">
                             <a href="{{ .company_url }}" target="_blank">{{ .company }}</a>
@@ -160,7 +160,7 @@
                 {{ range .Pages }}
                   {{ if eq .Title "Experiences" }}
                     {{ range sort .Params.item "date_start" "desc"}}
-                      <div class="swiper-slide swiper-slide-test">
+                      <div class="swiper-slide swiper-slide-10">
                         <h3>{{ .title }}</h3>
                         <h4>
                             <a href="{{ .organization_url }}" target="_blank">{{ .organization }}</a>

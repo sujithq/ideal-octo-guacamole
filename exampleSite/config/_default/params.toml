@@ -1,0 +1,22 @@
+[params]
+  dateFormat = "Jan 2, 2006"
+
+[[params.socials]]
+  name = "twitter"
+  url = "https://x.com/SujithQ"
+  icon = "bi bi-twitter-x"
+
+[[params.socials]]
+  name = "facebook"
+  url = "https://www.facebook.com/sujith.quintelier"
+  icon = "bi bi-facebook"
+
+[[params.socials]]
+  name = "github"
+  url = "https://github.com/sujithq"
+  icon = "bi bi-github"
+
+[[params.socials]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/sujithquintelier/"
+  icon = "bi bi-linkedin"
