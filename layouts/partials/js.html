@@ -1,5 +1,6 @@
 <!-- Store available themes in JavaScript -->
 <script>
+    window.HUGO_ENV = "{{ .Site.Params.environment }}";
     var availableThemes = JSON.parse({{ .Site.Params.themes | jsonify }});
 </script>
 <!-- Bootstrap JS (Optional, for components like modals, tooltips, etc.) -->

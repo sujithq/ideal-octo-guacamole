@@ -117,7 +117,8 @@
   
     // window.addEventListener("load", initSwiper);
 
-    document.addEventListener("DOMContentLoaded", function () {
+    if (window.HUGO_ENV === "development") {
+      document.addEventListener("DOMContentLoaded", function () {
         const themeToggle = document.getElementById("themeToggle");
         const htmlElement = document.documentElement;
     
@@ -189,6 +190,7 @@
     
         themeToggle.addEventListener("click", switchTheme);
     });
+  }
     
   
   })();

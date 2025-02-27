@@ -1,5 +1,7 @@
 <div class="header-social-links">
-    {{- range .Site.Params.socials }}
+  {{ with .Site.Params.socials }}
+    {{ range . }}
       <a href="{{ .url }}" target="_blank" class="{{ .name }}"><i class="{{ .icon }}"></i></a>
-    {{- end }}
+    {{ end }}
+  {{ end }}
 </div>

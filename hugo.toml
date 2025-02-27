@@ -1,16 +1,36 @@
-[development]
-  baseURL = "http://localhost:1313/"
-  disableRobotsTXT = true
-
-[production]
-  baseURL = "/ideal-octo-guacamole"
-  disableRobotsTXT = false
-  
-languageCode = 'en-us'
-LanguageDirection = 'ltr'
-title = 'Ideal Octo Guacamole'
+# [development]
+#   baseURL = "http://localhost:1313/"
+#   disableRobotsTXT = true
+# 
+# [production]
+#   baseURL = "/ideal-octo-guacamole"
+#   disableRobotsTXT = false
+#   
+# languageCode = 'en-us'
+# LanguageDirection = 'ltr'
+# title = 'Ideal Octo Guacamole'
 
 [params]
   theme = "xebia"
   themes = ["dark", "light", "neon", "forest", "xebia"]
   dateFormat = "Jan 2, 2006"
+  
+[[params.socials]]
+  name = "twitter"
+  url = "https://x.com/SujithQ"
+  icon = "bi bi-twitter-x"
+
+[[params.socials]]
+  name = "facebook"
+  url = "https://www.facebook.com/sujith.quintelier"
+  icon = "bi bi-facebook"
+
+[[params.socials]]
+  name = "github"
+  url = "https://github.com/sujithq"
+  icon = "bi bi-github"
+
+[[params.socials]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/sujithquintelier/"
+  icon = "bi bi-linkedin"  

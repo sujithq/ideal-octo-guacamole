@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-bs-theme="{{ .Site.Params.theme }}">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-bs-theme="{{ .Site.Params.theme }}" tabindex="0">
     <head>
         {{ partial "head" . }}
     </head>
-    <body >
+    <body>
         <header id="header" class="header sticky-top">
             {{ partial "header" . }}
         </header>
