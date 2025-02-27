@@ -1,8 +1,8 @@
 # List of vendors and files to copy
 $filesToCopy = @(
-    @{ Vendor = "bootstrap"; FileName = "dist/js/bootstrap.bundle.min.js"; Destination = "assets/vendor/bootstrap/js" ; Source = "node_modules" }
     @{ Vendor = "aos"; FileName = "dist/aos.js"; Destination = "assets/vendor/aos/js" ; Source = "node_modules" }
     @{ Vendor = "aos"; FileName = "dist/aos.css"; Destination = "assets/vendor/aos/css" ; Source = "node_modules" }
+    @{ Vendor = "bootstrap"; FileName = "dist/js/bootstrap.bundle.min.js"; Destination = "assets/vendor/bootstrap/js" ; Source = "node_modules" }
     @{ Vendor = "swiper"; FileName = "swiper-bundle.min.js"; Destination = "assets/vendor/swiper/js" ; Source = "node_modules" }
     @{ Vendor = "swiper"; FileName = "swiper-bundle.min.css"; Destination = "assets/vendor/swiper/css" ; Source = "node_modules" }
     @{ Vendor = "bootstrap-icons"; FileName = "font/fonts/bootstrap-icons.woff"; Destination = "static/scss/fonts" ; Source = "node_modules" }
