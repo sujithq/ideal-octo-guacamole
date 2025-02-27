@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docs on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/doc/</link><description>Recent content in Docs on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 24 Feb 2025 14:49:31 +0100</lastBuildDate><atom:link href="/ideal-octo-guacamole/doc/index.xml" rel="self" type="application/rss+xml"/><item><title>Alerts</title><link>/ideal-octo-guacamole/doc/alerts/</link><pubDate>Mon, 24 Feb 2025 14:49:31 +0100</pubDate><guid>/ideal-octo-guacamole/doc/alerts/</guid><description>&lt;div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+ &lt;div class="row">
+ &lt;h2>Alerts&lt;/h2>
+ &lt;div class="col-md-12">
+ &lt;div class="alert alert-primary" role="alert">
+ A simple primary alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-secondary" role="alert">
+ A simple secondary alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-success" role="alert">
+ A simple success alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-danger" role="alert">
+ A simple danger alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-warning" role="alert">
+ A simple warning alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-info" role="alert">
+ A simple info alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-light" role="alert">
+ A simple light alert—check it out!
+ &lt;/div>
+ &lt;div class="alert alert-dark" role="alert">
+ A simple dark alert—check it out!
+ &lt;/div>
+ &lt;/div>
+ &lt;h2>Link color&lt;/h2>
+ &lt;div class="col-md-12">
+ &lt;div class="alert alert-primary" role="alert">
+ A simple primary alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-secondary" role="alert">
+ A simple secondary alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-success" role="alert">
+ A simple success alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-danger" role="alert">
+ A simple danger alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-warning" role="alert">
+ A simple warning alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-info" role="alert">
+ A simple info alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-light" role="alert">
+ A simple light alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;div class="alert alert-dark" role="alert">
+ A simple dark alert with
+ &lt;a href="#" class="alert-link">an example link&lt;/a>. Give it a click if you
+ like.
+ &lt;/div>
+ &lt;/div>
+ &lt;h2>Additional content&lt;/h2>
+ &lt;div class="col-md-12">
+ &lt;div class="alert alert-success" role="alert">
+ &lt;h4 class="alert-heading">Well done!&lt;/h4>
+ &lt;p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.&lt;/p></description></item><item><title>Badges</title><link>/ideal-octo-guacamole/doc/badges/</link><pubDate>Mon, 24 Feb 2025 14:49:31 +0100</pubDate><guid>/ideal-octo-guacamole/doc/badges/</guid><description>&lt;div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+ &lt;div class="row">
+ &lt;h2>Headings&lt;/h2>
+ &lt;div class="col-md-12">
+ &lt;h1>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h1>
+ &lt;h2>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h2>
+ &lt;h3>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h3>
+ &lt;h4>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h4>
+ &lt;h5>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h5>
+ &lt;h6>Example heading &lt;span class="badge bg-secondary">New&lt;/span>&lt;/h6>
+ &lt;/div>
+ &lt;h2>Buttons&lt;/h2>
+ &lt;div class="col-md-12">
+ &lt;button type="button" class="btn btn-primary">
+ Notifications &lt;span class="badge text-bg-secondary">4&lt;/span>
+ &lt;/button>
+ &lt;/div>
+ &lt;/div>
+&lt;/div></description></item></channel></rss>

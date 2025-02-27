@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Optimizing Cloud Deployments on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/series/optimizing-cloud-deployments/</link><description>Recent content in Optimizing Cloud Deployments on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 17 Jun 2022 06:00:00 +0000</lastBuildDate><atom:link href="/ideal-octo-guacamole/series/optimizing-cloud-deployments/index.xml" rel="self" type="application/rss+xml"/><item><title>🔍 Azure Load Balancing Explained: Choosing the Right Option</title><link>/ideal-octo-guacamole/posts/2022-06-17-azure-load-balancing-explained/</link><pubDate>Fri, 17 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022-06-17-azure-load-balancing-explained/</guid><description>&lt;h1 id="azure-load-balancing-explained-choosing-the-right-option">&lt;strong>Azure Load Balancing Explained: Choosing the Right Option&lt;/strong>&lt;/h1>
+&lt;h2 id="what-is-load-balancing">&lt;strong>What is Load Balancing?&lt;/strong>&lt;/h2>
+&lt;p>Load balancing is the &lt;strong>even distribution of network traffic&lt;/strong> across a group of backend computing resources or servers. The primary goals of load balancing are:&lt;/p>
+&lt;p>✅ &lt;strong>Optimizing resource utilization&lt;/strong>&lt;br>
+✅ &lt;strong>Maximizing throughput &amp;amp; performance&lt;/strong>&lt;br>
+✅ &lt;strong>Minimizing response time&lt;/strong>&lt;br>
+✅ &lt;strong>Ensuring high availability&lt;/strong>&lt;br>
+✅ &lt;strong>Preventing overload on a single resource&lt;/strong>&lt;/p>
+&lt;p>In &lt;strong>Azure&lt;/strong>, there are multiple load-balancing options, each designed for different &lt;strong>traffic types and use cases&lt;/strong>.&lt;/p></description></item></channel></rss>
