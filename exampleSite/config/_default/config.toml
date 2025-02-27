@@ -73,4 +73,8 @@ baseURL = "http://localhost:1313/"
     name = "Series"
     url = "/series"
     weight = 3
-    parent = "taxonomy"  
+    parent = "taxonomy"
+
+[services]
+    [services.disqus]
+    shortname = 'sujithq'
