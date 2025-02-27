@@ -6,7 +6,7 @@
         <h2 class="card-title">{{ .Title }}</h2>
               {{ partial "blog-detail.html" (dict "page" . "useContent" true "useLink" false) }}
       </div>
+      {{ template "_internal/disqus.html" . }}
     </div>
-    <a href="{{ "/" | relURL }}" class="btn btn-primary mt-3">Back to Home</a>
 </div>
 {{ end }}
