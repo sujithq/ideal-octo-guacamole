@@ -3,7 +3,7 @@
 <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
     <div class="row mt-5">
       <div class="col-lg mt-3">
-        <h2 class="card-title">{{ .Title }}</h2>
+        <!-- <h2 class="card-title">{{ .Title }}</h2> -->
               {{ partial "blog-detail.html" (dict "page" . "useContent" true "useLink" false) }}
       </div>
       {{ template "_internal/disqus.html" . }}

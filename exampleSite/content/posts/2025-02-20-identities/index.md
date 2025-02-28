@@ -56,21 +56,21 @@ layout = 'single'
     
 +++
 
-### Securing Azure Identities: The “New” Perimeter in Cloud Security
+## Securing Azure Identities: The “New” Perimeter in Cloud Security
 
 It’s no secret that the cloud has fundamentally changed how we approach cybersecurity. The days when a robust firewall was all you needed to keep attackers at bay are long gone. As cloud-native services increasingly move into the public sphere, identity has emerged as the new defensive perimeter—if an attacker compromises your identities and credentials, they’re essentially inside. 
 
-### Why Identities Matter More Than Ever
+## Why Identities Matter More Than Ever
 
 If you’ve participated in a cybersecurity roundtable recently, you’ve likely heard someone mention, “Identity is the new perimeter.” Historically, once you were inside a corporate network, you had broad access to internal systems—much like walking through a front door and freely wandering the house. However, the widespread adoption of cloud services—accessible from anywhere—has turned this model upside down. 
 
-### Navigating Azure Identities
+## Navigating Azure Identities
 
 Given that identities are the linchpin of security, it’s crucial to understand the different identity types available in Azure. This variety can be a blessing or a curse. On one hand, multiple identity types allow for flexibility across diverse use cases; on the other, choosing the wrong type can inadvertently weaken your security posture.
 
 Below is a quick overview of the most common identities in Azure; for the sake of brevity, we’ll focus primarily on **user** and **service principal** identities:
 
-#### User Identities
+### User Identities
 1. **Member Users**  
    Created and managed within Microsoft Entra ID (formerly Azure AD), or synced from on-premises Active Directory via Entra ID Connect.  
 2. **Guest Users**  
@@ -78,14 +78,14 @@ Below is a quick overview of the most common identities in Azure; for the sake o
 3. **Consumer Users**  
    Managed through Entra ID B2C, primarily for applications requiring customer-facing authentication.
 
-#### Service Principals
+### Service Principals
 1. **Application-Based**  
    Created through Azure’s Application Registrations.  
 2. **Managed Identities**  
    - **User Assigned**: Created independently and can be assigned to multiple resources.  
    - **System Assigned**: Automatically spun up and managed by Azure for a specific resource; deleted when the resource is removed.
 
-#### Other Identity Types
+### Other Identity Types
 - **Device Identities**: Entra ID registered, joined, or hybrid-joined devices.  
 - **External Identities**: Federated identities from other identity providers.  
 - **Group Identities**: Security groups or Microsoft 365 Groups in Entra ID—yes, groups can effectively act like identities.  
@@ -94,11 +94,11 @@ Below is a quick overview of the most common identities in Azure; for the sake o
 
 Even if a group isn’t a “user” in the traditional sense, having the ability to access certain resources means it demands the same level of security and oversight as a standard user account.
 
-### Practical Tips to Fortify Your Azure Identities
+## Practical Tips to Fortify Your Azure Identities
 
 Securing identities doesn’t have to be an uphill battle. Small, strategic steps can dramatically improve your security stance. Below are tried-and-tested measures for both **users** and **workload identities**.
 
-#### Tips for User Accounts
+### Tips for User Accounts
 
 1. **Enable Multi-Factor Authentication (MFA)**  
    If you do just one thing, do this. MFA blocks the lion’s share of password-based attacks.  
@@ -113,7 +113,7 @@ Securing identities doesn’t have to be an uphill battle. Small, strategic step
 6. **Leverage Built-In Azure Identity Tools**  
    Microsoft Entra and Azure AD Identity Protection can automatically flag high-risk activities like risky user or risky sign-in events.
 
-#### Tips for Workload Identities (Service Principals / Managed Identities)
+### Tips for Workload Identities (Service Principals / Managed Identities)
 
 1. **Adopt Managed Identities**  
    Instead of hardcoding credentials in applications, let Azure handle identity lifecycle management. This limits the risk of credential leaks.  

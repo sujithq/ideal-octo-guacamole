@@ -1,9 +1,11 @@
 // Your variable overrides go here, e.g.:
 // $h1-font-size: 3rem;
 
-@import "external/bootswatch/dist/xebia/variables";
+// @import "external/bootswatch/dist/xebia/variables";
+@import "xebia/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "external/bootswatch/dist/xebia/bootswatch";
+// @import "external/bootswatch/dist/xebia/bootswatch";
+@import "xebia/bootswatch";
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 
