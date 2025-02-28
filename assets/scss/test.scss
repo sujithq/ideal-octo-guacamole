@@ -1,0 +1,39 @@
+// Your variable overrides go here, e.g.:
+// $h1-font-size: 3rem;
+
+@import "external/bootswatch/dist/sketchy/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "external/bootswatch/dist/sketchy/bootswatch";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+
+:root {
+    --accent-color: #{$primary}; 
+    --contrast-color: #{$light}; 
+    --swiper-navigation-color: #{$primary};
+    --swiper-theme-color: #{$primary};
+    --default-color: #{$primary};
+}
+.center-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@import "scrolltop";
+@import "preloader";
+// @import "resume.scss";
+// @import "header.scss";
+// @import "footer.scss";
+// @import "search.scss";
+
+
+
+@for $k from 1 through 6 {
+    $i: $k * 5;
+    .swiper-slide-#{$i} {
+      padding-left: $i * 1%;
+      padding-right: $i * 1%;
+    }
+}

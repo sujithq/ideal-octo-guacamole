@@ -31,22 +31,8 @@ baseURL = "http://localhost:1313/"
   [[menu.main]]
     identifier = "docs"
     name = "Documentation"
-#     url = "/docs/"
+    url = "/documentation"
     weight = 3
-
-  [[menu.main]]
-    identifier = "alerts"
-    name = "Alerts"
-    url = "/doc/alerts"
-    weight = 1
-    parent = "docs"
-
-  [[menu.main]]
-    identifier = "badges"
-    name = "Badges"
-    url = "/doc/badges"
-    weight = 2
-    parent = "docs"
 
   [[menu.main]]
     identifier = "taxonomy"

@@ -15,7 +15,10 @@
             
     {{ end }}
 </script>
-{{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
+<!-- {{ $styles := resources.Get $scssPath | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"> -->
+
+{{ $styles := resources.Get "scss/test.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{ $aos := resources.Get "vendor/aos/css/aos.css" | toCSS | minify | fingerprint }}

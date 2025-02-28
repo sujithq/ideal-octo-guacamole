@@ -11,8 +11,8 @@
 # title = 'Ideal Octo Guacamole'
 
 [params]
-  theme = "xebia"
-  themes = ["dark", "light", "neon", "forest", "xebia"]
+  theme = "light"
+  themes = ["dark", "light"]
   dateFormat = "Jan 2, 2006"
   
 [[params.socials]]

@@ -27,7 +27,7 @@
 {{ $resize_options := printf "%s webp icon" (.Get "resize_options" | default "100x100") }}
 
 <div class="container">
-  <div class="row">
+  <div class="row mt-5">
   {{/* Attempt to automatically load gallery images from page bundle */}}
   {{ $images := resources.Match $album_path }}
   {{ range (sort $images "Name" $sort_order) }}
