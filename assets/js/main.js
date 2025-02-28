@@ -61,6 +61,20 @@
         preloader.remove();
       });
     }
+
+    // Toggle light and dark themes
+    function toggleThemeMenu() {
+      let themeMenu = document.querySelector('#theme-menu');
+
+      if (!themeMenu) return;
+
+      document.querySelectorAll('[data-bs-theme-value]').forEach(value => {
+        value.addEventListener('click', () => {
+          const theme = value.getAttribute('data-bs-theme-value');
+          document.documentElement.setAttribute('data-bs-theme', theme);
+        });
+      });
+    }
   
     /**
      * Scroll top button

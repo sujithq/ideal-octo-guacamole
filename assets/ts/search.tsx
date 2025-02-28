@@ -295,23 +295,15 @@ class Search {
             <a href={item.permalink}>
                 <div class="card mb-3 border-0">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src={item.permalink + "cover.jpg" } class={"img-fluid rounded-start h-100"} alt={item.title }/>
+                        <div class="col-md-1">
+                            <img src={item.permalink + "cover.jpg" } class={"img-fluid rounded-start h-100 ms-1"} alt={item.title }/>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="article-title" dangerouslySetInnerHTML={{ __html: item.title }}></h5>
-                                <section class="article-preview" dangerouslySetInnerHTML={{ __html: item.preview }}></section>
+                        <div class="col-md-11">
+                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                <h5 dangerouslySetInnerHTML={{ __html: item.title }}></h5>
+                                <div dangerouslySetInnerHTML={{ __html: item.preview }}></div>
                             </div>
                         </div>
-                        <div class="article-details">
-                        </div>
-                        {
-                            item.image &&
-                            <div class="article-image">
-                                <img src={item.image} loading="lazy" />
-                            </div>
-                        }
                     </div>
                 </div>
             </a>

@@ -1,9 +1,9 @@
 // Your variable overrides go here, e.g.:
 // $h1-font-size: 3rem;
 
-@import "external/bootswatch/dist/brut/variables";
+@import "external/bootswatch/dist/xebia/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "external/bootswatch/dist/brut/bootswatch";
+@import "external/bootswatch/dist/xebia/bootswatch";
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 
@@ -24,9 +24,10 @@
 
 @import "scrolltop";
 @import "preloader";
+@import "footer.scss";
+
 // @import "resume.scss";
 // @import "header.scss";
-// @import "footer.scss";
 // @import "search.scss";
 
 

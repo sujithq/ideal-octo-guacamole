@@ -44,7 +44,71 @@
               {{ end }}
 
           </ul>
+          <ul class="navbar-nav ms-md-auto">
+            {{ with .Site.Params.socials }}
+                {{ range . }}
+                <li class="nav-item">
+                <!-- <a href="{{ .url }}" rel="noopener" target="_blank" class="nav-link"><i class="{{ .icon }}"></i></a> -->
+                <a target="_blank" rel="noopener" class="nav-link" href="{{ .url }}"><i class="{{ .icon }}"></i><span class="d-lg-none ms-2">{{ .name }}</span></a>
+                </li>
+                {{ end }}
+            {{ end }}
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none my-2 text-white-50">
+              </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+                  <i class="bi bi-circle-half"></i>
+                  <span class="d-lg-none ms-2">Toggle theme</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                      <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none my-2 text-white-50">
+              </li>
+              <li>
+                {{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
+        {{- if $query -}}
+            {{- $searchPage := index $query 0 -}}
+            <form class="d-flex search-form" action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }}>
+                <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
+                <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
+                </button>
+              </form>
+        {{- end -}}
+              </li>
+          </ul>
       </div>
-      {{ partial "socials.html" . }}
+      <!-- <div class="me-1">
+        {{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
+        {{- if $query -}}
+            {{- $searchPage := index $query 0 -}}
+            <form class="d-flex search-form" action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }}>
+                <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
+                <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
+                </button>
+              </form>
+        {{- end -}}
+
+        
+          </div> -->
+
+          
+      <!-- {{ partial "socials.html" . }} -->
   </div>
 </nav>
