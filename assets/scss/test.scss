@@ -1,18 +1,19 @@
 // Your variable overrides go here, e.g.:
 // $h1-font-size: 3rem;
 
-@import "external/bootswatch/dist/sketchy/variables";
+@import "external/bootswatch/dist/brut/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "external/bootswatch/dist/sketchy/bootswatch";
+@import "external/bootswatch/dist/brut/bootswatch";
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 
 :root {
-    --accent-color: #{$primary}; 
-    --contrast-color: #{$light}; 
+    // --accent-color: #{$primary}; 
+    // --contrast-color: #{$light}; 
     --swiper-navigation-color: #{$primary};
     --swiper-theme-color: #{$primary};
-    --default-color: #{$primary};
+    --swiper-pagination-color: #{$primary};
+    // --default-color: #{$primary};
 }
 .center-figure {
     display: flex;
