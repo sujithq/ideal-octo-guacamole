@@ -1,5 +1,12 @@
 <div class="row">
 
+      <!-- Search Widget -->
+      <div class="search-widget widget-item">
+        {{ partial "search.html" .page }}
+      </div><!--/Search Widget -->
+      {{ if .showSearch }}
+      {{ end }}
+
 <div class="card border-primary mt-3 mb-3">
   <div class="card-body">
     <div class="d-flex flex-column align-items-center">

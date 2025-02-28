@@ -1,0 +1,16 @@
+{{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
+{{- if $query -}}
+    {{- $searchPage := index $query 0 -}}
+    <form action="{{ $searchPage.RelPermalink }}" class="search-form" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }}>
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="keywords" />
+        
+            <button title="Search">
+                <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
+            </button>
+        </p>
+    </form>
+{{- else -}}
+    {{- warnf "Search page not found. Create a page with layout: search." -}}
+{{- end -}}
