@@ -10,7 +10,7 @@
                   {{ range sort site.Menus.main "Weight" }}
                       {{ $isActive := or ($.IsMenuCurrent "main" .) (eq .URL $.RelPermalink) }}
                       {{ if .HasChildren }}
-                          <li class="nav-item dropdown">
+                          <li class="nav-item dropdown" data-bs-theme="light"   >
                               <a class="nav-link dropdown-toggle {{ if $isActive }}active{{ end }}" 
                                  href="{{ .URL }}" 
                                  data-bs-toggle="dropdown">

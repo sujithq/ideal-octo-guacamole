@@ -11,7 +11,7 @@
         <div class="card-body">
           <h2 class="card-title">Other Posts</h2>
 
-          <div class="container">
+          <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4">
               {{ $remainingPosts := after 1 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }}
               {{ range $remainingPosts }} 

@@ -75,6 +75,7 @@
         });
       });
     }
+    toggleThemeMenu();
   
     /**
      * Scroll top button
