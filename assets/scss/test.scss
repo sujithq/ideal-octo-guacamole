@@ -24,9 +24,16 @@
     justify-content: center;
 }
 
+.middot-divider {
+    padding-right: .45em;
+    padding-left: .45em;
+    font-size: 15px
+  }
+
 @import "scrolltop";
 @import "preloader";
 @import "footer.scss";
+@import "timeline.scss";
 
 // @import "resume.scss";
 // @import "header.scss";

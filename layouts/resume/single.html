@@ -80,7 +80,7 @@
         <div class="card-header text-center">
           <h4 class="center-text">Experiences</h4>
         </div>
-        <div class="card-body">
+        <!-- <div class="card-body">
           <div class="swiper expSwiper">
             <div class="swiper-wrapper">
               {{ with .Site.GetPage "section" "resume" }}
@@ -107,7 +107,6 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
           </div>
-          <!-- Initialize Swiper -->
           <script>
             function swiperInit() {
               var swiper = new Swiper(".expSwiper", {
@@ -126,6 +125,88 @@
             }
             window.addEventListener('DOMContentLoaded', swiperInit);
           </script>
+        </div> -->
+        <div class="card-body">
+          <section class="page-section" id="about">
+            <div class="container">
+                <!-- <div class="text-center">
+                    <h2 class="section-heading text-uppercase">About</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div> -->
+                <ul class="timeline">
+                  {{ with .Site.GetPage "section" "resume" }}
+                    {{ range .Pages }}
+                      {{ $index := 0 }} <!-- Initialize index -->
+                      {{ if eq .Title "Experiences" }}
+                        {{ range sort .Params.item "date_start" "desc"}}
+                {{ if modBool $index 2 }} <!-- Check if index is even -->
+                  <li>
+                {{ else }}
+                  <li class="timeline-inverted">
+                  {{ end }}
+                              <div class="timeline-image">
+                                <!-- <img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /> -->
+                              </div>
+                              <div class="timeline-panel">
+                                  <div class="timeline-heading">
+                                      <h5>{{ .date_start | time.Format $global.Site.Params.dateFormat  }} - {{ if .date_end }}{{ .date_end | time.Format $global.Site.Params.dateFormat  }}{{ else }}Present{{ end }}<span class="middot-divider">.</span>{{.location}}</h5>
+                                      <h5 class="subheading"><em>{{ .title }}</em>{{ .title }}</h5>
+                                      <h5 class="subheading">
+                                        <a href="{{ .company_url }}" target="_blank">{{ .company }}</a>
+                                      </h5>
+                                  </div>
+                                  <div class="timeline-body"><p class="text-muted">{{ .short_description}}</p></div>
+                              </div>
+                          </li>
+                          {{ $index = add $index 1 }} <!-- Increment index -->
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                    <!-- <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>March 2011</h4>
+                                <h4 class="subheading">An Agency is Born</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>December 2015</h4>
+                                <h4 class="subheading">Transition to Full Service</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>July 2020</h4>
+                                <h4 class="subheading">Phase Two Expansion</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                            </h4>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </section>
         </div>
       </div>
       <div class="card border-primary mb-3">
