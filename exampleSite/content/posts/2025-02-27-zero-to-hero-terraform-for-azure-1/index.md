@@ -29,15 +29,13 @@ layout = 'single'
     
 +++
 
-## **From Zero to Hero: Terraform for Azure - Getting started**
-
-### **Introduction**
+## **Introduction**
 
 Terraform is a powerful Infrastructure as Code (IaC) tool that enables you to define, provision, and manage Azure resources using declarative configuration files. This blog series, _Zero to Hero: Terraform for Azure_, will take you through Terraform from the basics to advanced topics, using hands-on examples tailored for Azure.
 
 In this first post, we’ll focus on setting up your development environment and deploying your first resource on Azure using Terraform.
 
-### **Prerequisites**
+## **Prerequisites**
 
 Before we start, you need:
 
@@ -51,9 +49,9 @@ We’ll cover multiple setup options:
 
 ---
 
-### **1. Setting Up the Development Environment**
+## **1. Setting Up the Development Environment**
 
-#### **Option 1: Local Installation**
+### **Option 1: Local Installation**
 
 For local development, you need to install:
 
@@ -87,7 +85,7 @@ For local development, you need to install:
    - Install [VS Code](https://code.visualstudio.com/download).
    - Install the **Terraform extension** from the Marketplace.
 
-#### **Option 2: Using Docker**
+### **Option 2: Using Docker**
 
 If you prefer an isolated environment, you can use Terraform inside a Docker container.
 
@@ -103,11 +101,11 @@ If you prefer an isolated environment, you can use Terraform inside a Docker con
 
 ---
 
-### **2. Authenticating with Azure**
+## **2. Authenticating with Azure**
 
 To deploy resources, Terraform needs to authenticate with Azure.
 
-#### **Login using Azure CLI**
+### **Login using Azure CLI**
 
 1. Open a terminal and log in:
    ```sh
@@ -118,7 +116,7 @@ To deploy resources, Terraform needs to authenticate with Azure.
    az account set --subscription "<subscription-id>"
    ```
 
-#### **Using a Service Principal (For Automation)**
+### **Using a Service Principal (For Automation)**
 
 For automation in CI/CD pipelines:
 
@@ -130,11 +128,11 @@ Copy the JSON output for use in Terraform.
 
 ---
 
-### **3. Writing Your First Terraform Configuration**
+## **3. Writing Your First Terraform Configuration**
 
 Let’s create a simple Terraform script to deploy an Azure Storage Account.
 
-#### **Step 1: Initialize a Terraform Project**
+### **Step 1: Initialize a Terraform Project**
 
 1. Create a new directory:
    ```sh
@@ -145,7 +143,7 @@ Let’s create a simple Terraform script to deploy an Azure Storage Account.
    touch main.tf
    ```
 
-#### **Step 2: Define the Terraform Configuration**
+### **Step 2: Define the Terraform Configuration**
 
 Open `main.tf` in VS Code and add the following:
 
@@ -169,7 +167,7 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
-#### **Step 3: Initialize Terraform**
+### **Step 3: Initialize Terraform**
 
 Run:
 
@@ -177,13 +175,13 @@ Run:
 terraform init
 ```
 
-#### **Step 4: Preview Changes**
+### **Step 4: Preview Changes**
 
 ```sh
 terraform plan
 ```
 
-#### **Step 5: Apply the Configuration**
+### **Step 5: Apply the Configuration**
 
 ```sh
 terraform apply -auto-approve
@@ -193,7 +191,7 @@ Once completed, your resource group will be created in Azure.
 
 ---
 
-### **4. Cleaning Up and Next Steps**
+## **4. Cleaning Up and Next Steps**
 
 To remove the deployed resources:
 
@@ -201,7 +199,7 @@ To remove the deployed resources:
 terraform destroy -auto-approve
 ```
 
-#### **Next Steps**
+### **Next Steps**
 
 In the next post, we’ll explore **Terraform state management** and remote backends.
 
