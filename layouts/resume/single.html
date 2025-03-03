@@ -12,7 +12,7 @@
           {{ with $author }}
             <h4 class="center-text">{{ .Title }}</h4>
             <h5 class="center-text"><a href="{{ .Params.organizations.url }}">{{.Params.organizations.name}}</a></h5>
-            <div class="social-links markdown-content center-text">
+            <div class="social-links  center-text">
               {{ .Params.bio | markdownify}}
             </div>
           {{ end }}
@@ -23,7 +23,7 @@
           <p>{{ with .Params.author }}
             {{ $author := site.GetPage (printf "authors/%s" .) }}
             {{ with $author }}
-            <div class="markdown-content">
+            <div class="">
               {{ .Content }}
             </div>
             {{ end }}
@@ -95,7 +95,7 @@
                         <h5 class="date">
                           {{ .date_start | time.Format $global.Site.Params.dateFormat  }} - {{ if .date_end }}{{ .date_end | time.Format $global.Site.Params.dateFormat  }}{{ else }}Present{{ end }}<span class="middot-divider">.</span>{{.location}}
                         </h5>
-                        <p class="description markdown-content">{{ .description | markdownify }}</p>
+                        <p class="description ">{{ .description | markdownify }}</p>
                       </div>
                     {{ end}}
                   {{ end }}

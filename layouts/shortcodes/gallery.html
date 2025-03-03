@@ -27,7 +27,7 @@
 {{ $resize_options := printf "%s webp icon" (.Get "resize_options" | default "100x100") }}
 
 <div class="container">
-  <div class="row mt-5">
+  <div class="row row-cols-12 g-1 d-flex justify-content-center">
   {{/* Attempt to automatically load gallery images from page bundle */}}
   {{ $images := resources.Match $album_path }}
   {{ range (sort $images "Name" $sort_order) }}
@@ -48,7 +48,7 @@
   {{else if in .Name "-l." }}
     {{ $image_size = "gallery-item--large" }}
   {{end}}
-  <div class="col-sm-2 markdown-content">
+  <div class="col ">
     <a data-fancybox="gallery-{{$album}}" href="{{ .RelPermalink }}" {{ with $caption }}data-caption="{{.|markdownify|emojify|safeHTMLAttr}}"{{ end }}>
         <img src="{{ $image.RelPermalink }}" loading="lazy" alt="{{ plainify $caption | default $filename }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
         <!-- <img src="{{ $image.RelPermalink }}" loading="lazy" alt="{{ plainify $caption | default $filename }}" width="100" height="100"> -->
