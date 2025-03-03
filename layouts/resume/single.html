@@ -217,8 +217,10 @@
           {{ with .Site.GetPage "section" "resume" }}
             {{ range .Pages }}
               {{ if eq .Title "Accomplishments" }}
-                  {{ range sort .Params.item "date_start" "desc"}}
-                  <div class="timeline-item">
+                  {{ $items := sort .Params.item "date_start" "desc" }}
+                  {{ $lastIndex := sub (len $items) 1 }}
+                  {{ range $idx, $item := $items}}
+                  <div class="timeline-item mt-3">
                     <div class="timeline-content">
                         <h3>{{ .title }}</h3>
                         <h4>
@@ -229,13 +231,16 @@
                         </h5>
                         <p class="description">{{ .description }}</p>
                         <div class="links">
-                            <a class="btn" href="{{ .url }}" target="_blank">More Info</a>
+                            <a href="{{ .url }}" target="_blank"><div class="btn btn-primary">More Info</div></a>
                             {{ if .certificate_url }}
-                                <a class="btn btn-cert" href="{{ .certificate_url }}" target="_blank">View Certificate</a>
+                                <a href="{{ .certificate_url }}" target="_blank"><div class="btn btn-outline-primary">View Certificate</div></a>
                             {{ end }}
                         </div>
                     </div>
                   </div>
+                  {{ if lt $idx $lastIndex }}
+                    <hr>
+                  {{ end }}
                   {{ end }}
               {{ end }}
             {{ end }}
