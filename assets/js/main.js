@@ -132,80 +132,80 @@
   
     // window.addEventListener("load", initSwiper);
 
-    if (window.HUGO_ENV === "development") {
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("themeToggle");
-        const htmlElement = document.documentElement;
+  //   if (window.HUGO_ENV === "development") {
+  //     document.addEventListener("DOMContentLoaded", function () {
+  //       const themeToggle = document.getElementById("themeToggle");
+  //       const htmlElement = document.documentElement;
     
-        // Get available themes from config
-        let themes = window.availableThemes || ["dark", "light", "neon", "forest", "xebia"];    
-        let currentTheme = htmlElement.getAttribute("data-bs-theme");
+  //       // Get available themes from config
+  //       let themes = window.availableThemes || ["dark", "light", "neon", "forest", "xebia"];    
+  //       let currentTheme = htmlElement.getAttribute("data-bs-theme");
 
-        // remove all themes from html element
+  //       // remove all themes from html element
     
-        // Get stored theme or use default from config
-        const storedTheme = localStorage.getItem("bs-theme");
-        if (storedTheme && themes.includes(storedTheme)) {
-            currentTheme = storedTheme;
-            htmlElement.setAttribute("data-bs-theme", storedTheme);
-        }
+  //       // Get stored theme or use default from config
+  //       const storedTheme = localStorage.getItem("bs-theme");
+  //       if (storedTheme && themes.includes(storedTheme)) {
+  //           currentTheme = storedTheme;
+  //           htmlElement.setAttribute("data-bs-theme", storedTheme);
+  //       }
 
-        reset(currentTheme);
+  //       // reset(currentTheme);
 
-        function reset(currentTheme) {
+  //       function reset(currentTheme) {
 
-          const stylesheets = Array.from(document.querySelectorAll("link[rel='stylesheet']"))
-        .filter(link => link.href.startsWith(window.location.origin + "/scss/style-")).forEach(link => {
+  //       //   const stylesheets = Array.from(document.querySelectorAll("link[rel='stylesheet']"))
+  //       // .filter(link => link.href.startsWith(window.location.origin + "/scss/style-")).forEach(link => {
 
-            if(link.getAttribute("data-theme") !== currentTheme) {
-              link.parentNode.removeChild(link);
-            }
-          });
+  //       //     if(link.getAttribute("data-theme") !== currentTheme) {
+  //       //       link.parentNode.removeChild(link);
+  //       //     }
+  //       //   });
 
-          if(!getOldThemeStylesheet(currentTheme)) {
-            let themeData = window.themeStyles[currentTheme];
-            if (themeData) {
-                let newLink = document.createElement("link");
-                newLink.rel = "stylesheet";
-                newLink.href = themeData.link;
-                newLink.integrity = themeData.integrity;
-                newLink.crossOrigin = "anonymous";
-                newLink.setAttribute("data-theme", currentTheme);
+  //         if(!getOldThemeStylesheet(currentTheme)) {
+  //           let themeData = window.themeStyles[currentTheme];
+  //           if (themeData) {
+  //               let newLink = document.createElement("link");
+  //               newLink.rel = "stylesheet";
+  //               newLink.href = themeData.link;
+  //               newLink.integrity = themeData.integrity;
+  //               newLink.crossOrigin = "anonymous";
+  //               newLink.setAttribute("data-theme", currentTheme);
         
-                document.head.appendChild(newLink);
-            }
-          }
+  //               document.head.appendChild(newLink);
+  //           }
+  //         }
 
-        };
+  //       };
     
-        function getOldThemeStylesheet(currentTheme) {
-            let themeData = window.themeStyles[currentTheme];
-            if (themeData) {
-                return Array.from(document.querySelectorAll("link[rel='stylesheet']")).find(
-                    (link) => link.integrity === themeData.integrity
-                );
-            }
-            return null;
-        }
+  //       function getOldThemeStylesheet(currentTheme) {
+  //           let themeData = window.themeStyles[currentTheme];
+  //           if (themeData) {
+  //               return Array.from(document.querySelectorAll("link[rel='stylesheet']")).find(
+  //                   (link) => link.integrity === themeData.integrity
+  //               );
+  //           }
+  //           return null;
+  //       }
     
-        // Function to switch to the next theme in the list
-        function switchTheme() {
-            let currentIndex = themes.indexOf(currentTheme);
-            let nextIndex = (currentIndex + 1) % themes.length;
-            let newTheme = themes[nextIndex];
+  //       // Function to switch to the next theme in the list
+  //       function switchTheme() {
+  //           let currentIndex = themes.indexOf(currentTheme);
+  //           let nextIndex = (currentIndex + 1) % themes.length;
+  //           let newTheme = themes[nextIndex];
         
-            htmlElement.setAttribute("data-bs-theme", newTheme);
-            localStorage.setItem("bs-theme", newTheme);
+  //           htmlElement.setAttribute("data-bs-theme", newTheme);
+  //           localStorage.setItem("bs-theme", newTheme);
         
-            console.log(`Switching theme from '${currentTheme}' to '${newTheme}'`);
+  //           console.log(`Switching theme from '${currentTheme}' to '${newTheme}'`);
         
-            reset(newTheme);
-            currentTheme = newTheme;
-        }
+  //           reset(newTheme);
+  //           currentTheme = newTheme;
+  //       }
     
-        themeToggle.addEventListener("click", switchTheme);
-    });
-  }
+  //       themeToggle.addEventListener("click", switchTheme);
+  //   });
+  // }
     
   
   })();
