@@ -23,12 +23,14 @@ tags = [
 ]
 
 categories = [ 'Technical Skills' ]
-series = [ 'Azure in Practice' ]
+series = [ ]
 
 layout = 'single'
 [params]
     cover = true
     author = 'sujith'
+
+description = "Understand the concepts of Azure storage redundancy, data availability, and durability. Learn how to ensure your data is safe and accessible at all times."
 
 +++
 

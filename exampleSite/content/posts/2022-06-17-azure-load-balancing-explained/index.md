@@ -47,6 +47,9 @@ layout = 'single'
 [params]
     cover = true
     author = 'sujith'
+
+description = "Learn about Azure load balancing, its types, and how to effectively distribute network traffic to ensure high availability and reliability of your applications."
+
     
 +++
 

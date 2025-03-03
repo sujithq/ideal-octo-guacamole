@@ -5,54 +5,28 @@ draft = false
 tags = [
   "Azure",
   "Microsoft Entra ID",
-  "Identities",
-  "Cybersecurity",
+  "Identity Security",
   "Cloud Security",
-  "Multi-Factor Authentication (MFA)",
+  "Multi-Factor Authentication",
   "Passwordless Authentication",
-  "Phishing",
   "Managed Identities",
   "Service Principals",
-  "Principle of Least Privilege",
-  "Conditional Access",
-  "Identity Protection",
-  "Temporary Access Pass (TAP)",
-  "Device Identity",
-  "Group Identity",
-  "Role-Based Access Control (RBAC)",
-  "Guest Users",
-  "User Accounts",
-  "Application Registrations"
+  "Role-Based Access Control"
 ]
 categories = [
   'Professional Experience',
-  'Technical Skills',
-  # 'Certifications & Training',
-  # 'Projects & Contributions',
-  # 'Speaking & Training',
-  # 'Publications & Writing',
-  # 'Education',
-  # 'Community Engagement'
+  'Technical Skills'
 ]
 series = [
-  'Azure in Practice',
-  'Security',
-  # 'Azure DevOps in Practice',
-  # 'Infrastructure as Code (IaC) Essentials',
-  # 'Optimizing Cloud Deployments',
-  # 'Building & Deploying .NET Apps',
-  # 'GitHub & DevOps',
-  # 'Performance & Scaling in the Cloud',
-  # 'Advent of Code Solutions',
-  # 'Hugo Website Development',
-  # 'PowerShell for DevOps',
-  # 'Workshops & Training'
 ]
 
 layout = 'single'
 [params]
     cover = true
     author = 'sujith'
+
+description = "Explore the concept of identities in Azure, including user and service identities, and learn how to manage and secure them effectively."
+
     
 +++
 

@@ -14,3 +14,5 @@ baseURL = "/ideal-octo-guacamole"
     url = "/resume"
     weight = 2
 
+#[params]
+#  tags = ['prod', 'Azure', 'GitHub']

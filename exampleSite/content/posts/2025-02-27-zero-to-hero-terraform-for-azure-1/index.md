@@ -1,22 +1,19 @@
 +++
-title = '🖥️ From Zero to Hero: Terraform for Azure - Getting started'
+title = '🖥️ From Zero to Hero: Terraform for Azure - Part 1'
 date = '2025-02-27 06:00:00Z'
 draft = false
 tags = [
   "Terraform",
-  "Azure"
+  "Azure",
+  "az-cli",
+  "IaC",
+  "Cloud Infrastructure",
+  "Beginners Guide"
 ]
 categories = [
-  "Terraform Basics",
-  "Azure Terraform",
-  "DevOps Automation",
-  "Infrastructure as Code",
-  "Azure CLI",
-  "Terraform Setup",
-  "Visual Studio Code",
-  "Docker for Terraform",
-  "Terraform Authentication",
-  "Cloud Infrastructure",
+  "Cloud",
+  "Infrastructure as Code (IaC)",
+  "DevOps"
 ]
 series = [
   'Zero to Hero: Terraform for Azure'
@@ -27,6 +24,8 @@ layout = 'single'
     cover = true
     author = 'sujith'
     
+description = "Kickstart your journey with Terraform for Azure. This first part of the series covers the basics and sets the foundation for automating your Azure infrastructure."
+
 +++
 
 ## **Introduction**
@@ -163,7 +162,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "terraform-rg"
-  location = "East US"
+  location = "West Europe"
 }
 ```
 

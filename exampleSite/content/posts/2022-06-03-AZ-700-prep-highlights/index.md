@@ -28,6 +28,8 @@ layout = 'single'
 [params]
     cover = true
     author = 'sujith'
+
+description = "Discover key highlights and essential tips for preparing for the AZ-700 certification exam. Enhance your knowledge and boost your chances of success."
     
 +++
 

@@ -1,2 +1,5 @@
 
 title = "ideal-octo-guacamole-dev"
+
+#[params]
+#  tags = ['dev', 'Azure', 'GitHub']
