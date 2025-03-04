@@ -207,5 +207,60 @@
   //   });
   // }
     
+//  Helper functions
+function escapeHtml(html) {
+  return html.replace(/×/g, '&times;')
+             .replace(/«/g, '&laquo;')
+             .replace(/»/g, '&raquo;')
+             .replace(/←/g, '&larr;')
+             .replace(/→/g, '&rarr;');
+}
+
+  function cleanSource(html) {
+    // Escape HTML, split the lines to an Array, remove empty elements
+    // and finally remove the last element
+    let lines = escapeHtml(html).split('\n').filter(Boolean).slice(0, -1);
+    const indentSize = lines[0].length - lines[0].trim().length;
+    const re = new RegExp(' {' + indentSize + '}');
+
+    lines = lines.map(line => {
+      return re.test(line) ? line.slice(Math.max(0, indentSize)) : line;
+    });
+
+    return lines.join('\n');
+  }
+
+    // Add source modals
+    function addSourceModals() {
+      const sourceModalElement = document.getElementById('source-modal');
   
+      if (!sourceModalElement) {
+        return;
+      }
+      const btns = sourceModalElement.querySelector('.btn-copy');
+      btns.addEventListener('click', (e) => {
+        if (navigator.clipboard) {
+          const code = sourceModalElement.querySelector('.modal-body pre').innerText;
+          navigator.clipboard.writeText(code);
+        }
+  
+        const sourceModal = bootstrap.Modal.getOrCreateInstance(sourceModalElement);
+        sourceModal.hide();
+      });
+  
+      document.body.addEventListener('click', event => {
+        if (!event.target.matches('.source-button')) {
+          return;
+        }
+  
+        const sourceModal = bootstrap.Modal.getOrCreateInstance(sourceModalElement);
+        let html = event.target.parentNode.innerHTML;
+  
+        html = Prism.highlight(cleanSource(html), Prism.languages.html, 'html');
+  
+        sourceModalElement.querySelector('code').innerHTML = html;
+        sourceModal.show();
+      }, false);
+    }
+    addSourceModals();
   })();

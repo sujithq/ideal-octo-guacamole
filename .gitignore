@@ -14,6 +14,7 @@ node_modules/
 aos.js
 aos.css
 bootstrap.bundle.min.js
+prism.js
 swiper-bundle.min.js
 swiper-bundle.min.css
 bootstrap-icons.woff

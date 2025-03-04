@@ -6,6 +6,7 @@ const filesToCopy = [
   { vendor: "aos", fileName: "dist/aos.js", destination: "assets/vendor/aos/js", source: "node_modules" },
   { vendor: "aos", fileName: "dist/aos.css", destination: "assets/vendor/aos/css", source: "node_modules" },
   { vendor: "bootstrap", fileName: "dist/js/bootstrap.bundle.min.js", destination: "assets/vendor/bootstrap/js", source: "node_modules" },
+  { vendor: "prismjs", fileName: "prism.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.js", destination: "assets/vendor/swiper/js", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.css", destination: "assets/vendor/swiper/css", source: "node_modules" },
   { vendor: "bootstrap-icons", fileName: "font/fonts/bootstrap-icons.woff", destination: "static/scss/fonts", source: "node_modules" },

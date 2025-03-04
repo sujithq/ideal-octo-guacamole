@@ -48,3 +48,59 @@
       font-size: var(--h#{$k}-font-size);
     }
 }
+
+
+.bs-component {
+  position: relative;
+  + .bs-component {
+    margin-top: 1rem;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+  .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+  }
+  .modal-dialog {
+    width: 90%;
+  }
+  .popover {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    margin: 20px;
+  }
+}
+
+.source-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  font-weight: 700;
+
+  i {
+    pointer-events: none;
+  }
+}
+
+.source-button:hover {
+  cursor: pointer;
+}
+
+.bs-component:hover .source-button {
+  display: block;
+}
+
+#source-modal {
+  pre {
+    max-height: calc(100vh - 11rem);
+  }
+}
