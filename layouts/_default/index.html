@@ -6,7 +6,7 @@
       {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date"
       "desc") }} {{ $latest := index . 0 }} {{ partial "blog-detail.html" (dict
       "page" $latest "useContent" true "useLink" true) }} {{ end }}
-      {{ template "_internal/disqus.html" . }}
+      <!-- {{ template "_internal/disqus.html" . }} -->
       <div class="card border-primary col-lg-12 mt-3">
         <div class="card-body">
           <h2 class="card-title">Other Posts</h2>
