@@ -6,7 +6,9 @@
         <!-- <h2 class="card-title">{{ .Title }}</h2> -->
               {{ partial "blog-detail.html" (dict "page" . "useContent" true "useLink" false) }}
       </div>
-      <!-- {{ template "_internal/disqus.html" . }} -->
+      <div class="card border-primary mt-3">
+        {{ template "_internal/disqus.html" . }}
+      </div>
     </div>
 </div>
 {{ end }}
