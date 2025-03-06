@@ -168,3 +168,24 @@
 .card {
   border-radius: var(#{--bs-card-border-radius});
 }
+
+
+
+:root,
+[data-bs-theme=light]{
+  --bs-link-color: $secondary;
+
+  a{
+    color: var(--bs-link-color);
+    opacity: 0.8;
+  }
+}
+
+[data-bs-theme=light]{
+  --bs-link-color: $primary;
+
+  a{
+    color: var(--bs-link-color);
+    opacity: 0.8;
+  }
+}

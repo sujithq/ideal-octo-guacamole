@@ -90,29 +90,6 @@ url = "https://xebia.com/digital-transformation/microsoft-services/"
   institution = "Koninklijk Atheneum Lokeren"
   year = 1996
 
-## Social/Academic Networking
-[[socials]]
-name = "twitter"
-link = "https://twitter.com/SujithQ"
-icon = "bi bi-twitter-x"
-
-[[socials]]
-name = "facebook"
-link = "https://www.facebook.com/sujith.quintelier"
-icon = "bi bi-facebook"
-
-[[socials]]
-name = "github"
-link = "https://github.com/sujithq"
-icon = "bi bi-github"
-
-[[socials]]
-name = "linkedin"
-link = "https://www.linkedin.com/in/sujithquintelier/"
-icon = "bi bi-linkedin"
-
-
-
 ## Highlight the author in author lists? (true/false)
 highlight_name = true
 +++
