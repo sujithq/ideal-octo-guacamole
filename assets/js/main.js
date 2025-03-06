@@ -219,7 +219,10 @@ function escapeHtml(html) {
   function cleanSource(html) {
     // Escape HTML, split the lines to an Array, remove empty elements
     // and finally remove the last element
-    let lines = escapeHtml(html).split('\n').filter(Boolean).slice(0, -1);
+    let lines = escapeHtml(html).split('\n').filter(Boolean);
+
+    lines = lines.filter(line => !line.trim().startsWith('<button class="source-button'));
+
     const indentSize = lines[0].length - lines[0].trim().length;
     const re = new RegExp(' {' + indentSize + '}');
 
