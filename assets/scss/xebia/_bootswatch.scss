@@ -167,6 +167,7 @@
 
 .card {
   border-radius: var(#{--bs-card-border-radius});
+  overflow: hidden;
 }
 
 
@@ -189,3 +190,10 @@
     opacity: 0.8;
   }
 }
+
+
+// .card img {
+//   // border-top-left-radius: var(#{--bs-card-border-radius});
+//   // border-top-right-radius: var(#{--bs-card-border-radius});
+//   border-radius: var(#{--bs-card-border-radius});
+// }
