@@ -6,3 +6,9 @@
 
 {{ $swiper := resources.Get "vendor/swiper/css/swiper-bundle.min.css" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $swiper.RelPermalink }}" integrity="{{ $swiper.Data.Integrity }}">
+
+{{ $prismjs := resources.Get "vendor/prismjs/css/prism.min.css" | fingerprint }}
+{{ if ne .Site.Params.prismjsTheme "default" }}
+    {{ $prismjs = resources.Get (printf "vendor/prismjs/css/prism-%s.min.css" .Site.Params.prismjsTheme) | fingerprint }}
+{{ end }}
+<link rel="stylesheet" href="{{ $prismjs.RelPermalink }}" integrity="{{ $prismjs.Data.Integrity }}">

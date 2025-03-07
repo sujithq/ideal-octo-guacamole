@@ -11,11 +11,14 @@ baseURL = "http://localhost:1313/"
   themeColor = "#6a1d57"
   socialImage = "/images/Sujith_Quintelier.jpg"
   author = "Sujith Quintelier"
+  prismjsTheme = "default"
  
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = 'monokai'      
 
 [taxonomies]
   categories = 'categories'

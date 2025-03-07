@@ -1,0 +1,16 @@
+:root {
+    --swiper-navigation-color: #{$primary};
+    --swiper-theme-color: #{$primary};
+    --swiper-pagination-color: #{$primary};
+  }
+  
+  @for $k from 1 through 6 {
+    $i: $k * 5;
+    .swiper-slide-#{$i} {
+      padding-left: $i * 1%;
+      padding-right: $i * 1%;
+    }
+    h#{$k} {
+      font-size: var(--h#{$k}-font-size);
+    }
+  }

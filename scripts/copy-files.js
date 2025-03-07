@@ -6,7 +6,8 @@ const filesToCopy = [
   { vendor: "aos", fileName: "dist/aos.js", destination: "assets/vendor/aos/js", source: "node_modules" },
   { vendor: "aos", fileName: "dist/aos.css", destination: "assets/vendor/aos/css", source: "node_modules" },
   { vendor: "bootstrap", fileName: "dist/js/bootstrap.bundle.min.js", destination: "assets/vendor/bootstrap/js", source: "node_modules" },
-  { vendor: "prismjs", fileName: "prism.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
+  { vendor: "prismjs", fileName: "components/prism-core.min.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
+  { vendor: "prismjs", fileName: "plugins/autoloader/prism-autoloader.min.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
   { vendor: "prismjs", fileName: "themes/prism-okaidia.min.css", destination: "assets/vendor/prismjs/css", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.js", destination: "assets/vendor/swiper/js", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.css", destination: "assets/vendor/swiper/css", source: "node_modules" },
@@ -71,5 +72,39 @@ Promise.all(filesToCopy.map(entry => {
 }).catch(error => {
   console.error(`\x1b[31mError copying files: ${error.message}\x1b[0m`);
 });
+
+/**
+ * Copy a folder and its contents to destination directory
+ * @param {string} source - Source directory
+ * @param {string} destination - Destination directory
+ */
+function copyFolderRecursiveSync(source, destination) {
+  if (!fs.existsSync(source)) {
+    console.error(`\x1b[31mSource folder '${source}' does not exist.\x1b[0m`);
+    return;
+  }
+  if (!fs.existsSync(destination)) {
+    fs.mkdirSync(destination, { recursive: true });
+  }
+
+  const entries = fs.readdirSync(source, { withFileTypes: true });
+
+  for (let entry of entries) {
+    const sourcePath = path.join(source, entry.name);
+    const destinationPath = path.join(destination, entry.name);
+
+    if (entry.isDirectory()) {
+      copyFolderRecursiveSync(sourcePath, destinationPath);
+    } else {
+      fs.copyFileSync(sourcePath, destinationPath);
+      console.log(`\x1b[32mCopied '${sourcePath}' to '${destinationPath}'.\x1b[0m`);
+    }
+  }
+}
+
+
+// Example usage of copyFolderRecursiveSync
+copyFolderRecursiveSync('node_modules/prismjs/components', 'static/vendor/prismjs/js/components');
+copyFolderRecursiveSync('node_modules/prismjs/themes', 'static/vendor/prismjs/css');
 
 console.log("\x1b[32mAll files copied successfully!\x1b[0m");

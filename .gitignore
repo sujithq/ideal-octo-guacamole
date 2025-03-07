@@ -10,12 +10,6 @@ node_modules/
 /playwright/.cache/
 
 # Hugo
-
-aos.js
-aos.css
-bootstrap.bundle.min.js
-prism.js
-swiper-bundle.min.js
-swiper-bundle.min.css
-bootstrap-icons.woff
-bootstrap-icons.woff2
+assets/vendor
+static/vendor
+static/scss/fonts/bootstrap-icons.woff*
