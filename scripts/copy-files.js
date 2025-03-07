@@ -7,6 +7,7 @@ const filesToCopy = [
   { vendor: "aos", fileName: "dist/aos.css", destination: "assets/vendor/aos/css", source: "node_modules" },
   { vendor: "bootstrap", fileName: "dist/js/bootstrap.bundle.min.js", destination: "assets/vendor/bootstrap/js", source: "node_modules" },
   { vendor: "prismjs", fileName: "prism.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
+  { vendor: "prismjs", fileName: "themes/prism-okaidia.min.css", destination: "assets/vendor/prismjs/css", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.js", destination: "assets/vendor/swiper/js", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.css", destination: "assets/vendor/swiper/css", source: "node_modules" },
   { vendor: "bootstrap-icons", fileName: "font/fonts/bootstrap-icons.woff", destination: "static/scss/fonts", source: "node_modules" },
@@ -23,12 +24,10 @@ const filesToCopy = [
 function copyNodeModuleFile(source, vendor, fileName, destination) {
   // Ensure all parameters are provided
   if (!vendor || !fileName || !source || !destination) {
-    console.error("\x1b[31mSource, Vendor, FileName and Destination parameters are required.\x1b[0m");
+    console.error("\x1b[31mAll parameters (source, vendor, fileName, destination) are required.\x1b[0m");
     return;
-  } else {
-    console.log(`\x1b[33mCopying ${source}/${vendor}/${fileName} to ${destination} ...\x1b[0m`);
   }
-
+  console.log(`\x1b[33mCopying ${source}/${vendor}/${fileName} to ${destination} ...\x1b[0m`);
   // Ensure the source exists
   const vendorPath = path.join(source, vendor);
   if (!fs.existsSync(vendorPath)) {
@@ -37,16 +36,14 @@ function copyNodeModuleFile(source, vendor, fileName, destination) {
   } else {
     console.log(`\x1b[33mVendor path '${vendorPath}' exists.\x1b[0m`);
   }
+  console.log(`\x1b[33mVendor path '${vendorPath}' exists.\x1b[0m`);
 
   const sourceFile = path.join(source, vendor, fileName);
   if (!fs.existsSync(sourceFile)) {
     console.error(`\x1b[31mSource file '${sourceFile}' does not exist.\x1b[0m`);
     return;
-  } else {
-    console.log(`\x1b[33mSource file '${sourceFile}' exists.\x1b[0m`);
   }
-
-  // Ensure the destination exists
+  console.log(`\x1b[33mSource file '${sourceFile}' exists.\x1b[0m`);
   if (!fs.existsSync(destination)) {
     fs.mkdirSync(destination, { recursive: true });
   }
@@ -55,13 +52,24 @@ function copyNodeModuleFile(source, vendor, fileName, destination) {
   const destinationFile = path.join(destination, path.basename(fileName));
   fs.copyFileSync(sourceFile, destinationFile);
 
-  console.log(`\x1b[32mCopied '${sourceFile}' to '${destination}'.\x1b[0m`);
+  console.log(`\x1b[32mCopied '${sourceFile}' to '${destinationFile}'.\x1b[0m`);
 }
 
 // Loop through each entry and call copyNodeModuleFile
-filesToCopy.forEach(entry => {
+Promise.all(filesToCopy.map(entry => {
   console.log(`Processing: ${entry.vendor}/${entry.fileName}...`);
-  copyNodeModuleFile(entry.source, entry.vendor, entry.fileName, entry.destination);
+  return new Promise((resolve, reject) => {
+    try {
+      copyNodeModuleFile(entry.source, entry.vendor, entry.fileName, entry.destination);
+      resolve();
+    } catch (error) {
+      reject(error);
+    }
+  });
+})).then(() => {
+  console.log("\x1b[32mAll files copied successfully!\x1b[0m");
+}).catch(error => {
+  console.error(`\x1b[31mError copying files: ${error.message}\x1b[0m`);
 });
 
 console.log("\x1b[32mAll files copied successfully!\x1b[0m");
