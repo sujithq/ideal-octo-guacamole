@@ -8,7 +8,7 @@ const filesToCopy = [
   { vendor: "bootstrap", fileName: "dist/js/bootstrap.bundle.min.js", destination: "assets/vendor/bootstrap/js", source: "node_modules" },
   { vendor: "prismjs", fileName: "components/prism-core.min.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
   { vendor: "prismjs", fileName: "plugins/autoloader/prism-autoloader.min.js", destination: "assets/vendor/prismjs/js", source: "node_modules" },
-  { vendor: "prismjs", fileName: "themes/prism-okaidia.min.css", destination: "assets/vendor/prismjs/css", source: "node_modules" },
+  // { vendor: "prismjs", fileName: "themes/prism-okaidia.min.css", destination: "assets/vendor/prismjs/css", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.js", destination: "assets/vendor/swiper/js", source: "node_modules" },
   { vendor: "swiper", fileName: "swiper-bundle.min.css", destination: "assets/vendor/swiper/css", source: "node_modules" },
   { vendor: "bootstrap-icons", fileName: "font/fonts/bootstrap-icons.woff", destination: "static/scss/fonts", source: "node_modules" },
@@ -106,5 +106,6 @@ function copyFolderRecursiveSync(source, destination) {
 // Example usage of copyFolderRecursiveSync
 copyFolderRecursiveSync('node_modules/prismjs/components', 'static/vendor/prismjs/js/components');
 copyFolderRecursiveSync('node_modules/prismjs/themes', 'static/vendor/prismjs/css');
+copyFolderRecursiveSync('node_modules/prismjs/themes', 'assets/vendor/prismjs/css');
 
 console.log("\x1b[32mAll files copied successfully!\x1b[0m");
