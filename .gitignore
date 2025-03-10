@@ -12,4 +12,5 @@ node_modules/
 # Hugo
 assets/vendor
 static/vendor
+static/components
 static/scss/fonts/bootstrap-icons.woff*

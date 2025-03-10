@@ -104,7 +104,7 @@ function copyFolderRecursiveSync(source, destination) {
 
 
 // Example usage of copyFolderRecursiveSync
-copyFolderRecursiveSync('node_modules/prismjs/components', 'static/vendor/prismjs/js/components');
+copyFolderRecursiveSync('node_modules/prismjs/components', 'static/components');
 copyFolderRecursiveSync('node_modules/prismjs/themes', 'static/vendor/prismjs/css');
 copyFolderRecursiveSync('node_modules/prismjs/themes', 'assets/vendor/prismjs/css');
 
