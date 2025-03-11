@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+    {{ if .showRecentPosts }}
     <div class="card border-primary mb-3 p-0">
       <div class="card-body">
         <div class="card-title">
@@ -35,7 +36,7 @@
                 {{ else }} 
                   {{ $cover = "img/default-cover.jpg" }} 
                 {{ end }}
-                <img src="{{ $cover }}" class="img-fluid rounded-start h-100 " alt="{{ .Title }}">
+                <img src="{{ $cover }}" class="img-fluid rounded-start" alt="{{ .Title }}">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -50,6 +51,7 @@
         {{ end }}
         </div>
     </div>
+    {{ end}}
 
     {{ range $taxName, $termsMap := .page.Site.Taxonomies }}
     <div class="card border-primary mb-3 p-0">

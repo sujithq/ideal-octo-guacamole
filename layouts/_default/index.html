@@ -3,19 +3,13 @@
 <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
   <div class="row mt-5">
     <div class="col-lg-8">
-      {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date"
-      "desc") }} {{ $latest := index . 0 }} {{ partial "blog-detail.html" (dict
-      "page" $latest "useContent" true "useLink" true) }} {{ end }}
-      <!-- <div class="card border-primary mt-3">
-        <div class="card-body">
-          {{ template "_internal/disqus.html" . }}
-        </div>
-      </div> -->
-      
+      {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }} 
+        {{ $latest := index . 0 }} 
+        {{ partial "blog-detail.html" (dict "page" $latest "useContent" true "useLink" true) }} 
+      {{ end }}
       <div class="card border-primary col-lg-12 mt-3">
         <div class="card-body">
           <h2 class="card-title">Other Posts</h2>
-
           <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4">
               {{ $remainingPosts := after 1 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }}
@@ -46,42 +40,12 @@
               {{ end}}
             </div>
         </div>
-        
-          <!-- <div class="container">
-            <div class="row d-flex gap-1 row-cols-lg-2 row-cols-1">
-              {{ $remainingPosts := after 1 (sort (where site.RegularPages
-              "Section" "posts") "Date" "desc") }} {{ range $remainingPosts }} {{
-              $cover := "" }} {{ if .Params.cover }} {{ $cover = printf
-              "%s/cover.jpg" .RelPermalink }} {{ else }} {{ $cover =
-              "img/default-cover.jpg" }} {{ end }}
-              <div class="card border-primary col-lg-6">
-                <div class="">
-                  <a href="{{ .RelPermalink }}"
-                    ><img src="{{ $cover }}" alt="" class="img-fluid"
-                  /></a>
-                </div>
-                <div class="card-body">
-                  <span class="">
-                    {{ with index .Params.tags 0 }} {{ . }} {{ end }}
-                  </span>
-                  <span class="mx-1">•</span>
-                  <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                  <h6 class="card-title">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                  </h6>
-                </div>
-              </div>
-  
-              {{ end}}
-            </div>
-            </div> -->
         </div>
       </div>
       
     </div>
     <div class="col-lg-4 sidebar">
-      {{ partial "sidebar.html" (dict "page" . "showRecentPosts" false
-      "showSearch" false) }}
+      {{ partial "sidebar.html" (dict "page" . "showRecentPosts" false) }}
     </div>
   </div>
 </div>
