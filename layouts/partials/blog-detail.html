@@ -10,7 +10,7 @@
     {{ end }}
   {{ end }}
   <div class="card-body">
-    <h2 class="card-title"><strong>{{ .page.Title}}</strong></h2>
+    <h1 class="card-title"><strong>{{ .page.Title}}</strong></h1>
       <div class="d-flex align-items-center">
           {{ with .page.Params.author }}
           {{ $author := site.GetPage (printf "authors/%s" .) }}

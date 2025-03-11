@@ -1,6 +1,16 @@
 
 // Variables
 
+@if $web-font-path {
+  @import url("#{$web-font-path}");
+}
+
+:root{
+  --bs-body-font-family: #{$font-sans-serif} !important;
+  --bs-font-sans-serif: #{$font-sans-serif} !important;
+  --bs-font-monospace: #{$font-monospace} !important;
+}
+
 :root,
 [data-bs-theme=light]{
 
@@ -344,3 +354,13 @@ pre {
 //       // font-size:1.5rem
 //   }
 // }
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+	font-family: $font-monospace !important;
+}
+
+.rounded-pill {
+  font-family: $font-tags !important;
+}
