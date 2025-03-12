@@ -19,19 +19,6 @@
       <h1 class="card-title"><strong>{{ .page.Title}}</strong></h1>
     {{ end }}
         <div class="d-flex align-items-center">
-          <!-- {{ with .page.Params.author }}
-          {{ $author := site.GetPage (printf "authors/%s" .) }}
-          {{ $resume := site.GetPage "resume" }}
-              <span>
-                {{ if $resume }}
-                  <a href="{{ $resume.RelPermalink }}">{{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "20") }}</a>
-                {{ else}}
-                  {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "20") }}
-                {{ end }}
-              </span>
-              <span class="mx-1">•</span>
-          {{ end}} -->
-          <span class="text-primary mx-1">New!</span>
           <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
         </div>
         <div>

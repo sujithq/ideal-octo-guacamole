@@ -26,7 +26,7 @@
 {{ $sort_order := .Get "order" | default "asc" }}
 {{ $resize_options := printf "%s webp icon" (.Get "resize_options" | default "100x100") }}
 
-<div class="container">
+<div class="container mt-0">
   <div class="row row-cols-12 g-1 d-flex justify-content-center">
   {{/* Attempt to automatically load gallery images from page bundle */}}
   {{ $images := resources.Match $album_path }}

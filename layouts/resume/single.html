@@ -36,7 +36,7 @@
         <!-- <div class="card-header">
         </div> -->
         <div class="card-body">
-          <div class="row mt-5">
+          <div class="row">
             <div class="col-lg-6">
               <h4>Interests</h4>
               <ul>
@@ -80,55 +80,9 @@
         <div class="card-header text-center">
           <h4 class="center-text">Experiences</h4>
         </div>
-        <!-- <div class="card-body">
-          <div class="swiper expSwiper">
-            <div class="swiper-wrapper">
-              {{ with .Site.GetPage "section" "resume" }}
-                {{ range .Pages }}
-                  {{ if eq .Title "Experiences" }}
-                    {{ range sort .Params.item "date_start" "desc"}}
-                      <div class="swiper-slide swiper-slide-10">
-                        <h3>{{ .title }}</h3>
-                        <h4 class="organization">
-                            <a href="{{ .company_url }}" target="_blank">{{ .company }}</a>
-                        </h4>
-                        <h5 class="date">
-                          {{ .date_start | time.Format $global.Site.Params.dateFormat  }} - {{ if .date_end }}{{ .date_end | time.Format $global.Site.Params.dateFormat  }}{{ else }}Present{{ end }}<span class="middot-divider">.</span>{{.location}}
-                        </h5>
-                        <p class="description ">{{ .description | markdownify }}</p>
-                      </div>
-                    {{ end}}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <script>
-            function swiperInit() {
-              var swiper = new Swiper(".expSwiper", {
-                // effect: "cards",
-              // cssMode: true,
-              navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              },
-              pagination: {
-                el: ".swiper-pagination",
-              },
-              mousewheel: true,
-              keyboard: true,
-            });
-            }
-            window.addEventListener('DOMContentLoaded', swiperInit);
-          </script>
-        </div> -->
         <div class="card-body">
           <section class="page-section" id="about">
-            <div class="container">
+            <div class="container mt-0">
                 <!-- <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
