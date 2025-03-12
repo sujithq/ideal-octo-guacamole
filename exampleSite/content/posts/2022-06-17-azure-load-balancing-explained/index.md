@@ -122,7 +122,6 @@ Now, let’s explore each of these services in detail.
 
 {{< image src="img/azure-traffic-manager.png" alt="Azure Traffic Manager" caption="Azure Traffic Manager" >}}  
 
-
 **Traffic Manager** is a **DNS-based global load balancer**, designed to distribute traffic across **multiple Azure regions**. It **does not directly route traffic**—instead, it resolves requests to the nearest **healthy backend**.  
 
 ### **How It Works**  
@@ -133,7 +132,6 @@ Now, let’s explore each of these services in detail.
 4️⃣ The client receives the IP of the closest, available backend and connects directly.  
 
 {{< image src="img/tm-setup.png" alt="Azure Traffic Manager Setup" caption="Azure Traffic Manager Setup" >}}  
-
 
 ### **Routing Methods**  
 
@@ -158,7 +156,6 @@ Now, let’s explore each of these services in detail.
 ## **🔹 Azure Application Gateway (APG)**  
 
 {{< image src="img/azure-application-gateway.png" alt="Azure Application Gateway" caption="Azure Application Gateway" >}}  
-
 
 **Application Gateway** is a **Layer 7 load balancer** designed specifically for **HTTP(S) traffic**. It provides advanced **web traffic routing**, **SSL offloading**, and **Web Application Firewall (WAF) integration**.  
 

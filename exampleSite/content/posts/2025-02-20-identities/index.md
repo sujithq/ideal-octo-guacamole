@@ -32,11 +32,11 @@ description = "Explore the concept of identities in Azure, including user and se
 
 ## Securing Azure Identities: The “New” Perimeter in Cloud Security
 
-It’s no secret that the cloud has fundamentally changed how we approach cybersecurity. The days when a robust firewall was all you needed to keep attackers at bay are long gone. As cloud-native services increasingly move into the public sphere, identity has emerged as the new defensive perimeter—if an attacker compromises your identities and credentials, they’re essentially inside. 
+It’s no secret that the cloud has fundamentally changed how we approach cybersecurity. The days when a robust firewall was all you needed to keep attackers at bay are long gone. As cloud-native services increasingly move into the public sphere, identity has emerged as the new defensive perimeter—if an attacker compromises your identities and credentials, they’re essentially inside.
 
 ## Why Identities Matter More Than Ever
 
-If you’ve participated in a cybersecurity roundtable recently, you’ve likely heard someone mention, “Identity is the new perimeter.” Historically, once you were inside a corporate network, you had broad access to internal systems—much like walking through a front door and freely wandering the house. However, the widespread adoption of cloud services—accessible from anywhere—has turned this model upside down. 
+If you’ve participated in a cybersecurity roundtable recently, you’ve likely heard someone mention, “Identity is the new perimeter.” Historically, once you were inside a corporate network, you had broad access to internal systems—much like walking through a front door and freely wandering the house. However, the widespread adoption of cloud services—accessible from anywhere—has turned this model upside down.
 
 ## Navigating Azure Identities
 
@@ -45,6 +45,7 @@ Given that identities are the linchpin of security, it’s crucial to understand
 Below is a quick overview of the most common identities in Azure; for the sake of brevity, we’ll focus primarily on **user** and **service principal** identities:
 
 ### User Identities
+
 1. **Member Users**  
    Created and managed within Microsoft Entra ID (formerly Azure AD), or synced from on-premises Active Directory via Entra ID Connect.  
 2. **Guest Users**  
@@ -53,6 +54,7 @@ Below is a quick overview of the most common identities in Azure; for the sake o
    Managed through Entra ID B2C, primarily for applications requiring customer-facing authentication.
 
 ### Service Principals
+
 1. **Application-Based**  
    Created through Azure’s Application Registrations.  
 2. **Managed Identities**  
@@ -60,6 +62,7 @@ Below is a quick overview of the most common identities in Azure; for the sake o
    - **System Assigned**: Automatically spun up and managed by Azure for a specific resource; deleted when the resource is removed.
 
 ### Other Identity Types
+
 - **Device Identities**: Entra ID registered, joined, or hybrid-joined devices.  
 - **External Identities**: Federated identities from other identity providers.  
 - **Group Identities**: Security groups or Microsoft 365 Groups in Entra ID—yes, groups can effectively act like identities.  

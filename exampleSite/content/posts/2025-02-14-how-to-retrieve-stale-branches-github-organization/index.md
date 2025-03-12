@@ -40,6 +40,7 @@ This guide walks you through a **Bash script** that:
 ## 🔧 Prerequisites  
 
 Before running the script, make sure:  
+
 - You have **GitHub CLI (`gh`)** installed and authenticated (`gh auth login`).  
 - You have **appropriate permissions** to list repositories and fetch branch details in your organization.  
 - You're running a **Unix-based system** (Linux/macOS or WSL for Windows).  
@@ -140,7 +141,7 @@ cat "$report_file"
 
 Once executed, the script produces a **report grouped by author**, making it easy to find out **who owns stale branches**:
 
-```
+```text
 Author: Alice
 - repo1 -> feature/login-page
 - repo2 -> hotfix/payment-fix

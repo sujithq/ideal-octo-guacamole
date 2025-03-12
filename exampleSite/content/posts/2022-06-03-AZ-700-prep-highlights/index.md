@@ -47,6 +47,7 @@ This blog post captures my notes from the **AZ-700** course, which is designed t
 Azure **Virtual Networks (VNets)** are the backbone of networking in Azure, allowing resources to communicate securely.  
 
 ### **VNet Capabilities**  
+
 Azure VNets support:  
 ✅ Communication with the internet  
 ✅ Communication between Azure resources  
@@ -55,6 +56,7 @@ Azure VNets support:
 ✅ Routing network traffic efficiently  
 
 ### **VNet Address Space**  
+
 Azure VNets use **private IP address ranges** as defined in **RFC 1918**:  
 
 | IP Range | Prefix |  
@@ -64,6 +66,7 @@ Azure VNets use **private IP address ranges** as defined in **RFC 1918**:
 | 192.168.0.0 - 192.168.255.255 | 192.168/16 |  
 
 ### **Subnet Allocation**  
+
 Azure **reserves 5 IPs** per subnet:  
 🔹 `x.x.x.0` → Network address  
 🔹 `x.x.x.1` → Default gateway  
@@ -83,10 +86,12 @@ In Azure, every resource must have a **unique name** within its defined scope. S
 ## **3. Regions & Availability Zones**  
 
 ### **Regions & Subscriptions**  
+
 - Resources in a **VNet must be in the same region**, but cross-region connectivity is possible.  
 - VNets can be **linked across different subscriptions**.  
 
 ### **Availability Zones (AZs)**  
+
 Availability Zones provide **high availability** by distributing resources across **physically separate data centers** within a region.  
 
 🔹 **Zonal Services** → Resources pinned to a specific zone  
@@ -109,11 +114,13 @@ Azure provides both **public and private DNS services** to resolve domain names.
 {{< image src="img/hybrid-dns-infra.png" caption="DNS" alt="DNS" >}}
 
 ### **Public DNS**  
+
 Azure DNS manages **internet-facing** domain names and supports:  
 🔹 **A / AAAA** records for IPv4/IPv6  
 🔹 **CNAME** records for aliasing domains  
 
 ### **Private DNS**  
+
 For internal name resolution within VNets, Azure supports:  
 1️⃣ **Azure DNS Private Zones**  
 2️⃣ **Azure-provided name resolution**  
@@ -136,11 +143,11 @@ Azure **VNet Peering** allows seamless communication between VNets without a VPN
 | **Global Peering** | Cross-region | Uses Azure backbone |  
 
 ### **VNet Peering Benefits**  
+
 ✅ Secure private communication (no internet exposure)  
 ✅ No need for VPN gateways  
 ✅ **Supports NSGs** for access control  
 ✅ Works across **subscriptions and tenants**  
-
 
 {{< image src="img/peering.jpg" caption="Peering" alt="Peering" >}}
 
@@ -150,17 +157,19 @@ Azure **VNet Peering** allows seamless communication between VNets without a VPN
 
 💡 **Use case**: A hub-and-spoke topology where a single gateway in the hub VNet provides VPN access to multiple spokes.  
 
-{{< image src="img/gatewaytransit.png" alt="Gateway Transit" caption="Gateway Transit" >}} 
+{{< image src="img/gatewaytransit.png" alt="Gateway Transit" caption="Gateway Transit" >}}
 
 ## **8. Azure Traffic Routing**  
 
 Azure manages traffic routing through:  
 
 ### **1️⃣ System Routes** (default routes created by Azure)  
+
 🔹 Internet traffic → Sent via the default **Internet Gateway**  
 🔹 Private traffic → Stays within the **VNet**  
 
 ### **2️⃣ Custom Routes (UDRs - User Defined Routes)**  
+
 Use **route tables** to override system routes.  
 💡 Example: Direct traffic to a **firewall appliance** instead of the default gateway.  
 
