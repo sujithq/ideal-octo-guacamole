@@ -57,25 +57,34 @@ For local development, you need to install:
 1. **Terraform**
    - [Download Terraform](https://developer.hashicorp.com/terraform/downloads) for your OS.
    - Verify installation:
+
      ```sh
      terraform version
      ```
+
 2. **Azure CLI**
 
    - Install Azure CLI for authentication and resource management:
      - Windows:
+
        ```powershell
        winget install --id Microsoft.AzureCLI -e
        ```
+
      - macOS:
+
        ```sh
        brew install azure-cli
        ```
+
      - Linux (Debian-based):
+
        ```sh
        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
        ```
+
    - Verify installation:
+
      ```sh
      az version
      ```
@@ -90,10 +99,13 @@ If you prefer an isolated environment, you can use Terraform inside a Docker con
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop).
 2. Run Terraform inside a container:
+
    ```sh
    docker run --rm -it hashicorp/terraform:latest version
    ```
+
 3. To work with local files, mount a volume:
+
    ```sh
    docker run --rm -it -v $(pwd):/app -w /app hashicorp/terraform:latest init
    ```
@@ -107,10 +119,13 @@ To deploy resources, Terraform needs to authenticate with Azure.
 ### **Login using Azure CLI**
 
 1. Open a terminal and log in:
+
    ```sh
    az login
    ```
+
 2. If using multiple subscriptions, set the desired one:
+
    ```sh
    az account set --subscription "<subscription-id>"
    ```
@@ -134,10 +149,13 @@ Let’s create a simple Terraform script to deploy an Azure Storage Account.
 ### **Step 1: Initialize a Terraform Project**
 
 1. Create a new directory:
+
    ```sh
    mkdir terraform-azure && cd terraform-azure
    ```
+
 2. Create a new Terraform file:
+
    ```sh
    touch main.tf
    ```
