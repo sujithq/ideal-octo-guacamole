@@ -4,7 +4,7 @@
     <div class="row mt-5">
       <div class="col-lg mt-3">
         <!-- <h2 class="card-title">{{ .Title }}</h2> -->
-              {{ partial "blog-detail.html" (dict "page" . "useContent" true "useLink" false) }}
+              {{ partial "blog/detail.html" (dict "page" . "useContent" true "useLink" false "showComments" true "isIndex" false) }}
       </div>
       <!-- <div class="card border-primary">
         <div class="card-body">

@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-transparent pt-0 pb-0" data-bs-theme="dark">
-  <div class="container">
+<nav class="navbar navbar-expand-lg fixed-top bg-primary navbar-transparent" data-bs-theme="dark">
+  <div class="container mt-0">
       <a class="navbar-brand" href="#">{{ .Site.Title }}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" data-bs-theme="light">
           <ul class="navbar-nav">
               {{ if site.Menus.main }}
                   {{ range sort site.Menus.main "Weight" }}
@@ -83,7 +83,7 @@
                 {{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
         {{- if $query -}}
             {{- $searchPage := index $query 0 -}}
-            <form class="d-flex search-form" action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }}>
+            <form class="d-flex search-form " action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }} data-bs-theme="light">
                 <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
                 <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
                     <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>

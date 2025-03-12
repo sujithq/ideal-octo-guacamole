@@ -1,19 +1,19 @@
 +++
-## Display name
+# Display name
 title = "Sujith Quintelier"
 
-## Full name (for SEO)
+# Full name (for SEO)
 first_name = "Sujith"
 last_name = "Quintelier"
 
-## Status emoji
+# Status emoji
 [status]
 icon = "☕️"
 
-## Is this the primary user of the site?
+# Is this the primary user of the site?
 superuser = true
 
-## Role/position/tagline
+# Role/position/tagline
 [params]
   role = """
   * Azure Cloud Solutions Architect
@@ -42,7 +42,7 @@ superuser = true
     * Github Copilot for Business Fundamentals
   * Terraform Associate
   """
-  ## Interests to show in About widget
+  # Interests to show in About widget
   interests = [
     "Azure",
     "Dev(Sec)Ops",
@@ -59,12 +59,12 @@ superuser = true
     "ML",
     "Cognitive Services"
   ]
-  ## Enter email to display Gravatar (if Gravatar enabled in Config)
+  # Enter email to display Gravatar (if Gravatar enabled in Config)
   email = "sujith.quintelier@gmail.com"
-  ## Short bio (displayed in user profile at end of posts)
+  # Short bio (displayed in user profile at end of posts)
   bio = "Azure Consultant, DevOps Architect, and GitHub Trainer with 25+ years of IT expertise, specializing in cloud solutions, security, automation, and infrastructure as code."
 
-## Organizations/Affiliations to show in About widget
+# Organizations/Affiliations to show in About widget
 [organizations]
 name = "Xebia|Microsoft Services"
 url = "https://xebia.com/digital-transformation/microsoft-services/"
@@ -73,7 +73,7 @@ url = "https://xebia.com/digital-transformation/microsoft-services/"
 
 
 
-## Education to show in About widget
+# Education to show in About widget
 [education]
   [[education.courses]]
   course = "Applied Informatics"
@@ -90,19 +90,19 @@ url = "https://xebia.com/digital-transformation/microsoft-services/"
   institution = "Koninklijk Atheneum Lokeren"
   year = 1996
 
-## Highlight the author in author lists? (true/false)
+# Highlight the author in author lists? (true/false)
 highlight_name = true
 +++
 
 I started my career as a **developer specializing in Microsoft technologies**, building applications with **.NET** and working on enterprise software solutions. Over the years, I expanded my expertise beyond development, diving deep into **cloud architecture, DevOps, and cybersecurity**. Today, with over **25 years in IT**, I focus on **helping businesses design, implement, and secure modern cloud solutions**.  
 
-### **🌍 My Cloud & DevOps Journey**  
+## **🌍 My Cloud & DevOps Journey**  
 
 As a **certified Azure Solutions Architect**, I specialize in designing, implementing, and managing **secure, scalable, and reliable** cloud solutions. My journey in **.NET development** gave me a **strong foundation in software engineering**, and as cloud technologies evolved, I transitioned into **Azure, DevOps, and automation**, bringing a **developer-first approach** to cloud and infrastructure.  
 
 I'm deeply passionate about **DevOps culture and automation**. With certifications in **GitHub Actions, GitHub Advanced Security, and Terraform**, I help teams **optimize their CI/CD pipelines, improve software security, and streamline cloud infrastructure with infrastructure as code (IaC)**.  
 
-### **🚀 What I Do Best**  
+## **🚀 What I Do Best**  
 
 - **Cloud Architecture** – Designing robust **Azure** environments for businesses of all sizes  
 - **DevOps & Automation** – Implementing **CI/CD pipelines, infrastructure as code (IaC), and cloud automation**  
@@ -110,38 +110,42 @@ I'm deeply passionate about **DevOps culture and automation**. With certificatio
 - **GitHub Training & Consulting** – Helping teams adopt GitHub **Actions, Advanced Security, and Enterprise Administration**  
 - **Software Development** – Leveraging my **.NET background** to build **cloud-native applications**  
 
-### **🔧 My Certifications & Expertise**  
+## **🔧 My Certifications & Expertise**  
 
 I've spent years expanding my knowledge across **Azure, DevOps, Security and AI**, earning multiple certifications, including:  
 
-#### **☁️ Cloud & Infrastructure**  
+### **☁️ Cloud & Infrastructure**  
+
 ✅ **Azure Solutions Architect** – Cloud strategy & architecture  
 ✅ **Azure Administrator** – Managing cloud infrastructure  
 ✅ **Azure Developer** – Building cloud-native applications with **.NET**  
 ✅ **Azure Network Engineer** – Hybrid networking & routing  
 ✅ **Azure Cosmos DB Developer** – Scalable NoSQL solutions  
 
-#### **🛠 DevOps & GitHub**  
+### **🛠 DevOps & GitHub**  
+
 ✅ **Azure DevOps Engineer** – CI/CD, automation, and release management pipelines  
 ✅ **GitHub Actions** – Automated workflows for CI/CD, testing, security scanning, and infrastructure deployment  
 ✅ **GitHub Advanced Security** – Secure software development  
 ✅ **GitHub Administration** – Enterprise GitHub management  
 ✅ **Terraform Associate (HashiCorp)** – Infrastructure as Code (IaC) automation  
 
-#### **🔐 Security & Identity**  
+### **🔐 Security & Identity**  
+
 ✅ **Azure Security Engineer** – Threat protection & security controls  
 ✅ **Azure Identity & Access Administrator** – IAM & Azure AD management  
 ✅ **Cybersecurity Architect** – Enterprise-wide security strategy  
 
-#### **🧠 AI**  
+### **🧠 AI**  
+
 ✅ **Azure AI Engineer** – Developing AI solutions with cognitive services and ML models  
 
+### **📢 Training & Mentorship**  
 
-#### **📢 Training & Mentorship**  
 As a **GitHub Accredited Trainer**, I deliver training on:  
 🎓 GitHub Actions | GitHub for Developers | Advanced Security | GitHub Administration | Copilot for Business  
 
-### **🛠 My Approach to Technology**  
+## **🛠 My Approach to Technology**  
 
 I believe that **great architecture starts with great development**. My **.NET background** helps me **bridge the gap between software development and cloud infrastructure**, ensuring that applications are **not only well-built but also scalable, secure, and efficient in the cloud**.  
 
@@ -149,8 +153,8 @@ I love **solving complex technical challenges** and finding **practical solution
 
 Beyond the technical side, I enjoy **mentoring teams, guiding DevOps transformations, and exploring emerging technologies** to stay ahead in the ever-evolving cloud landscape.  
 
-### **🌟 Let's Connect!**  
+## **🌟 Let's Connect!**  
 
 If you're interested in **cloud, DevOps, or GitHub best practices**, let's chat! Whether you're looking for **advice, collaboration, or training**, I’m always happy to share knowledge and explore new opportunities.  
 
-📩 **Reach out, and let’s build something awesome together!** 🚀  
+📩 **Reach out, and let’s build something awesome together!** 🚀

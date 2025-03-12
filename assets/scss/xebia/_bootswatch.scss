@@ -9,6 +9,7 @@
   --bs-body-font-family: #{$font-sans-serif} !important;
   --bs-font-sans-serif: #{$font-sans-serif} !important;
   --bs-font-monospace: #{$font-monospace} !important;
+  --navbar-height: 100px; /* Default Bootstrap navbar height */
 }
 
 :root,
@@ -363,4 +364,8 @@ pre[class*="language-"] {
 
 .rounded-pill {
   font-family: $font-tags !important;
+}
+
+.container {
+  margin-top: var(--navbar-height);
 }

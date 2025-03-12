@@ -1,15 +1,23 @@
 {{ define "main" }}
 
 <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+  <div class="row">
+    <div class="col-lg">
+      <h1>Welcome to My Blog: Navigating Azure, GitHub, and DevOps Challenges 🚀</h1>
+      <p class="lead">Join me on a journey through the world of Azure, GitHub, and DevOps as I share insights, solutions, and experiences to help you overcome challenges and achieve success.</p>
+    </div>
+  </div>
   <div class="row mt-5">
-    <div class="col-lg-8">
+    <div class="col-lg">
       {{ with first 1 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }} 
         {{ $latest := index . 0 }} 
-        {{ partial "blog-detail.html" (dict "page" $latest "useContent" true "useLink" true) }} 
+        {{ partial "blog/first.html" (dict "page" $latest) }} 
       {{ end }}
-      <div class="card border-primary col-lg-12 mt-3">
-        <div class="card-body">
-          <h2 class="card-title">Other Posts</h2>
+      <hr>
+
+      <div class="card border-0 col-lg-12 mt-3">
+        <div class="card-body p-0">
+          <!-- <h2 class="card-title">Other Posts</h2> -->
           <div class="container p-0">
             <div class="row row-cols-lg-2 row-cols-1 g-4">
               {{ $remainingPosts := after 1 (sort (where site.RegularPages "Section" "posts") "Date" "desc") }}
@@ -21,10 +29,10 @@
                   {{ $cover = "img/default-cover.jpg" }} 
                 {{ end }}
                 <div class="col">
-                    <div class="card border-primary">
+                    <div class="card border-0">
                         <div>
                             <a href="{{ .RelPermalink }}">
-                                <img src="{{ $cover }}" alt="" class="img-fluid">
+                                <img src="{{ $cover }}" alt="" class="img-fluid rounded" />
                             </a>
                         </div>
                         <div class="card-body">
@@ -34,6 +42,9 @@
                             <h6 class="card-title">
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                             </h6>
+                            <div>
+                              {{.Params.description }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -44,9 +55,9 @@
       </div>
       
     </div>
-    <div class="col-lg-4 sidebar">
+    <!-- <div class="col-lg-4 sidebar">
       {{ partial "sidebar.html" (dict "page" . "showRecentPosts" false) }}
-    </div>
+    </div> -->
   </div>
 </div>
 {{ end }}

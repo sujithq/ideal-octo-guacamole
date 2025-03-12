@@ -1,18 +1,25 @@
-<div class="card border-primary mt-3 mb-3">
+{{ if not .isIndex }}
+  <a href="/"><i class="bi bi-arrow-left mx-1"></i>All posts</a>
+  <div class="text-center">{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</div>
+  <h1 class="text-center"><strong>{{ .page.Title}}</strong></h1>
+{{ end }}
+<div class="card border-0 mt-3 mb-3">
   {{ if .page.Params.cover }} {{ $cover := printf "%s/cover.jpg"
   .page.RelPermalink }}
     {{ if .useLink }}
     <a href="{{ .page.RelPermalink }}"
-      ><img src="{{ $cover }}" alt="" class="img-fluid"
+      ><img src="{{ $cover }}" alt="" class="img-fluid rounded"
     /></a>
     {{ else }}
-    <img src="{{ $cover }}" alt="" class="img-fluid" />
+    <img src="{{ $cover }}" alt="" class="img-fluid rounded" />
     {{ end }}
   {{ end }}
   <div class="card-body">
-    <h1 class="card-title"><strong>{{ .page.Title}}</strong></h1>
-      <div class="d-flex align-items-center">
-          {{ with .page.Params.author }}
+    {{ if .isIndex }}
+      <h1 class="card-title"><strong>{{ .page.Title}}</strong></h1>
+    {{ end }}
+        <div class="d-flex align-items-center">
+          <!-- {{ with .page.Params.author }}
           {{ $author := site.GetPage (printf "authors/%s" .) }}
           {{ $resume := site.GetPage "resume" }}
               <span>
@@ -23,14 +30,15 @@
                 {{ end }}
               </span>
               <span class="mx-1">•</span>
-          {{ end}}
+          {{ end}} -->
+          <span class="text-primary mx-1">New!</span>
           <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
         </div>
         <div>
-          {{ if .useContent}}
+          {{ if .useContent }}
             {{ .page.Content }}
           {{ else }}
-            {{ .page.Summary }}
+            {{ .page.Params.description }}
           {{ end }}
         </div>
         <div class="d-flex align-items-center flex-wrap">
@@ -54,8 +62,10 @@
   </div>
 </div>
 
-<div class="card border-primary mt-3">
-  <div class="card-body">
-    {{ template "_internal/disqus.html" .page }}
+{{ if .showComments}}
+  <div class="card border-0 mt-3">
+    <div class="card-body">
+      {{ template "_internal/disqus.html" .page }}
+    </div>
   </div>
-</div>
+{{ end }}
