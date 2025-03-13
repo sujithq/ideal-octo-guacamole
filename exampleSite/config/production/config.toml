@@ -14,5 +14,11 @@ baseURL = "/ideal-octo-guacamole"
     url = "/resume"
     weight = 2
 
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives"
+    weight = 3
+
 [params]
   prismjsTheme = "okaidia"

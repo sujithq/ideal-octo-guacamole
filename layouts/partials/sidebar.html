@@ -70,5 +70,12 @@
       {{ end}}
     {{ end}}
 
+    <div class="card border-primary mt-3">
+      <div class="card-body">
+        <div class="card-title">
+          {{ partial "archives" (dict "Context" . "limit" 5) }}
+        </div>
+      </div>  
+    </div>  
   </div>
 </div>

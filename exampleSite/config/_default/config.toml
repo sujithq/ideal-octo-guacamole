@@ -12,6 +12,7 @@ baseURL = "http://localhost:1313/"
   socialImage = "/images/Sujith_Quintelier.jpg"
   author = "Sujith Quintelier"
   prismjsTheme = "default"
+  mainSections = ["post"]
  
 [markup]
   [markup.goldmark]
@@ -40,10 +41,16 @@ baseURL = "http://localhost:1313/"
     weight = 2
 
   [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives"
+    weight = 3
+
+  [[menu.main]]
     identifier = "docs"
     name = "Documentation"
     url = "/documentation"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = "taxonomy"
@@ -80,3 +87,5 @@ baseURL = "http://localhost:1313/"
   disableAliases = false
   pagerSize = 10
   path = 'page'
+
+
