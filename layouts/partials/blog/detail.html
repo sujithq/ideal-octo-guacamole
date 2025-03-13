@@ -1,7 +1,22 @@
+{{ $author := site.GetPage (printf "authors/%s" .page.Params.author) }}
+{{ $resume := site.GetPage "resume" }}
+{{ $home := site.GetPage "/" }}
+
 {{ if not .isIndex }}
-  <a href="/"><i class="bi bi-arrow-left mx-1"></i>All posts</a>
-  <div class="text-center">{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</div>
-  <h1 class="text-center"><strong>{{ .page.Title}}</strong></h1>
+  <a href="{{$home.Permalink}}"><i class="bi bi-arrow-left mx-1"></i>All posts</a>
+  <div class="text-center">
+    <span class="mx-1">Written by</span>
+    <span>
+      {{ if $resume }}
+        <a href="{{ $resume.RelPermalink }}">{{ $author.Title }}</a>
+      {{ else }}
+        {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "20") }}
+      {{ end }}
+    </span>
+    <span class="mx-1">•</span>
+    <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
+  </div>
+  <h1 class="text-center"><strong>{{ .page.Title }}</strong></h1>
 {{ end }}
 <div class="card border-0 mt-3 mb-3">
   {{ if .page.Params.cover }} {{ $cover := printf "%s/cover.jpg"
@@ -14,39 +29,46 @@
     <img src="{{ $cover }}" alt="" class="img-fluid rounded" />
     {{ end }}
   {{ end }}
+  <div class="text-center mt-3">
+
+    <div class="btn-group rounded" role="group" aria-label="Basic example">
+      <button type="button" class="btn resp-sharing-button--facebook"><a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-facebook"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--twitter"><a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text={{ .page.Title }}&amp;url={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-twitter-x"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--tumblr"><a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title={{ .page.Title }}&amp;caption={{ .page.Title }}&amp;content={{ .page.Permalink }}&amp;canonicalUrl={{ .page.Permalink }}&amp;shareSource=tumblr_share_button" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-square-tumblr"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--email"><a class="resp-sharing-button__link" href="mailto:?subject={{ .page.Title }}&amp;body={{ .page.Permalink }}" target="_self" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-envelope"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--pinterest"><a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url={{ .page.Permalink }}&amp;media={{ .page.Permalink }}&amp;description={{ .page.Title }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-pinterest"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--linkedin"><a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .page.Permalink }}&amp;title={{ .page.Title }}&amp;summary={{ .page.Title }}&amp;source={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-linkedin"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--reddit"><a class="resp-sharing-button__link" href="https://reddit.com/submit/?url={{ .page.Permalink }}&amp;resubmit=true&amp;title={{ .page.Title }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-reddit"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--xing"><a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url={{ .page.Permalink }};title={{ .page.Title }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-square-xing"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--whatsapp"><a class="resp-sharing-button__link" href="whatsapp://send?text={{ .page.Title }}%20{{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-whatsapp"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--hackernews"><a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u={{ .page.Permalink }}&amp;t={{ .page.Title }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-square-hacker-news"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--vk"><a class="resp-sharing-button__link" href="http://vk.com/share.php?title={{ .page.Title }}&amp;url={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--vk resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-vk"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--telegram"><a class="resp-sharing-button__link" href="https://telegram.me/share/url?text={{ .page.Title }}&amp;url={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="bi bi-telegram"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--flipboard"><a class="resp-sharing-button__link" href="https://share.flipboard.com/bookmarklet/popout?v=2&title={{ .page.Title }}&url={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--flipboard resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-flipboard"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--pocket"><a class="resp-sharing-button__link" href="https://getpocket.com/save?url={{ .page.Permalink }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--pocket resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-get-pocket"></i></div></div></a></button>
+      <button type="button" class="btn resp-sharing-button--buffer"><a class="resp-sharing-button__link" href="https://bufferapp.com/add?url={{ .page.Permalink }}&text={{ .page.Title }}" target="_blank" rel="noopener" aria-label=""><div class="resp-sharing-button resp-sharing-button--buffer resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><i class="fa-brands fa-buffer"></i></div></div></a></button>
+    </div>
+
+    
+    
+  </div>
   <div class="card-body">
     {{ if .isIndex }}
-      <h1 class="card-title"><strong>{{ .page.Title}}</strong></h1>
+      <h1 class="card-title"><strong>{{ .page.Title }}</strong></h1>
     {{ end }}
-        <div class="d-flex align-items-center">
-          <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
-        </div>
-        <div>
-          {{ if .useContent }}
-            {{ .page.Content }}
-          {{ else }}
-            {{ .page.Params.description }}
-          {{ end }}
-        </div>
-        {{ partial "taxonomy.html" (dict "page" .page) }} 
-        <!-- <div class="d-flex align-items-center flex-wrap">
-          <span class="mx-1"><i class="bi bi-stack"></i></span>
-          {{ range .page.Params.series }}
-            <a href="{{ printf "%s/series/%s" site.BaseURL (. | urlize) | absLangURL }}"><span class="badge rounded-pill bg-primary mx-1">{{ . }}</span></a>
-          {{ end }}
-        </div>
-        <div class="d-flex align-items-center flex-wrap">
-          <span class="mx-1"><i class="bi bi-folder"></i></span>
-          {{ range .page.Params.categories }}
-            <a href="{{ printf "%s/categories/%s" site.BaseURL (. | urlize) | absLangURL }}"><span class="badge rounded-pill bg-secondary mx-1">{{ . }}</span></a>
-          {{ end }}
-        </div>
-        <div class="d-flex align-items-center flex-wrap">
-          <span class="mx-1"><i class="bi bi-tags"></i></span>
-          {{ range .page.Params.tags }}
-            <a href="{{ printf "%s/tags/%s" site.BaseURL (. | urlize) | absLangURL }}"><span class="badge rounded-pill bg-success mx-1">{{ . }}</span></a>
-          {{ end }}
-        </div> -->
+    <div class="d-flex align-items-center">
+      <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
+    </div>
+    <div>
+      {{ if .useContent }}
+        {{ .page.Content }}
+      {{ else }}
+        {{ .page.Params.description }}
+      {{ end }}
+    </div>
+    {{ if .showTaxonomy }}
+      {{ partial "taxonomy.html" (dict "page" .page) }} 
+    {{ end }}
   </div>
 </div>
 

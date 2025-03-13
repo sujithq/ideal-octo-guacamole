@@ -1,0 +1,46 @@
+
+{{ $index := .index }}
+{{ $pages := .pages }}
+{{ $total := len $pages }}
+
+<div class="card border-0 col-md-12 mt-3">
+    <div class="card-body p-0">
+      <div class="container p-0 mt-0">
+        <div class="row row-cols-md-2 row-cols-1 g-4">
+
+{{ $idx := 0 }}
+{{ range seq 0 1 }}
+    {{ $p:= (index $pages (add $index $idx)) }}
+    {{if lt (add $index $idx) $total }}
+        {{ $cover := "" }} 
+        {{ if $p.Params.cover }} 
+            {{ $cover = printf "%s/cover.jpg" $p.RelPermalink }} 
+        {{ else }} 
+            {{ $cover = "img/default-cover.jpg" }} 
+        {{ end }}
+        <div class="col">
+            <div class="card border-0">
+                <div>
+                    <a href="{{ $p.RelPermalink }}"><img src="{{ $cover }}" alt="" class="img-fluid rounded" /></a>
+                </div>
+            <div class="card-body">
+                <span>{{ with index $p.Params.tags 0 }} {{ . }} {{ end }}</span>
+                <span class="mx-1">•</span>
+                <span>{{ $p.Date.Format $p.Site.Params.dateFormat }}</span>
+                <h6 class="card-title">
+                <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+                </h6>
+                <div>
+                    {{$p.Params.description }}
+                </div>
+                <a href="{{ $p.Permalink }}" class="text-info">Read more<span><i class="bi bi-arrow-right mx-1"></i></span></a>
+            </div>
+        </div>
+        </div>
+    {{ end}}
+    {{ $idx = add $idx 1 }}
+{{ end}}
+</div>
+</div>
+</div>  
+</div>  

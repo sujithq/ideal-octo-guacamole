@@ -1,18 +1,19 @@
-<div class="container">
+<div class="container mt-0">
   <div class="row">
-    <div class="card border-primary mt-3 mb-3 p-0">
+    <div class="card border-primary m-0 p-0">
       <div class="card-body">
         <div class="d-flex flex-column align-items-center">
           {{ with .page.Params.author }} 
-            {{ $author := site.GetPage (printf "authors/%s" .) }} {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "150") }} 
-              {{ with $author }}
-              <h4>{{ $author.Title }}</h4>
+            {{ $author := site.GetPage (printf "authors/%s" .) }} 
+            <h4>About {{ $author.Title }}</h4>
+            {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "150") }} 
+            {{ with $author }}
               {{ $resume := site.GetPage "resume" }} 
               {{ with $resume }}
                 <a href="{{ $resume.RelPermalink }}"><h5>{{$resume.Title}}</h5></a>
               {{ end }}
               <div class="text-center">
-                {{ $author.Params.bio | markdownify }}
+                {{ $author.Params.about | markdownify }}
               </div>
             {{ end }} 
           {{ end }}
@@ -52,20 +53,22 @@
         </div>
     </div>
     {{ end}}
-
-    {{ range $taxName, $termsMap := .page.Site.Taxonomies }}
-    <div class="card border-primary mb-3 p-0">
-      <div class="card-body">
-        <div class="card-title">
-          <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ title $taxName }}</h4>
-          {{ range $term, $pages := $termsMap }} {{ with site.GetPage (printf
-            "/%s/%s" $taxName $term) }}
-            <!-- <li><a href="{{ .RelPermalink }}">{{ $term }} ({{ len $pages }})</a></li> -->
-            <a href="{{ .RelPermalink }}"><span class="badge rounded-pill bg-primary mx-1">{{ $term }} ({{ len $pages }})</span></a>
-            {{ end }} {{ end }}
+    {{ if .showTaxonomy }}
+      {{ range $taxName, $termsMap := .page.Site.Taxonomies }}
+      <div class="card border-primary mb-3 p-0">
+        <div class="card-body">
+          <div class="card-title">
+            <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ title $taxName }}</h4>
+            {{ range $term, $pages := $termsMap }} {{ with site.GetPage (printf
+              "/%s/%s" $taxName $term) }}
+              <!-- <li><a href="{{ .RelPermalink }}">{{ $term }} ({{ len $pages }})</a></li> -->
+              <a href="{{ .RelPermalink }}"><span class="badge rounded-pill bg-primary mx-1">{{ $term }} ({{ len $pages }})</span></a>
+              {{ end }} {{ end }}
+          </div>
         </div>
       </div>
-    </div>
+      {{ end}}
     {{ end}}
+
   </div>
 </div>
