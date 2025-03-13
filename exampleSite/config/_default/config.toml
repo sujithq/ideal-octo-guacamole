@@ -75,3 +75,8 @@ baseURL = "http://localhost:1313/"
 [services]
     [services.disqus]
     shortname = 'sujithq'
+
+[pagination]
+  disableAliases = false
+  pagerSize = 10
+  path = 'page'
