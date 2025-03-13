@@ -228,6 +228,7 @@ a{
 @import "footer.scss";
 @import "timeline.scss";
 @import "swiper";
+@import "sharingButtons";
 
 .bs-component {
 position: relative;
@@ -368,4 +369,12 @@ pre[class*="language-"] {
 
 .container {
   margin-top: var(--navbar-height);
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.01); /* Adjust the scale factor as needed */
 }
