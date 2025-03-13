@@ -63,6 +63,7 @@ superuser = true
   email = "sujith.quintelier@gmail.com"
   # Short bio (displayed in user profile at end of posts)
   bio = "Azure Consultant, DevOps Architect, and GitHub Trainer with 25+ years of IT expertise, specializing in cloud solutions, security, automation, and infrastructure as code."
+  about = "Hi, I'm Sujith Quintelier—an Azure, DevOps and GitHub consultant/trainer with over 25 years of experience in IT. I specialize in cloud solutions, automation, and infrastructure as code, helping teams streamline their workflows and build scalable, secure systems. Whether it's optimizing DevOps practices, architecting cloud-native solutions, or sharing knowledge through training and consulting, I'm passionate about making technology work smarter."
 
 # Organizations/Affiliations to show in About widget
 [organizations]
