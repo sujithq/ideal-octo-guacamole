@@ -32,7 +32,7 @@
           
         </div>
       </div>
-      <div class="card border-primary mb-3">
+      <div class="card border-primary mb-3" data-aos="fade-up">
         <!-- <div class="card-header">
         </div> -->
         <div class="card-body">
@@ -76,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="card border-primary mb-3">
+      <div class="card border-primary mb-3" data-aos="fade-up">
         <div class="card-header text-center">
           <h4 class="center-text">Experiences</h4>
         </div>
@@ -163,7 +163,7 @@
         </section>
         </div>
       </div>
-      <div class="card border-primary mb-3">
+      <div class="card border-primary mb-3" data-aos="fade-up">
         <div class="card-header text-center">
           <h4 class="center-text">Accomplishments</h4>
         </div>
@@ -171,9 +171,9 @@
           {{ with .Site.GetPage "section" "resume" }}
             {{ range .Pages }}
               {{ if eq .Title "Accomplishments" }}
-                  {{ $items := sort .Params.item "date_start" "desc" }}
-                  {{ $lastIndex := sub (len $items) 1 }}
-                  {{ range $idx, $item := $items}}
+                {{ $items := sort .Params.item "date_start" "desc" }}
+                {{ $lastIndex := sub (len $items) 1 }}
+                {{ range $idx, $item := $items}}
                   <div class="timeline-item mt-3">
                     <div class="timeline-content">
                         <h3>{{ .title }}</h3>
@@ -195,13 +195,13 @@
                   {{ if lt $idx $lastIndex }}
                     <hr>
                   {{ end }}
-                  {{ end }}
+                {{ end }}
               {{ end }}
             {{ end }}
           {{ end }}
         </div>
       </div>
-      <div class="card border-primary mb-3">
+      <div class="card border-primary mb-3" data-aos="fade-up">
         <div class="card-header text-center">
           <h4 class="center-text">Badges</h4>
         </div>
