@@ -94,11 +94,19 @@ $font-sans-serif: "Source Sans Pro", "Mona Sans" !default;
 $font-monospace: "Fira Code", SFMono-Regular !default;
 $font-tags: "Nunito", "Inter" !default;
 
-$google-fonts: join($font-sans-serif, $font-monospace, comma);
+$google-fonts: join($font-sans-serif, $font-monospace);
 $google-fonts: join($google-fonts, $font-tags, comma);
 
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
 // Replace spaces with "+" for Google Fonts URL compatibility
-$google-fonts-url: str-replace(#{$google-fonts}, " ", "+");
+$google-fonts-url: str-replace(str-replace("#{$google-fonts}", ",+", "|"), " ", "+");
 
 // Construct the final web font path
 $web-font-path: "https://fonts.googleapis.com/css?family=#{$google-fonts-url}&display=swap" !default;

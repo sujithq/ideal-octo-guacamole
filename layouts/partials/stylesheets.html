@@ -1,4 +1,4 @@
-{{ $styles := resources.Get "scss/test.scss" | toCSS | minify | fingerprint }}
+{{ $styles := resources.Get "scss/ideal-octo-guacamole.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{ $aos := resources.Get "vendor/aos/css/aos.css" | toCSS | minify | fingerprint }}
