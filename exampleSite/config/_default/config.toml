@@ -12,7 +12,7 @@ baseURL = "http://localhost:1313/"
   socialImage = "/images/Sujith_Quintelier.jpg"
   author = "Sujith Quintelier"
   prismjsTheme = "default"
-  mainSections = ["post"]
+#  mainSections = ["posts"]
  
 [markup]
   [markup.goldmark]
