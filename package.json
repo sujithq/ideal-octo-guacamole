@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "copy-files": "node scripts/copy-files.js",
-    "copy-vendor-files": "node scripts/copy-vendor-files.js",
     "postinstall": "npm run copy-files"
   },
   "keywords": [],
