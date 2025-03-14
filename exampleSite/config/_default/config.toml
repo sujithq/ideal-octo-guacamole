@@ -27,57 +27,49 @@ baseURL = "http://localhost:1313/"
   series = 'series'
 
 [menu]
-
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "resume"
-    name = "Resume"
-    url = "/resume"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "docs"
-    name = "Documentation"
-    url = "/documentation"
-    weight = 4
-
-  [[menu.main]]
-    identifier = "taxonomy"
-    name = "Taxonomy"
-#     url = "/docs/"
-    weight = 3
-
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags"
-    weight = 1
-    parent = "taxonomy"
-
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories"
-    weight = 2
-    parent = "taxonomy"  
-
-  [[menu.main]]
-    identifier = "series"
-    name = "Series"
-    url = "/series"
-    weight = 3
-    parent = "taxonomy"
+#  [[menu.main]]
+#    identifier = "blog"
+#    name = "Blog"
+#    url = "/"
+#    weight = 1
+#  [[menu.main]]
+#    identifier = "resume"
+#    name = "Resume"
+#    url = "/resume"
+#    weight = 2
+#  [[menu.main]]
+#    identifier = "archives"
+#    name = "Archives"
+#    url = "/archives"
+#    weight = 3
+#  [[menu.main]]
+#    identifier = "docs"
+#    name = "Documentation"
+#    url = "/documentation"
+#    weight = 4
+ [[menu.main]]
+   identifier = "taxonomy"
+   name = "Taxonomy"
+#    url = "/docs/"
+   weight = 3
+ [[menu.main]]
+   identifier = "tags"
+   name = "Tags"
+   url = "/tags"
+   weight = 1
+   parent = "taxonomy"
+ [[menu.main]]
+   identifier = "categories"
+   name = "Categories"
+   url = "/categories"
+   weight = 2
+   parent = "taxonomy"  
+ [[menu.main]]
+   identifier = "series"
+   name = "Series"
+   url = "/series"
+   weight = 3
+   parent = "taxonomy"
 
 [services]
     [services.disqus]

@@ -1,6 +1,6 @@
 +++
 title = '🖥️ From Zero to Hero: Terraform for Azure - Part 1'
-date = '2025-02-27 06:00:00Z'
+date = '2025-03-10 06:00:00Z'
 draft = false
 tags = [
   "Terraform",

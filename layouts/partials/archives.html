@@ -2,32 +2,31 @@
 {{- $limit := default 5 .Params.limit -}}
 {{- $archivesPage := site.GetPage "archives" -}}
 {{- if $archivesPage -}}
-    {{- $archivesPage := site.GetPage "archives" -}}
-    <section class="widget archives">
-        <div class="widget-icon">
-            {{ partial "helper/icon" "infinity" }}
-        </div>
-        <h2 class="widget-title section-title">Archives</h2>
-
-        {{ $pages := where site.RegularPages "Section" "posts" }}
-        {{ $archives := $pages.GroupByDate "2006" }}
-        
-        <div class="widget-archive--list">
-            {{ range $index, $item := first (add $limit 1) ($archives) }}
-                {{- $id := lower (replace $item.Key " " "-") -}}
-                <div class="archives-year">
-                    <a href="{{ $archivesPage.RelPermalink }}#{{ $id }}">
-                        {{ if eq $index $limit }}
-                            <span class="year">{{ T "widget.archives.more" }}</span>
-                        {{ else }}
-                            <span class="year">{{ .Key }}</span>
-                            <span class="count">{{ len $item.Pages }}</span>
+    {{ $pages := where site.RegularPages "Section" "posts" }}
+    {{ $archives := $pages.GroupByDate "2006" }}
+        <div class="accordion" id="archives">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="test">
+            <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetest" aria-expanded="true" aria-controls="collapsetest">
+                Archives
+            </button>
+            </h2>
+            <div id="collapsetest" class="accordion-collapse collapse" aria-labelledby="test" data-bs-parent="#archives">
+            <div class="accordion-body p-3">
+                {{ range $index, $item := first $limit ($archives) }}
+                    <p class="mb-0">{{ .Key }}({{ len $item.Pages }})</p>
+                    {{ $pgs := $item.Pages.GroupByDate "January" }}
+                    {{ range $idx, $it := $pgs }}
+                        <p class="ms-2 mb-0">{{ .Key }}({{ len $it.Pages }})</p>
+                        {{ range $inx, $itm := ($it.Pages) }}
+                            <p class="ms-3 mb-0">{{ $itm.Title }}</p>
                         {{ end }}
-                    </a> 
-                </div>
-            {{ end }}
-        </div>
-    </section>
+                    {{ end }}
+                {{ end }}
+            </div>
+            </div>
+        </div>        
+    </div>
 {{- else -}}
     {{- warnf "Archives page not found. Create a page with layout: archives." -}}
 {{- end -}}

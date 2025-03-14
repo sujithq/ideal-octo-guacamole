@@ -1,6 +1,6 @@
 +++
 title = '🚀 How to Retrieve Stale Branches Across All Repositories in a GitHub Organization'
-date = 2025-02-14T01:00:00-00:00
+date = 2025-01-14T01:00:00-00:00
 draft = false
 tags = [
   "GitHub",

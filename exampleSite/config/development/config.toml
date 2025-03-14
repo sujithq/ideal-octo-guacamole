@@ -2,4 +2,4 @@
 title = "ideal-octo-guacamole-dev"
 
 [params]
-  prismjsTheme = "tomorrow"
+  prismjsTheme = "okaidia" # "tomorrow"
