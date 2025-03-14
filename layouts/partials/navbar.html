@@ -44,7 +44,7 @@
               {{ end }}
 
           </ul>
-          <ul class="navbar-nav ms-md-auto">
+          <ul class="navbar-nav ms-lg-auto">
             {{ with .Site.Params.socials }}
                 {{ range . }}
                 <li class="nav-item">
@@ -81,34 +81,17 @@
               </li>
               <li>
                 {{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
-        {{- if $query -}}
-            {{- $searchPage := index $query 0 -}}
-            <form class="d-flex search-form " action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }} data-bs-theme="light">
-                <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
-                <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
-                    <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
-                </button>
-              </form>
-        {{- end -}}
+                {{- if $query -}}
+                    {{- $searchPage := index $query 0 -}}
+                    <form class="d-flex search-form " action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }} data-bs-theme="light">
+                        <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
+                        <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
+                            <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
+                        </button>
+                      </form>
+                {{- end -}}
               </li>
           </ul>
       </div>
-      <!-- <div class="me-1">
-        {{- $query := first 1 (where .Site.Pages "Layout" "==" "search") -}}
-        {{- if $query -}}
-            {{- $searchPage := index $query 0 -}}
-            <form class="d-flex search-form" action="{{ $searchPage.RelPermalink }}" {{ with .OutputFormats.Get "json" -}}data-json="{{ .Permalink }}" {{- end }}>
-                <input name="keyword" class="form-control me-sm-2" type="search" placeholder="keywords">
-                <button title="Search" class="btn btn-secondary my-2 my-sm-0" type="submit">
-                    <svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
-                </button>
-              </form>
-        {{- end -}}
-
-        
-          </div> -->
-
-          
-      <!-- {{ partial "socials.html" . }} -->
   </div>
 </nav>
