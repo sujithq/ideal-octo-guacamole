@@ -106,7 +106,7 @@ $google-fonts: join($google-fonts, $font-tags, comma);
 }
 
 // Replace spaces with "+" for Google Fonts URL compatibility
-$google-fonts-url: str-replace(str-replace("#{$google-fonts}", ",+", "|"), " ", "+");
+$google-fonts-url: str-replace(str-replace("#{$google-fonts}", " ", "+"), ",+", "|");
 
 // Construct the final web font path
 $web-font-path: "https://fonts.googleapis.com/css?family=#{$google-fonts-url}&display=swap" !default;
