@@ -1,7 +1,5 @@
----
-title: "Search"
-layout: "search"
-outputs:
-    - html
-    - json
----
++++
+title = "Search"
+layout = "search"
+outputs = ["html", "json"]
++++
