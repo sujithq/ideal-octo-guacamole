@@ -10,7 +10,7 @@ node_modules/
 /playwright/.cache/
 
 # Hugo
-assets/vendor
-static/vendor
-static/components
-static/scss/fonts/bootstrap-icons.woff*
+exampleSite/assets/vendor
+exampleSite/static/vendor
+exampleSite/static/components
+exampleSite/static/scss/fonts/bootstrap-icons.woff*
