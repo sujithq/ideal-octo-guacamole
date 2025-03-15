@@ -14,7 +14,7 @@
           {{ partial "newUpdate.html" (dict "page" .page) }}
           <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
         </div>
-        <h2 class="card-title"><strong>{{ .page.Title}}</strong></h2>
+        <h6 class="card-title"><strong>{{ .page.Title}}</strong></h6>
         <div>
           {{ .page.Params.description }}
         </div>

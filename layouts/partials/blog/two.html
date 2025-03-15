@@ -27,7 +27,7 @@
                 {{ partial "newUpdate.html" (dict "page" $p) }}
                 <span>{{ $p.Date.Format $p.Site.Params.dateFormat }}</span>
                 <h6 class="card-title">
-                <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+                <strong>{{ $p.Title }}</strong>
                 </h6>
                 <div>
                     {{$p.Params.description }}
