@@ -10,7 +10,7 @@
       <p class="lead">Join me on a journey through the world of Azure, GitHub, and DevOps as I share insights, solutions, and experiences to help you overcome challenges and achieve success. Opinions are my own.</p>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row mt-1">
     <div class="col-lg-9">
       {{ $posts := where site.RegularPages "Section" "posts" }}
       {{ $pageSize := 4 }}
@@ -35,7 +35,7 @@
         {{ end }}
       {{ end }}
     </div>
-    <div class="col-lg-3 sidebar">
+    <div class="col-lg-3 sidebar p-lg-0">
       {{ partial "sidebar.html" (dict "page" .) }}
     </div>
   </div>

@@ -9,11 +9,11 @@
             <div id="collapseAbout" class="accordion-collapse collapsed collapsed show" aria-labelledby="About" data-bs-parent="#widgets">
                 <div class="accordion-body p-3">
                     <div class="card border-0 m-0 p-0">
-                        <div class="card-body">
+                        <div class="card-body p-0">
                           <div class="d-flex flex-column align-items-center">
                             {{ with .page.Params.author }} 
                               {{ $author := site.GetPage (printf "authors/%s" .) }} 
-                              <h4>{{ $author.Title }}</h4>
+                              <!-- <h4>{{ $author.Title }}</h4> -->
                               {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "150") }} 
                               {{ with $author }}
                                 {{ $resume := site.GetPage "resume" }} 
@@ -33,9 +33,9 @@
         </div>
     {{ end }}
     {{ if site.Params.widgets.recentPosts.enabled}}
-        <div class="accordion-item rounded-top">
+        <div class="accordion-item">
             <h2 class="accordion-header" id="RecentPosts">
-                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecentPosts" aria-expanded="true" aria-controls="collapseRecentPosts">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecentPosts" aria-expanded="true" aria-controls="collapseRecentPosts">
                     Recent Posts
                 </button>
             </h2>
@@ -55,9 +55,9 @@
         </div>
     {{ end }}
     {{ if site.Params.widgets.taxonomy.enabled}}
-        <div class="accordion-item rounded-top">
+        <div class="accordion-item">
             <h2 class="accordion-header" id="Taxonomy">
-                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTaxonomy" aria-expanded="true" aria-controls="collapseTaxonomy">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTaxonomy" aria-expanded="true" aria-controls="collapseTaxonomy">
                     Taxonomy
                 </button>
             </h2>
@@ -67,7 +67,9 @@
                         <div class="card border-0 m-0 p-0">
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ title $taxName }}</h4>
+                                    <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ with site.GetPage (printf "/%s" $taxName) }}
+                                        <a href="{{ .RelPermalink }}">{{title $taxName}}</a>
+                                    {{ end }}</h4>
                                     {{ range $term, $pages := $termsMap }} 
                                         {{ with site.GetPage (printf "/%s/%s" $taxName $term) }}
                                             <a href="{{ .RelPermalink }}"><span class="badge rounded-pill bg-primary mx-1">{{ $term }} ({{ len $pages }})</span></a>
@@ -82,14 +84,14 @@
         </div>
     {{ end }}
     {{ if site.Params.widgets.archives.enabled}}
-        <div class="accordion-item rounded-top">
+        <div class="accordion-item">
             {{- $limit := default 5 site.Params.widgets.archives.limit -}}
             {{- $archivesPage := site.GetPage "archives" -}}
             {{- if $archivesPage -}}
                 {{ $pages := where site.RegularPages "Section" "posts" }}
                 {{ $archives := $pages.GroupByDate "2006" }}
                 <h2 class="accordion-header" id="Archives">
-                    <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArchives" aria-expanded="true" aria-controls="collapseArchives">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArchives" aria-expanded="true" aria-controls="collapseArchives">
                         Archives
                     </button>
                 </h2>
@@ -114,9 +116,9 @@
         </div>
     {{ end }}
     {{ if site.Params.widgets.subscribe.enabled}}
-        <div class="accordion-item rounded-top">
-            <h2 class="accordion-header" id="Subscribe">
-                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribe" aria-expanded="true" aria-controls="collapseSubscribe">
+        <div class="accordion-item">
+            <h2 class="accordion-header " id="Subscribe">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribe" aria-expanded="true" aria-controls="collapseSubscribe">
                     Subscribe
                 </button>
             </h2>
