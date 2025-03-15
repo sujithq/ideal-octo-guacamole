@@ -32,6 +32,8 @@ layout = 'single'
 
 description = "Understand the concepts of Azure storage redundancy, data availability, and durability. Learn how to ensure your data is safe and accessible at all times."
 
+slug = "azure-storage-redundancy-data-availability-durability"
+
 +++
 
 Azure Storage automatically **stores multiple copies** of your data to protect against failures, power outages, and even **massive natural disasters**. **Redundancy** ensures that your data remains available and durable even when failures occur.  

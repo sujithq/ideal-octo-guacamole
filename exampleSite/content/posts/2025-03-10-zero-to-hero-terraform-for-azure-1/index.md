@@ -26,6 +26,7 @@ layout = 'single'
     
 description = "Kickstart your journey with Terraform for Azure. This first part of the series covers the basics and sets the foundation for automating your Azure infrastructure."
 
+slug = "zero-to-hero-terraform-for-azure-1"
 +++
 
 ## **Introduction**

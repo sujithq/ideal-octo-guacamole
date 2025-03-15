@@ -23,6 +23,8 @@ layout = 'single'
     author = 'sujith'
 description = "A step-by-step guide on how to identify and retrieve stale branches in your GitHub organization. Keep your repository clean and organized."
 
+slug = "retrieve-stale-branches-github-organization"
+
 +++
 
 Keeping your GitHub repositories clean is crucial for maintainability. Over time, branches pile up, making it difficult to track what’s relevant. If you’re managing multiple repositories in an organization, manually identifying stale branches can be a hassle.  

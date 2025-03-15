@@ -27,6 +27,8 @@ layout = 'single'
 
 description = "Explore the concept of identities in Azure, including user and service identities, and learn how to manage and secure them effectively."
 
+
+slug = "securing-azure-identities"
     
 +++
 

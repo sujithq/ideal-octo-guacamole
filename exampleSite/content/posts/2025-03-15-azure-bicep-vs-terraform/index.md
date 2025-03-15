@@ -15,6 +15,8 @@ layout = 'single'
     
 description = "A detailed comparison of Azure Bicep and Terraform, covering their features, use cases, and which one is better suited for your Infrastructure as Code needs."
 
+slug = "azure-bicep-vs-terraform"
+
 +++
 
 ## **Introduction**

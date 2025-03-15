@@ -30,7 +30,9 @@ baseURL = "http://localhost:1313/"
   [params.widgets.subscribe]
     enabled = true
 
- 
+[permalinks]
+  posts = "/:slug/"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
