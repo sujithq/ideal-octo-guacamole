@@ -35,7 +35,7 @@ GitHub Copilot is an AI-driven coding assistant that helps developers write code
 ✔ **Multi-Language Support** – Works with Python, JavaScript, TypeScript, Go, Ruby, C#, Terraform, and more.  
 ✔ **Entire Function Implementations** – Suggests entire function bodies from just a function signature or comment.  
 ✔ **Comment-Driven Development** – Generates code based on natural language descriptions.  
-✔ **IDE Integration** – Works inside VS Code, Neovim, JetBrains, and Visual Studio.
+✔ **IDE Integration** – Works inside VS Code, Neovim, JetBrains, and Visual Studio.  
 ✔ **GitHub Copilot Chat** – An AI assistant built into the IDE for real-time coding support, explanations, and debugging.  
 ✔ **Code Explanations** – Copilot can analyze and explain snippets of code, improving developer understanding.  
 ✔ **Security Vulnerability Prevention** – Detects and suggests fixes for insecure coding patterns.  
