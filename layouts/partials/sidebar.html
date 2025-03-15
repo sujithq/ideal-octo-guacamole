@@ -1,81 +1,11 @@
 <div class="container mt-0">
   <div class="row">
-    <div class="card border-primary m-0 p-0">
-      <div class="card-body">
-        <div class="d-flex flex-column align-items-center">
-          {{ with .page.Params.author }} 
-            {{ $author := site.GetPage (printf "authors/%s" .) }} 
-            <h4>About {{ $author.Title }}</h4>
-            {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "150") }} 
-            {{ with $author }}
-              {{ $resume := site.GetPage "resume" }} 
-              {{ with $resume }}
-                <a href="{{ $resume.RelPermalink }}"><h5>{{$resume.Title}}</h5></a>
-              {{ end }}
-              <div class="text-center">
-                {{ $author.Params.about | markdownify }}
-              </div>
-            {{ end }} 
-          {{ end }}
-        </div>
-      </div>
-    </div>
-    {{ if .showRecentPosts }}
-    <div class="card border-primary mb-3 p-0">
-      <div class="card-body">
-        <div class="card-title">
-          <h4>Recent Posts</h4>
-        </div>
-        {{ range first 5 (where site.RegularPages "Section" "posts") }}
-        <a href="{{ .RelPermalink }}">
-          <div class="card mb-3 border-0">
-            <div class="row g-0">
-              <div class="col-lg-4">
-                {{ $cover := "" }} 
-                {{ if .Params.cover }} 
-                  {{ $cover = printf "%s/cover.jpg" .RelPermalink }}
-                {{ else }} 
-                  {{ $cover = "img/default-cover.jpg" }} 
-                {{ end }}
-                <img src="{{ $cover }}" class="img-fluid rounded-start" alt="{{ .Title }}">
-              </div>
-              <div class="col-lg-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{ .Title }}</h5>
-                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        {{ end }}
-        </div>
-    </div>
-    {{ end}}
-    {{ if .showTaxonomy }}
-      {{ range $taxName, $termsMap := .page.Site.Taxonomies }}
-      <div class="card border-primary mb-3 p-0">
-        <div class="card-body">
-          <div class="card-title">
-            <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ title $taxName }}</h4>
-            {{ range $term, $pages := $termsMap }} {{ with site.GetPage (printf
-              "/%s/%s" $taxName $term) }}
-              <!-- <li><a href="{{ .RelPermalink }}">{{ $term }} ({{ len $pages }})</a></li> -->
-              <a href="{{ .RelPermalink }}"><span class="badge rounded-pill bg-primary mx-1">{{ $term }} ({{ len $pages }})</span></a>
-              {{ end }} {{ end }}
-          </div>
-        </div>
-      </div>
-      {{ end}}
-    {{ end}}
-
     <div class="card border-0 mt-3 p-0">
       <div class="card-body p-0">
         <div class="card-title">
-          {{ partial "archives" (dict "Context" . "limit" 5) }}
+          {{ partial "widgets" (dict "page" .page) }}
         </div>
       </div>  
-    </div>  
+    </div>
   </div>
 </div>

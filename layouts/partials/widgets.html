@@ -1,0 +1,130 @@
+<div class="accordion" id="widgets">
+    {{ if site.Params.widgets.about.enabled}}
+        <div class="accordion-item rounded-top">
+            <h2 class="accordion-header" id="About">
+                <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="true" aria-controls="collapseAbout">
+                    About
+                </button>
+            </h2>
+            <div id="collapseAbout" class="accordion-collapse collapsed collapsed show" aria-labelledby="About" data-bs-parent="#widgets">
+                <div class="accordion-body p-3">
+                    <div class="card border-0 m-0 p-0">
+                        <div class="card-body">
+                          <div class="d-flex flex-column align-items-center">
+                            {{ with .page.Params.author }} 
+                              {{ $author := site.GetPage (printf "authors/%s" .) }} 
+                              <h4>{{ $author.Title }}</h4>
+                              {{ partial "gravatar/avatar-params" (dict "Email" $author.Params.email "ClassName" "rounded-circle flex-shrink-0" "Size" "150") }} 
+                              {{ with $author }}
+                                {{ $resume := site.GetPage "resume" }} 
+                                {{ with $resume }}
+                                  <a href="{{ $resume.RelPermalink }}"><h5>{{$resume.Title}}</h5></a>
+                                {{ end }}
+                                <div class="text-center">
+                                  {{ $author.Params.about | markdownify }}
+                                </div>
+                              {{ end }} 
+                            {{ end }}
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+    {{ if site.Params.widgets.recentPosts.enabled}}
+        <div class="accordion-item rounded-top">
+            <h2 class="accordion-header" id="RecentPosts">
+                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRecentPosts" aria-expanded="true" aria-controls="collapseRecentPosts">
+                    Recent Posts
+                </button>
+            </h2>
+            <div id="collapseRecentPosts" class="accordion-collapse collapsed collapse" aria-labelledby="RecentPosts" data-bs-parent="#widgets">
+                <div class="accordion-body p-0">
+                    <div class="card border-0 m0 p-0">
+                        <div class="card-body">
+                          {{ range first 5 (where site.RegularPages "Section" "posts") }}
+                            <a href="{{ .RelPermalink }}">
+                                <p class="card-text">{{ .Title }}</p>
+                            </a>
+                          {{ end }}
+                          </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+    {{ if site.Params.widgets.taxonomy.enabled}}
+        <div class="accordion-item rounded-top">
+            <h2 class="accordion-header" id="Taxonomy">
+                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTaxonomy" aria-expanded="true" aria-controls="collapseTaxonomy">
+                    Taxonomy
+                </button>
+            </h2>
+            <div id="collapseTaxonomy" class="accordion-collapse collapsed collapse" aria-labelledby="Taxonomy" data-bs-parent="#widgets">
+                <div class="accordion-body p-0">
+                    {{ range $taxName, $termsMap := .page.Site.Taxonomies }}
+                        <div class="card border-0 m-0 p-0">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4><i class="bi bi-{{if eq $taxName "tags" }}tags{{else if eq $taxName "categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ title $taxName }}</h4>
+                                    {{ range $term, $pages := $termsMap }} 
+                                        {{ with site.GetPage (printf "/%s/%s" $taxName $term) }}
+                                            <a href="{{ .RelPermalink }}"><span class="badge rounded-pill bg-primary mx-1">{{ $term }} ({{ len $pages }})</span></a>
+                                        {{ end }} 
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ end}}
+                </div>
+            </div>
+        </div>
+    {{ end }}
+    {{ if site.Params.widgets.archives.enabled}}
+        <div class="accordion-item rounded-top">
+            {{- $limit := default 5 site.Params.widgets.archives.limit -}}
+            {{- $archivesPage := site.GetPage "archives" -}}
+            {{- if $archivesPage -}}
+                {{ $pages := where site.RegularPages "Section" "posts" }}
+                {{ $archives := $pages.GroupByDate "2006" }}
+                <h2 class="accordion-header" id="Archives">
+                    <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArchives" aria-expanded="true" aria-controls="collapseArchives">
+                        Archives
+                    </button>
+                </h2>
+                <div id="collapseArchives" class="accordion-collapse collapsed collapse" aria-labelledby="Archives" data-bs-parent="#widgets">
+                    <div class="accordion-body p-3">
+                        {{ range $index, $item := first $limit ($archives) }}
+                            {{ $KeyYear := .Key}}
+                            <p class="mb-0"><a href="{{ $archivesPage.Permalink }}/#{{ $KeyYear }}">{{ $KeyYear }}</a>({{ len $item.Pages }})</p>
+                            {{ $pgs := $item.Pages.GroupByDate "January" }}
+                            {{ range $idx, $it := $pgs }}
+                                <p class="ms-2 mb-0"><a href="{{ $archivesPage.Permalink }}/#{{ $KeyYear }}{{ .Key }}">{{ .Key }}</a>({{ len $it.Pages }})</p>
+                                {{ range $inx, $itm := ($it.Pages) }}
+                                    <p class="ms-3 mb-0"><a href="{{ $itm.RelPermalink }}">{{ $itm.Title }}</a></p>
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+            {{- else -}}
+                {{- warnf "Archives page not found. Create a page with layout: archives." -}}
+            {{- end -}}
+        </div>
+    {{ end }}
+    {{ if site.Params.widgets.subscribe.enabled}}
+        <div class="accordion-item rounded-top">
+            <h2 class="accordion-header" id="Subscribe">
+                <button class="accordion-button rounded-top collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubscribe" aria-expanded="true" aria-controls="collapseSubscribe">
+                    Subscribe
+                </button>
+            </h2>
+            <div id="collapseSubscribe" class="accordion-collapse collapsed collapse" aria-labelledby="Subscribe" data-bs-parent="#widgets">
+                <div class="accordion-body p-3">
+                    <a href="index.xml" title="Subscribe to our RSS feed">RSS Feed</a>
+                </div>
+            </div>
+        </div>
+    {{ end }}
+</div>

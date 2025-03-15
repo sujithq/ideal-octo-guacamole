@@ -16,6 +16,20 @@ baseURL = "http://localhost:1313/"
 [params.days]
   new = 7       # Days threshold for "New" label
   updated = 14  # Days threshold for "Updated" label
+
+[params.widgets]
+  [params.widgets.archives]
+    enabled = true
+    limit = 5
+  [params.widgets.about]
+    enabled = true
+  [params.widgets.taxonomy]
+    enabled = true
+  [params.widgets.recentPosts]
+    enabled = true
+  [params.widgets.subscribe]
+    enabled = true
+
  
 [markup]
   [markup.goldmark]
