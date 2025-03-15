@@ -12,7 +12,10 @@ baseURL = "http://localhost:1313/"
   socialImage = "/images/Sujith_Quintelier.jpg"
   author = "Sujith Quintelier"
   prismjsTheme = "default"
-#  mainSections = ["posts"]
+
+[params.days]
+  new = 7       # Days threshold for "New" label
+  updated = 14  # Days threshold for "Updated" label
  
 [markup]
   [markup.goldmark]
@@ -80,4 +83,5 @@ baseURL = "http://localhost:1313/"
   pagerSize = 10
   path = 'page'
 
-
+[frontmatter]
+  lastmod = ["lastmod", "git", "date"]

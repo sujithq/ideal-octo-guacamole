@@ -11,8 +11,7 @@
     <div class="col-md-4 d-flex align-items-center">
       <div class="card-body pe-0 pt-0 pb-0">
         <div class="d-flex align-items-center">
-          <!-- <span class="text-primary">New!</span>
-          <span class="mx-1">•</span> -->
+          {{ partial "newUpdate.html" (dict "page" .page) }}
           <span>{{ .page.Date | time.Format .page.Site.Params.dateFormat }}</span>
         </div>
         <h2 class="card-title"><strong>{{ .page.Title}}</strong></h2>

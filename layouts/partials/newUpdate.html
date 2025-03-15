@@ -1,0 +1,15 @@
+{{ $now := now }}
+{{ $days := .page.Site.Params.days }} <!-- Define days properties in config.toml -->
+{{ $daysNew := $days.new | default 7 }}  <!-- Consider posts "New" if published within the last x days as defined in config.toml -->
+{{ $daysUpdated := $days.updated | default 14 }} <!-- Show "Updated" if lastmod was changed within x days as defined in config.toml -->
+
+{{ $isNew := lt (sub $now.Unix (.page.Date.Unix)) (mul $daysNew 86400) }}
+{{ $isUpdated := and (not $isNew) (lt (sub $now.Unix (.page.Lastmod.Unix)) (mul $daysUpdated 86400)) }}
+
+{{ if $isNew }}
+<span class="badge rounded bg-primary">New</span>
+<span class="mx-1">•</span>
+{{ else if $isUpdated }}
+<span class="badge rounded bg-info">Updated</span>
+<span class="mx-1">•</span>
+{{ end }}

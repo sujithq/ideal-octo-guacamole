@@ -24,8 +24,7 @@
                     <a href="{{ $p.RelPermalink }}"><img src="{{ $cover }}" alt="" class="img-fluid rounded" /></a>
                 </div>
             <div class="card-body">
-                <span>{{ with index $p.Params.tags 0 }} {{ . }} {{ end }}</span>
-                <span class="mx-1">•</span>
+                {{ partial "newUpdate.html" (dict "page" $p) }}
                 <span>{{ $p.Date.Format $p.Site.Params.dateFormat }}</span>
                 <h6 class="card-title">
                 <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
