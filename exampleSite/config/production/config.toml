@@ -19,6 +19,28 @@ baseURL = "/ideal-octo-guacamole"
     name = "Archives"
     url = "/posts"
     weight = 3
-
+ [[menu.main]]
+   identifier = "taxonomy"
+   name = "Taxonomy"
+   weight = 4
+ [[menu.main]]
+   identifier = "tags"
+   name = "Tags"
+   url = "/tags"
+   weight = 1
+   parent = "taxonomy"
+ [[menu.main]]
+   identifier = "categories"
+   name = "Categories"
+   url = "/categories"
+   weight = 2
+   parent = "taxonomy"  
+ [[menu.main]]
+   identifier = "series"
+   name = "Series"
+   url = "/series"
+   weight = 3
+   parent = "taxonomy"
+   
 [params]
   prismjsTheme = "okaidia"
