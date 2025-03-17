@@ -1,37 +1,38 @@
 {{ define "main" }}
 <div class="container">
     {{ $paginator := .Paginator }}
-    <p>Showing {{ .Paginator.PagerSize }} items per page.</p>
-    {{ range $paginator.Pages }}
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ end }}
-    
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
-            {{ if $paginator.HasPrev }}
-            <li class="page-item">
-                <a class="page-link" href="{{ $paginator.Prev.URL }}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            {{ end }}
-    
-            {{ range $paginator.Pagers }}
-            <li class="page-item {{ if eq .PageNumber $paginator.PageNumber }}active{{ end }}">
-                <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
-            </li>
-            {{ end }}
-    
-            {{ if $paginator.HasNext }}
-            <li class="page-item">
-                <a class="page-link" href="{{ $paginator.Next.URL }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
-    
+    <div class="row g-0">
+        <div class="col-lg-12">
+          <div class="card border-primary col-lg-12">
+            <div class="card-body">
+              <div class="container mt-0">
+                <div class="row">
+                  <div class="col-lg-12">
+                    {{ $pages := where site.RegularPages "Section" "posts" }}
+                    {{ $archives := $pages.GroupByDate "2006" }}
+                    {{ range $index, $item := $archives }}
+                        {{ $KeyYear := .Key}}
+                        <p class="mb-0" id="{{ $KeyYear }}">{{ .Key }}({{ len $item.Pages }})</p>
+                        {{ $pgs := $item.Pages.GroupByDate "January" }}
+                        {{ range $idx, $it := $pgs }}
+                            <p id="{{ $KeyYear }}{{ .Key }}" class="ms-2 mb-0">{{ .Key }}({{ len $it.Pages }})</p>
+                            {{ range $inx, $itm := ($it.Pages) }}
+                                {{- $image := $itm.Resources.Get "cover.jpg" -}}
+                                <p class="ms-3 mb-1"><span class="mx-1"><img src="{{ ($image.Fill "50x50 q100 Center").RelPermalink }}"></span><a href="{{ $itm.RelPermalink }}">{{ $itm.Title }}</a></p>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>      
+          </div>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-lg-12 d-flex justify-content-center">
+        {{ partial "pagination.html" (dict "paginator" $paginator) }}
+        </div>      
+    </div>
 </div>
-
 {{ end }}

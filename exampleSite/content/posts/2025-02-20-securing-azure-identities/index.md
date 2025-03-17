@@ -1,5 +1,6 @@
 +++
 title = '🔒 Securing Azure Identities'
+slug = "securing-azure-identities"
 date = '2025-02-20 06:00:00Z'
 draft = false
 tags = [
@@ -26,9 +27,6 @@ layout = 'single'
     author = 'sujith'
 
 description = "Explore the concept of identities in Azure, including user and service identities, and learn how to manage and secure them effectively."
-
-
-slug = "securing-azure-identities"
     
 +++
 

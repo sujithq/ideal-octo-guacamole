@@ -1,5 +1,6 @@
 +++
 title = '🖥️ From Zero to Hero: Terraform for Azure - Part 1'
+slug = "zero-to-hero-terraform-for-azure-1"
 date = '2025-03-10 06:00:00Z'
 draft = false
 tags = [
@@ -26,7 +27,7 @@ layout = 'single'
     
 description = "Kickstart your journey with Terraform for Azure. This first part of the series covers the basics and sets the foundation for automating your Azure infrastructure."
 
-slug = "zero-to-hero-terraform-for-azure-1"
+
 +++
 
 ## **Introduction**

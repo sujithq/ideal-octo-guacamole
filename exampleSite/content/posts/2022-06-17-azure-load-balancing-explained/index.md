@@ -1,5 +1,6 @@
 +++
 title = '🔍 Azure Load Balancing Explained: Choosing the Right Option'
+slug = 'azure-load-balancing-explained'
 date = '2022-06-17 06:00:00Z'
 draft = false
 tags = [
@@ -50,7 +51,6 @@ layout = 'single'
 
 description = "Learn about Azure load balancing, its types, and how to effectively distribute network traffic to ensure high availability and reliability of your applications."
 
-    
 +++
 
 ## **What is Load Balancing?**  

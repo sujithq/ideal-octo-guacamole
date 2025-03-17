@@ -86,8 +86,8 @@
     {{ if site.Params.widgets.archives.enabled}}
         <div class="accordion-item border border-primary">
             {{- $limit := default 5 site.Params.widgets.archives.limit -}}
-            {{- $archivesPage := site.GetPage "archives" -}}
-            {{- if $archivesPage -}}
+            {{- $postsPage := index (where site.Sections "Title" "Posts") 0 -}}
+            {{- if $postsPage -}}
                 {{ $pages := where site.RegularPages "Section" "posts" }}
                 {{ $archives := $pages.GroupByDate "2006" }}
                 <h2 class="accordion-header" id="Archives">
@@ -99,14 +99,19 @@
                     <div class="accordion-body p-3">
                         {{ range $index, $item := first $limit ($archives) }}
                             {{ $KeyYear := .Key}}
-                            <p class="mb-0"><a href="{{ $archivesPage.Permalink }}/#{{ $KeyYear }}">{{ $KeyYear }}</a>({{ len $item.Pages }})</p>
+                            <p class="mb-0"><a href="{{ $postsPage.Permalink }}/#{{ $KeyYear }}">{{ $KeyYear }}</a>({{ len $item.Pages }})</p>
                             {{ $pgs := $item.Pages.GroupByDate "January" }}
                             {{ range $idx, $it := $pgs }}
-                                <p class="ms-2 mb-0"><a href="{{ $archivesPage.Permalink }}/#{{ $KeyYear }}{{ .Key }}">{{ .Key }}</a>({{ len $it.Pages }})</p>
+                                <p class="ms-2 mb-0"><a href="{{ $postsPage.Permalink }}/#{{ $KeyYear }}{{ .Key }}">{{ .Key }}</a>({{ len $it.Pages }})</p>
                                 {{ range $inx, $itm := ($it.Pages) }}
-                                    <p class="ms-3 mb-0"><a href="{{ $itm.RelPermalink }}">{{ $itm.Title }}</a></p>
+                                    {{- $image := $itm.Resources.Get "cover.jpg" -}}
+                                    
+                                    <p class="ms-3 mb-0"><span class="mx-1"><img src="{{ ($image.Fill "50x50 q100 Center").RelPermalink }}"></span><a href="{{ $itm.RelPermalink }}">{{ $itm.Title }}</a></p>
                                 {{ end }}
                             {{ end }}
+                        {{ end }}
+                        {{ if gt (len $pages) $limit }}
+                            <p class="mb-0"><a href="{{ $postsPage.Permalink }}">View all</a></p>
                         {{ end }}
                     </div>
                 </div>

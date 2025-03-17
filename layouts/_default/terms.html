@@ -8,7 +8,7 @@
       <h2 class="card-title"><i class="bi bi-{{if eq .Type "Tags" }}tags{{else if eq .Type "Categories" }}folder{{else}}stack{{end}} mx-1"></i>{{ .Title }}</h2>
       <div class="d-flex gap-1 flex-wrap">
         {{ range .Data.Terms.Alphabetical }}
-          <a href="{{ .Page.RelPermalink }}"><span class="badge rounded-pill bg-primary fs-5 mx-1">{{ .Page.Title }}<span class="badge text-bg-danger mx-1">{{ .Count }}</span></span></a>
+          <a href="{{ .Page.RelPermalink }}"><span class="badge rounded-pill bg-primary fs-5 mx-1">{{ .Page.Title }}<span class="badge rounded-pill text-bg-danger mx-1 m-0">{{ .Count }}</span></span></a>
         {{ end }}
     </div>
     </div>

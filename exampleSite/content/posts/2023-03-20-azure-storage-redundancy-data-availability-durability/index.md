@@ -1,5 +1,6 @@
 +++
 title = '🔹 Azure Storage Redundancy: Ensuring Data Availability and Durability'
+slug = "azure-storage-redundancy-data-availability-durability"
 date = '2023-03-20 06:00:00Z'
 draft = false
 tags = [
@@ -31,8 +32,6 @@ layout = 'single'
     author = 'sujith'
 
 description = "Understand the concepts of Azure storage redundancy, data availability, and durability. Learn how to ensure your data is safe and accessible at all times."
-
-slug = "azure-storage-redundancy-data-availability-durability"
 
 +++
 

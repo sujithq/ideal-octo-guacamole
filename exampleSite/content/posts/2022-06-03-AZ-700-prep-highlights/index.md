@@ -1,5 +1,6 @@
 +++
 title = '📘 AZ-700 Prep Highlights'
+slug = 'az-700-prep-highlights'
 date = '2022-06-03 06:00:00Z'
 draft = false
 tags = [

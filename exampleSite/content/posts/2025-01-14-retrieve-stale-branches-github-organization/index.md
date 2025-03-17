@@ -1,5 +1,6 @@
 +++
 title = '🚀 How to Retrieve Stale Branches Across All Repositories in a GitHub Organization'
+slug = "retrieve-stale-branches-github-organization"
 date = 2025-01-14T01:00:00-00:00
 draft = false
 tags = [
@@ -22,8 +23,6 @@ layout = 'single'
     cover = true
     author = 'sujith'
 description = "A step-by-step guide on how to identify and retrieve stale branches in your GitHub organization. Keep your repository clean and organized."
-
-slug = "retrieve-stale-branches-github-organization"
 
 +++
 

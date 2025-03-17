@@ -17,7 +17,7 @@ baseURL = "/ideal-octo-guacamole"
   [[menu.main]]
     identifier = "archives"
     name = "Archives"
-    url = "/archives"
+    url = "/posts"
     weight = 3
 
 [params]
