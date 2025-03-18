@@ -49,3 +49,10 @@
 {{ partial "fonts" . }}
 
 {{ partial "stylesheets" . }}
+
+<script>
+  (function() {
+      let savedTheme = localStorage.getItem("theme") || document.documentElement.getAttribute("data-bs-theme") || "light";
+      document.documentElement.setAttribute("data-bs-theme", savedTheme);
+  })();
+</script>

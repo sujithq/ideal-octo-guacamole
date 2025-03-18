@@ -69,19 +69,69 @@
   }
 
   // Toggle light and dark themes
-  function toggleThemeMenu() {
-    let themeMenu = document.querySelector("#theme-menu");
+  // function toggleThemeMenu() {
+  //   let themeMenu = document.querySelector("#theme-menu");
 
-    if (!themeMenu) return;
+  //   if (!themeMenu) return;
 
-    document.querySelectorAll("[data-bs-theme-value]").forEach((value) => {
-      value.addEventListener("click", () => {
-        const theme = value.getAttribute("data-bs-theme-value");
-        document.documentElement.setAttribute("data-bs-theme", theme);
-      });
+  //   document.querySelectorAll("[data-bs-theme-value]").forEach((value) => {
+  //     value.addEventListener("click", () => {
+  //       const theme = value.getAttribute("data-bs-theme-value");
+  //       document.documentElement.setAttribute("data-bs-theme", theme);
+  //     });
+  //   });
+  // }
+  // toggleThemeMenu();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll("[data-bs-theme-value]");
+    const htmlElement = document.documentElement;
+    let savedTheme = localStorage.getItem("theme") || htmlElement.getAttribute("data-bs-theme") || "light";
+
+    // Apply the saved theme to <html>
+    htmlElement.setAttribute("data-bs-theme", savedTheme);
+
+    // Invert all other elements' themes, :not(nav > div > div)
+    document.querySelectorAll("[data-bs-theme]:not(html):not(nav)").forEach(el => {
+        let elTheme = el.getAttribute("data-bs-theme") || "light";
+        el.setAttribute("data-bs-theme", elTheme === "light" ? "dark" : "light");
     });
-  }
-  toggleThemeMenu();
+
+    // Update button state based on the applied theme
+    themeButtons.forEach(btn => {
+        let themeValue = btn.getAttribute("data-bs-theme-value");
+        btn.setAttribute("aria-pressed", themeValue === savedTheme ? "true" : "false");
+    });
+
+    // Event listener for theme selection
+    themeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            let selectedTheme = button.getAttribute("data-bs-theme-value");
+
+            if (selectedTheme !== htmlElement.getAttribute("data-bs-theme")) {
+
+
+            // Set the theme on <html>
+            htmlElement.setAttribute("data-bs-theme", selectedTheme);
+            localStorage.setItem("theme", selectedTheme);
+
+            // Invert all other `data-bs-theme` elements, :not(nav > div > div)
+            document.querySelectorAll("[data-bs-theme]:not(html):not(nav)").forEach(el => {
+                let elTheme = el.getAttribute("data-bs-theme") || "light";
+                el.setAttribute("data-bs-theme", elTheme === "light" ? "dark" : "light");
+            });
+
+            // Update button states
+            themeButtons.forEach(btn => {
+                let themeValue = btn.getAttribute("data-bs-theme-value");
+                btn.setAttribute("aria-pressed", themeValue === selectedTheme ? "true" : "false");
+            });
+          }
+
+        });
+    });
+});
+
 
   /**
    * Scroll top button
