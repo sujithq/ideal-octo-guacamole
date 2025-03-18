@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Azure Load Balancer on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/tags/azure-load-balancer/</link><description>Recent content in Azure Load Balancer on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 17 Jun 2022 06:00:00 +0000</lastBuildDate><atom:link href="/ideal-octo-guacamole/tags/azure-load-balancer/index.xml" rel="self" type="application/rss+xml"/><item><title>🔍 Azure Load Balancing Explained: Choosing the Right Option</title><link>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</link><pubDate>Fri, 17 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</guid><description>&lt;h2 id="what-is-load-balancing">&lt;strong>What is Load Balancing?&lt;/strong>&lt;/h2>
+&lt;p>Load balancing is the &lt;strong>even distribution of network traffic&lt;/strong> across a group of backend computing resources or servers. The primary goals of load balancing are:&lt;/p>
+&lt;p>✅ &lt;strong>Optimizing resource utilization&lt;/strong>&lt;br>
+✅ &lt;strong>Maximizing throughput &amp;amp; performance&lt;/strong>&lt;br>
+✅ &lt;strong>Minimizing response time&lt;/strong>&lt;br>
+✅ &lt;strong>Ensuring high availability&lt;/strong>&lt;br>
+✅ &lt;strong>Preventing overload on a single resource&lt;/strong>&lt;/p>
+&lt;p>In &lt;strong>Azure&lt;/strong>, there are multiple load-balancing options, each designed for different &lt;strong>traffic types and use cases&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;h2 id="-azure-load-balancing-options">&lt;strong>🔍 Azure Load Balancing Options&lt;/strong>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>Service&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Scope&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Recommended for&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Layer&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Load Balancer&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>Non-HTTP(S) workloads&lt;/td>
+ &lt;td>Layer 4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Traffic Manager&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>DNS-based traffic routing&lt;/td>
+ &lt;td>Layer 7 (DNS)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Application Gateway&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>HTTP(S) web traffic&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Front Door&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>Web applications, API acceleration&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;figure class="text-center">
+ &lt;img src="img/load-balancing-decision-tree.png" alt="Load Balancing Decision Tree" class="img-fluid" />
+ 
+ &lt;figcaption>Load Balancing Decision Tree&lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>Now, let’s explore each of these services in detail.&lt;/p></description></item><item><title>📘 AZ-700 Prep Highlights</title><link>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</link><pubDate>Fri, 03 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</guid><description>&lt;p>This blog post captures my notes from the &lt;strong>AZ-700&lt;/strong> course, which is designed to teach &lt;strong>Network Engineers&lt;/strong> how to design, implement, and maintain &lt;strong>Azure networking solutions&lt;/strong>. The course covers a wide range of networking topics, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Designing, implementing, and managing&lt;/strong> core Azure networking infrastructure&lt;/li>
+&lt;li>&lt;strong>Hybrid networking&lt;/strong> connections for on-premises integration&lt;/li>
+&lt;li>&lt;strong>Load balancing&lt;/strong> strategies for optimizing traffic distribution&lt;/li>
+&lt;li>&lt;strong>Routing and private access&lt;/strong> to Azure services&lt;/li>
+&lt;li>&lt;strong>Network security&lt;/strong> and traffic filtering&lt;/li>
+&lt;li>&lt;strong>Monitoring and troubleshooting&lt;/strong> network connectivity&lt;/li>
+&lt;/ul>
+&lt;h2 id="1-virtual-networks-vnets">&lt;strong>1. Virtual Networks (VNets)&lt;/strong>&lt;/h2>
+&lt;p>Azure &lt;strong>Virtual Networks (VNets)&lt;/strong> are the backbone of networking in Azure, allowing resources to communicate securely.&lt;/p></description></item></channel></rss>
