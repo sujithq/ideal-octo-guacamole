@@ -5,9 +5,6 @@ title = 'Resume'
 layout = 'single'
 [params]
     author = 'sujith'
-menu.main.identifier = "resume"
-menu.main.weight = 2       
-menu.main.url = "/resume/"       
 description = "Explore my professional resume, showcasing my skills, experiences, accomplishments, and certifications. Learn more about my career journey and achievements."
 
 +++
