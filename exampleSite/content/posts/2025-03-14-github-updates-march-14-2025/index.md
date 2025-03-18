@@ -1,5 +1,5 @@
 +++
-title = "🔄 do not use GitHub's updates for March 14, 2025"
+title = "🔄 GitHub updates for March 14, 2025"
 slug = "github-updates-march-14-2025"
 date = '2025-03-14 06:00:00Z'
 draft = false
