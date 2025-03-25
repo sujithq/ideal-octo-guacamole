@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/</link><description>Recent content in Blog on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 25 Mar 2025 06:00:00 +0000</lastBuildDate><atom:link href="/ideal-octo-guacamole/index.xml" rel="self" type="application/rss+xml"/><item><title>📘 Using Federated Credentials to Secure Azure CI/CD Pipelines</title><link>/ideal-octo-guacamole/posts/2025/03/federated-credentials-secure-azure-cicd/</link><pubDate>Tue, 25 Mar 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/federated-credentials-secure-azure-cicd/</guid><description>&lt;h2 id="why-use-federated-credentials-in-cicd-pipelines">Why Use Federated Credentials in CI/CD Pipelines?&lt;/h2>
+&lt;p>In DevOps, protecting credentials and preventing secret sprawl across CI/CD systems like GitHub Actions and Azure DevOps is crucial. Federated credentials provide a secure way to authenticate pipelines without storing sensitive information, reducing the risk of exposure and simplifying secret management.&lt;/p>
+&lt;p>Federated identity leverages external identity providers (such as Azure Active Directory) to authenticate users and applications securely. Rather than managing multiple secrets or tokens across platforms, federated identity centralizes authentication, providing significant security and operational benefits.&lt;/p></description></item><item><title>🔄 Azure updates for March 18, 2025</title><link>/ideal-octo-guacamole/posts/2025/03/azure-updates-march-18-2025/</link><pubDate>Tue, 18 Mar 2025 07:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/azure-updates-march-18-2025/</guid><description>&lt;h2 id="introduction-azure-changelog--latest-updates--enhancements">&lt;strong>Introduction: Azure Changelog – Latest Updates &amp;amp; Enhancements&lt;/strong>&lt;/h2>
+&lt;p>Welcome to the Azure Changelog, your go-to source for the latest updates and enhancements in Microsoft Azure. In this edition, we will cover the most recent changes and improvements made to Azure services, tools, and features. Stay informed about the latest developments in the Azure ecosystem to optimize your cloud experience.&lt;/p>
+&lt;h3 id="kubenet-networking-for-azure-kubernetes-service-retires-on-march-31-2028">Kubenet Networking for Azure Kubernetes Service Retires on March 31, 2028&lt;/h3>
+&lt;p>Azure Kubernetes Service (AKS) will officially retire &lt;strong>kubenet networking&lt;/strong> on &lt;strong>March 31, 2028&lt;/strong>. After this date, workloads using kubenet will no longer be supported, so it&amp;rsquo;s essential to migrate in advance to avoid disruptions.&lt;/p></description></item><item><title>🔄 GitHub updates for March 18, 2025</title><link>/ideal-octo-guacamole/posts/2025/03/github-updates-march-18-2025/</link><pubDate>Tue, 18 Mar 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/github-updates-march-18-2025/</guid><description>&lt;h2 id="introduction-github-changelog--latest-updates--enhancements">&lt;strong>Introduction: GitHub Changelog – Latest Updates &amp;amp; Enhancements&lt;/strong>&lt;/h2>
+&lt;p>Stay up to date with the latest &lt;strong>GitHub updates, features, and improvements&lt;/strong> designed to enhance your development experience. Whether it’s &lt;strong>security and compliance advancements&lt;/strong>, &lt;strong>performance optimizations&lt;/strong>, or &lt;strong>new tools for automation and insights&lt;/strong>, this changelog keeps you informed about what’s new and how it can benefit your workflow.&lt;/p>
+&lt;p>Inspired by our &lt;a href="https://github.blog/changelog/2025-02-05-view-and-iterate-on-generated-files-directly-within-copilot-chat-preview/">previous release&lt;/a>, working with &lt;a href="https://github.com/copilot">Copilot Chat&lt;/a> on GitHub has become even more seamless. You can instantly preview HTML files, edit files you’ve created, and work on issues right away. Several exciting new capabilities give you more control and flexibility.&lt;/p></description></item><item><title>🚀 GitHub Copilot: The AI-Powered Coding Assistant</title><link>/ideal-octo-guacamole/posts/2025/03/github-copilot-the-ai-powered-coding-assistant/</link><pubDate>Sat, 15 Mar 2025 07:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/github-copilot-the-ai-powered-coding-assistant/</guid><description>&lt;h2 id="introduction">&lt;strong>Introduction&lt;/strong>&lt;/h2>
+&lt;p>GitHub Copilot is an AI-powered coding assistant developed by GitHub in collaboration with OpenAI. It acts as a pair programmer, providing real-time code suggestions, autocompletions, and entire function implementations based on context. Whether you&amp;rsquo;re writing JavaScript, Python, C#, or even Terraform, Copilot speeds up development and improves productivity.&lt;/p>
+&lt;p>In this article, we’ll explore what GitHub Copilot is, how it works, its benefits, limitations, and best practices for maximizing its potential.&lt;/p></description></item><item><title>⚖️ Azure Bicep vs Terraform: Which One Should You Use?</title><link>/ideal-octo-guacamole/posts/2025/03/azure-bicep-vs-terraform/</link><pubDate>Sat, 15 Mar 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/azure-bicep-vs-terraform/</guid><description>&lt;h2 id="introduction">&lt;strong>Introduction&lt;/strong>&lt;/h2>
+&lt;p>Infrastructure as Code (IaC) is a critical part of modern cloud development, allowing teams to define and manage infrastructure in a declarative and repeatable way. Two of the most popular IaC tools for Microsoft Azure are &lt;strong>Azure Bicep&lt;/strong> and &lt;strong>Terraform&lt;/strong>.&lt;/p>
+&lt;p>But which one should you use? This article compares Bicep and Terraform based on syntax, features, ease of use, ecosystem support, and real-world scenarios.&lt;/p>
+&lt;hr>
+&lt;h2 id="what-is-azure-bicep">&lt;strong>What is Azure Bicep?&lt;/strong>&lt;/h2>
+&lt;p>Azure Bicep is a &lt;strong>domain-specific language (DSL)&lt;/strong> developed by Microsoft as an abstraction over ARM (Azure Resource Manager) templates. It simplifies Azure infrastructure deployment by providing a cleaner syntax compared to JSON-based ARM templates.&lt;/p></description></item><item><title>🔄 GitHub updates for March 14, 2025</title><link>/ideal-octo-guacamole/posts/2025/03/github-updates-march-14-2025/</link><pubDate>Fri, 14 Mar 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/github-updates-march-14-2025/</guid><description>&lt;h2 id="introduction-github-changelog--latest-updates--enhancements">&lt;strong>Introduction: GitHub Changelog – Latest Updates &amp;amp; Enhancements&lt;/strong>&lt;/h2>
+&lt;p>Stay up to date with the latest &lt;strong>GitHub updates, features, and improvements&lt;/strong> designed to enhance your development experience. Whether it’s &lt;strong>security and compliance advancements&lt;/strong>, &lt;strong>performance optimizations&lt;/strong>, or &lt;strong>new tools for automation and insights&lt;/strong>, this changelog keeps you informed about what’s new and how it can benefit your workflow.&lt;/p>
+&lt;p>In this edition, we’re covering &lt;strong>GitHub’s PCI DSS v4.0 compliance&lt;/strong> for enterprise customers and the &lt;strong>general availability of GitHub Actions Performance Metrics&lt;/strong>, helping teams gain deeper insights into their CI/CD workflows. Let’s dive into the details! 🚀&lt;/p></description></item><item><title>🖥️ From Zero to Hero: Terraform for Azure - Part 1</title><link>/ideal-octo-guacamole/posts/2025/03/zero-to-hero-terraform-for-azure-1/</link><pubDate>Mon, 10 Mar 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/03/zero-to-hero-terraform-for-azure-1/</guid><description>&lt;h2 id="introduction">&lt;strong>Introduction&lt;/strong>&lt;/h2>
+&lt;p>Terraform is a powerful Infrastructure as Code (IaC) tool that enables you to define, provision, and manage Azure resources using declarative configuration files. This blog series, &lt;em>Zero to Hero: Terraform for Azure&lt;/em>, will take you through Terraform from the basics to advanced topics, using hands-on examples tailored for Azure.&lt;/p>
+&lt;p>In this first post, we’ll focus on setting up your development environment and deploying your first resource on Azure using Terraform.&lt;/p></description></item><item><title>🔒 Securing Azure Identities</title><link>/ideal-octo-guacamole/posts/2025/02/securing-azure-identities/</link><pubDate>Thu, 20 Feb 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/02/securing-azure-identities/</guid><description>&lt;h2 id="securing-azure-identities-the-new-perimeter-in-cloud-security">Securing Azure Identities: The “New” Perimeter in Cloud Security&lt;/h2>
+&lt;p>It’s no secret that the cloud has fundamentally changed how we approach cybersecurity. The days when a robust firewall was all you needed to keep attackers at bay are long gone. As cloud-native services increasingly move into the public sphere, identity has emerged as the new defensive perimeter—if an attacker compromises your identities and credentials, they’re essentially inside.&lt;/p>
+&lt;h2 id="why-identities-matter-more-than-ever">Why Identities Matter More Than Ever&lt;/h2>
+&lt;p>If you’ve participated in a cybersecurity roundtable recently, you’ve likely heard someone mention, “Identity is the new perimeter.” Historically, once you were inside a corporate network, you had broad access to internal systems—much like walking through a front door and freely wandering the house. However, the widespread adoption of cloud services—accessible from anywhere—has turned this model upside down.&lt;/p></description></item><item><title>🚀 How to Retrieve Stale Branches Across All Repositories in a GitHub Organization</title><link>/ideal-octo-guacamole/posts/2025/01/retrieve-stale-branches-github-organization/</link><pubDate>Tue, 14 Jan 2025 01:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/01/retrieve-stale-branches-github-organization/</guid><description>&lt;p>Keeping your GitHub repositories clean is crucial for maintainability. Over time, branches pile up, making it difficult to track what’s relevant. If you’re managing multiple repositories in an organization, manually identifying stale branches can be a hassle.&lt;/p>
+&lt;p>Luckily, with the &lt;strong>GitHub CLI (&lt;code>gh&lt;/code>)&lt;/strong>, you can automate this process and generate a &lt;strong>report of all non-main branches along with their last authors&lt;/strong>.&lt;/p>
+&lt;p>This guide walks you through a &lt;strong>Bash script&lt;/strong> that:&lt;br>
+✅ Retrieves all repositories in an organization&lt;br>
+✅ Lists branches, excluding &lt;code>main&lt;/code>, &lt;code>master&lt;/code>, and &lt;code>azure-master&lt;/code>&lt;br>
+✅ Identifies the last commit author for each branch&lt;br>
+✅ Groups the results by author for better visibility&lt;/p></description></item><item><title>🔹 Azure Storage Redundancy: Ensuring Data Availability and Durability</title><link>/ideal-octo-guacamole/posts/2023/03/azure-storage-redundancy-data-availability-durability/</link><pubDate>Mon, 20 Mar 2023 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2023/03/azure-storage-redundancy-data-availability-durability/</guid><description>&lt;p>Azure Storage automatically &lt;strong>stores multiple copies&lt;/strong> of your data to protect against failures, power outages, and even &lt;strong>massive natural disasters&lt;/strong>. &lt;strong>Redundancy&lt;/strong> ensures that your data remains available and durable even when failures occur.&lt;/p>
+&lt;p>This guide covers &lt;strong>all redundancy options&lt;/strong> available in Azure Storage and how they impact data durability, availability, and failover scenarios.&lt;/p>
+&lt;hr>
+&lt;h2 id="-primary-region-redundancy">🌍 &lt;strong>Primary Region Redundancy&lt;/strong>&lt;/h2>
+&lt;p>Azure Storage always maintains &lt;strong>three copies&lt;/strong> of your data in the &lt;strong>primary region&lt;/strong>. There are two replication options:&lt;/p></description></item><item><title>🔍 Azure Load Balancing Explained: Choosing the Right Option</title><link>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</link><pubDate>Fri, 17 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</guid><description>&lt;h2 id="what-is-load-balancing">&lt;strong>What is Load Balancing?&lt;/strong>&lt;/h2>
+&lt;p>Load balancing is the &lt;strong>even distribution of network traffic&lt;/strong> across a group of backend computing resources or servers. The primary goals of load balancing are:&lt;/p>
+&lt;p>✅ &lt;strong>Optimizing resource utilization&lt;/strong>&lt;br>
+✅ &lt;strong>Maximizing throughput &amp;amp; performance&lt;/strong>&lt;br>
+✅ &lt;strong>Minimizing response time&lt;/strong>&lt;br>
+✅ &lt;strong>Ensuring high availability&lt;/strong>&lt;br>
+✅ &lt;strong>Preventing overload on a single resource&lt;/strong>&lt;/p>
+&lt;p>In &lt;strong>Azure&lt;/strong>, there are multiple load-balancing options, each designed for different &lt;strong>traffic types and use cases&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;h2 id="-azure-load-balancing-options">&lt;strong>🔍 Azure Load Balancing Options&lt;/strong>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>Service&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Scope&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Recommended for&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Layer&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Load Balancer&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>Non-HTTP(S) workloads&lt;/td>
+ &lt;td>Layer 4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Traffic Manager&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>DNS-based traffic routing&lt;/td>
+ &lt;td>Layer 7 (DNS)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Application Gateway&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>HTTP(S) web traffic&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Front Door&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>Web applications, API acceleration&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;figure class="text-center">
+ &lt;img src="img/load-balancing-decision-tree.png" alt="Load Balancing Decision Tree" class="img-fluid" />
+ 
+ &lt;figcaption>Load Balancing Decision Tree&lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>Now, let’s explore each of these services in detail.&lt;/p></description></item><item><title>📘 AZ-700 Prep Highlights</title><link>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</link><pubDate>Fri, 03 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</guid><description>&lt;p>This blog post captures my notes from the &lt;strong>AZ-700&lt;/strong> course, which is designed to teach &lt;strong>Network Engineers&lt;/strong> how to design, implement, and maintain &lt;strong>Azure networking solutions&lt;/strong>. The course covers a wide range of networking topics, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Designing, implementing, and managing&lt;/strong> core Azure networking infrastructure&lt;/li>
+&lt;li>&lt;strong>Hybrid networking&lt;/strong> connections for on-premises integration&lt;/li>
+&lt;li>&lt;strong>Load balancing&lt;/strong> strategies for optimizing traffic distribution&lt;/li>
+&lt;li>&lt;strong>Routing and private access&lt;/strong> to Azure services&lt;/li>
+&lt;li>&lt;strong>Network security&lt;/strong> and traffic filtering&lt;/li>
+&lt;li>&lt;strong>Monitoring and troubleshooting&lt;/strong> network connectivity&lt;/li>
+&lt;/ul>
+&lt;h2 id="1-virtual-networks-vnets">&lt;strong>1. Virtual Networks (VNets)&lt;/strong>&lt;/h2>
+&lt;p>Azure &lt;strong>Virtual Networks (VNets)&lt;/strong> are the backbone of networking in Azure, allowing resources to communicate securely.&lt;/p></description></item></channel></rss>
