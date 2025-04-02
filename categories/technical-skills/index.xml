@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technical Skills on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/categories/technical-skills/</link><description>Recent content in Technical Skills on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 20 Feb 2025 06:00:00 +0000</lastBuildDate><atom:link href="/ideal-octo-guacamole/categories/technical-skills/index.xml" rel="self" type="application/rss+xml"/><item><title>🔒 Securing Azure Identities</title><link>/ideal-octo-guacamole/posts/2025/02/securing-azure-identities/</link><pubDate>Thu, 20 Feb 2025 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2025/02/securing-azure-identities/</guid><description>&lt;h2 id="securing-azure-identities-the-new-perimeter-in-cloud-security">Securing Azure Identities: The “New” Perimeter in Cloud Security&lt;/h2>
+&lt;p>It’s no secret that the cloud has fundamentally changed how we approach cybersecurity. The days when a robust firewall was all you needed to keep attackers at bay are long gone. As cloud-native services increasingly move into the public sphere, identity has emerged as the new defensive perimeter—if an attacker compromises your identities and credentials, they’re essentially inside.&lt;/p>
+&lt;h2 id="why-identities-matter-more-than-ever">Why Identities Matter More Than Ever&lt;/h2>
+&lt;p>If you’ve participated in a cybersecurity roundtable recently, you’ve likely heard someone mention, “Identity is the new perimeter.” Historically, once you were inside a corporate network, you had broad access to internal systems—much like walking through a front door and freely wandering the house. However, the widespread adoption of cloud services—accessible from anywhere—has turned this model upside down.&lt;/p></description></item><item><title>🔹 Azure Storage Redundancy: Ensuring Data Availability and Durability</title><link>/ideal-octo-guacamole/posts/2023/03/azure-storage-redundancy-data-availability-durability/</link><pubDate>Mon, 20 Mar 2023 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2023/03/azure-storage-redundancy-data-availability-durability/</guid><description>&lt;p>Azure Storage automatically &lt;strong>stores multiple copies&lt;/strong> of your data to protect against failures, power outages, and even &lt;strong>massive natural disasters&lt;/strong>. &lt;strong>Redundancy&lt;/strong> ensures that your data remains available and durable even when failures occur.&lt;/p>
+&lt;p>This guide covers &lt;strong>all redundancy options&lt;/strong> available in Azure Storage and how they impact data durability, availability, and failover scenarios.&lt;/p>
+&lt;hr>
+&lt;h2 id="-primary-region-redundancy">🌍 &lt;strong>Primary Region Redundancy&lt;/strong>&lt;/h2>
+&lt;p>Azure Storage always maintains &lt;strong>three copies&lt;/strong> of your data in the &lt;strong>primary region&lt;/strong>. There are two replication options:&lt;/p></description></item><item><title>🔍 Azure Load Balancing Explained: Choosing the Right Option</title><link>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</link><pubDate>Fri, 17 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/azure-load-balancing-explained/</guid><description>&lt;h2 id="what-is-load-balancing">&lt;strong>What is Load Balancing?&lt;/strong>&lt;/h2>
+&lt;p>Load balancing is the &lt;strong>even distribution of network traffic&lt;/strong> across a group of backend computing resources or servers. The primary goals of load balancing are:&lt;/p>
+&lt;p>✅ &lt;strong>Optimizing resource utilization&lt;/strong>&lt;br>
+✅ &lt;strong>Maximizing throughput &amp;amp; performance&lt;/strong>&lt;br>
+✅ &lt;strong>Minimizing response time&lt;/strong>&lt;br>
+✅ &lt;strong>Ensuring high availability&lt;/strong>&lt;br>
+✅ &lt;strong>Preventing overload on a single resource&lt;/strong>&lt;/p>
+&lt;p>In &lt;strong>Azure&lt;/strong>, there are multiple load-balancing options, each designed for different &lt;strong>traffic types and use cases&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;h2 id="-azure-load-balancing-options">&lt;strong>🔍 Azure Load Balancing Options&lt;/strong>&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>Service&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Scope&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Recommended for&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>Layer&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Load Balancer&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>Non-HTTP(S) workloads&lt;/td>
+ &lt;td>Layer 4&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Traffic Manager&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>DNS-based traffic routing&lt;/td>
+ &lt;td>Layer 7 (DNS)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Application Gateway&lt;/strong>&lt;/td>
+ &lt;td>Regional&lt;/td>
+ &lt;td>HTTP(S) web traffic&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Azure Front Door&lt;/strong>&lt;/td>
+ &lt;td>Global&lt;/td>
+ &lt;td>Web applications, API acceleration&lt;/td>
+ &lt;td>Layer 7&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;figure class="text-center">
+ &lt;img src="img/load-balancing-decision-tree.png" alt="Load Balancing Decision Tree" class="img-fluid" />
+ 
+ &lt;figcaption>Load Balancing Decision Tree&lt;/figcaption>
+ 
+&lt;/figure>
+
+
+&lt;p>Now, let’s explore each of these services in detail.&lt;/p></description></item></channel></rss>

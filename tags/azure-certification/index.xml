@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Azure Certification on ideal-octo-guacamole</title><link>/ideal-octo-guacamole/tags/azure-certification/</link><description>Recent content in Azure Certification on ideal-octo-guacamole</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Jun 2022 06:00:00 +0000</lastBuildDate><atom:link href="/ideal-octo-guacamole/tags/azure-certification/index.xml" rel="self" type="application/rss+xml"/><item><title>📘 AZ-700 Prep Highlights</title><link>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</link><pubDate>Fri, 03 Jun 2022 06:00:00 +0000</pubDate><guid>/ideal-octo-guacamole/posts/2022/06/az-700-prep-highlights/</guid><description>&lt;p>This blog post captures my notes from the &lt;strong>AZ-700&lt;/strong> course, which is designed to teach &lt;strong>Network Engineers&lt;/strong> how to design, implement, and maintain &lt;strong>Azure networking solutions&lt;/strong>. The course covers a wide range of networking topics, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Designing, implementing, and managing&lt;/strong> core Azure networking infrastructure&lt;/li>
+&lt;li>&lt;strong>Hybrid networking&lt;/strong> connections for on-premises integration&lt;/li>
+&lt;li>&lt;strong>Load balancing&lt;/strong> strategies for optimizing traffic distribution&lt;/li>
+&lt;li>&lt;strong>Routing and private access&lt;/strong> to Azure services&lt;/li>
+&lt;li>&lt;strong>Network security&lt;/strong> and traffic filtering&lt;/li>
+&lt;li>&lt;strong>Monitoring and troubleshooting&lt;/strong> network connectivity&lt;/li>
+&lt;/ul>
+&lt;h2 id="1-virtual-networks-vnets">&lt;strong>1. Virtual Networks (VNets)&lt;/strong>&lt;/h2>
+&lt;p>Azure &lt;strong>Virtual Networks (VNets)&lt;/strong> are the backbone of networking in Azure, allowing resources to communicate securely.&lt;/p></description></item></channel></rss>
