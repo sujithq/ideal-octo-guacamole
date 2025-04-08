@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="container my-5">
+  <h1 class="mb-4">IPv4 CIDR Calculator</h1>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input id="cidrInput" class="form-control" type="text" placeholder="e.g., 10.0.0.0/27" />
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+    </div>
+  </div>
+
+  <div id="alertBox" class="alert alert-danger d-none" role="alert"></div>
+
+  <div id="output" class="mt-4"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ip-cidr@3.1.0/dist/ip-cidr.min.js"></script>
+<script>
+  function calculate() {
+    const cidr = document.getElementById('cidrInput').value.trim();
+    const alertBox = document.getElementById('alertBox');
+    const output = document.getElementById('output');
+
+    output.innerHTML = '';
+    alertBox.classList.add('d-none');
+
+    try {
+      const block = new IPCIDR(cidr);
+      if (!block.isValid()) throw 'Invalid CIDR';
+
+      const details = {
+        'Network Address': block.start(),
+        'Broadcast Address': block.end(),
+        'Subnet Mask': block.subnetMask,
+        'First Usable IP': block.first(),
+        'Last Usable IP': block.last(),
+        'Number of Hosts': block.addressCount(),
+      };
+
+      let table = '<table class="table table-bordered">';
+      table += '<thead><tr><th>Property</th><th>Value</th></tr></thead><tbody>';
+      for (const key in details) {
+        table += `<tr><td>${key}</td><td>${details[key]}</td></tr>`;
+      }
+      table += '</tbody></table>';
+
+      output.innerHTML = table;
+    } catch (e) {
+      alertBox.textContent = `Invalid input: ${e}`;
+      alertBox.classList.remove('d-none');
+    }
+  }
+</script>
+{{ end }}
