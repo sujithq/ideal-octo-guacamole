@@ -1,0 +1,57 @@
+{{ define "main" }}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg m-0">
+      <h1 class="mb-4">Azure Certifications</h1>
+      <div class="table-responsive">
+        <table id="cert-table" class="table table-bordered table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Expires</th>
+              <th>Days Left</th>
+              <th>Start Renewal From</th>
+              <th>Starting In</th>
+            </tr>
+          </thead>
+          <tbody id="cert-tbody"
+            data-certs='{{ .Params.certs | jsonify }}'>
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const tbody = document.getElementById('cert-tbody');
+  const certs = JSON.parse(tbody.dataset.certs);
+  const today = new Date();
+
+  certs.forEach(cert => {
+    const expires = new Date(cert.expires);
+    const daysLeft = Math.ceil((expires - today) / (1000 * 60 * 60 * 24));
+    const renewalStart = new Date(expires);
+    renewalStart.setDate(expires.getDate() - 180);
+    const startingIn = Math.ceil((renewalStart - today) / (1000 * 60 * 60 * 24));
+
+    const row = `
+      <tr>
+        <td>${cert.code}</td>
+        <td>${cert.desc}</td>
+        <td>${cert.type}</td>
+        <td>${expires.toLocaleDateString()}</td>
+        <td>${daysLeft}</td>
+        <td>${renewalStart.toLocaleDateString()}</td>
+        <td>${startingIn}</td>
+      </tr>
+    `;
+    tbody.insertAdjacentHTML('beforeend', row);
+  });
+});
+</script>
+{{ end }}
