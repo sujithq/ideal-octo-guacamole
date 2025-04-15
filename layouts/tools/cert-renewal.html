@@ -32,7 +32,19 @@
   const certs = JSON.parse(tbody.dataset.certs);
   const today = new Date();
 
-  certs.forEach(cert => {
+  const certsWithDates = certs.map(cert => {
+    const expires = new Date(cert.expires);
+    const daysLeft = Math.ceil((expires - today) / (1000 * 60 * 60 * 24));
+    const renewalStart = new Date(expires);
+    renewalStart.setDate(expires.getDate() - 180);
+    const startingIn = Math.ceil((renewalStart - today) / (1000 * 60 * 60 * 24));
+    return { ...cert, expires, daysLeft, renewalStart, startingIn };
+  });
+
+  // Sort by "startingIn" ascending
+  certsWithDates.sort((a, b) => a.startingIn - b.startingIn);
+
+  certsWithDates.forEach(cert => {
     const expires = new Date(cert.expires);
     const daysLeft = Math.ceil((expires - today) / (1000 * 60 * 60 * 24));
     const renewalStart = new Date(expires);
