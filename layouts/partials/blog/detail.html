@@ -19,7 +19,7 @@
   <h1 class="text-center"><strong>{{ .page.Title }}</strong></h1>
 {{ end }}
 <div class="card border-0 mt-3 mb-3">
-  {{ if .page.Params.cover }} {{ $cover := printf "%s/cover.jpg"
+  {{ if .page.Params.cover }} {{ $cover := printf "%scover.jpg"
   .page.RelPermalink }}
     {{ if .useLink }}
     <a href="{{ .page.RelPermalink }}"
