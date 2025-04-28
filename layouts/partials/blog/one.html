@@ -2,7 +2,7 @@
   <div class="row g-0">
     <div class="col-md-8">
       {{ if .page.Params.cover }} 
-        {{ $cover := printf "%s/cover.jpg" .page.RelPermalink }}
+        {{ $cover := printf "%scover.jpg" .page.RelPermalink }}
         <a href="{{ .page.RelPermalink }}">
           <img src="{{ $cover }}" alt="" class="img-fluid rounded" />
         </a>

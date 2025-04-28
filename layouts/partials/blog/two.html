@@ -14,7 +14,7 @@
     {{if lt (add $index $idx) $total }}
         {{ $cover := "" }} 
         {{ if $p.Params.cover }} 
-            {{ $cover = printf "%s/cover.jpg" $p.RelPermalink }} 
+            {{ $cover = printf "%scover.jpg" $p.RelPermalink }} 
         {{ else }} 
             {{ $cover = "img/default-cover.jpg" }} 
         {{ end }}
