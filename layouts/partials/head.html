@@ -14,6 +14,10 @@
 
 <meta name="author" content="{{ .Site.Params.author }}">
 
+{{ if gt .Paginator.PageNumber 1 }}
+  <meta name="robots" content="noindex,follow">
+{{ end }}
+
 {{- if eq hugo.Environment "development" }}
   <meta name="robots" content="noindex, nofollow">
 {{- else }} 
